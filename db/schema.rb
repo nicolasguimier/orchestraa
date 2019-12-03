@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_150857) do
+ActiveRecord::Schema.define(version: 2019_12_03_155701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 2019_12_03_150857) do
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "instrument_id"
+    t.string "full_name"
+    t.string "email"
+    t.string "status", default: "pending"
+    t.string "sendinblue_email_id"
+    t.boolean "email_delivered", default: false
+    t.boolean "email_read", default: false
+    t.boolean "email_error", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_invitations_on_instrument_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
   create_table "musical_works", force: :cascade do |t|
@@ -94,6 +110,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_150857) do
   end
 
   add_foreign_key "concerts", "users"
+  add_foreign_key "invitations", "instruments"
+  add_foreign_key "invitations", "users"
   add_foreign_key "musical_works", "users"
   add_foreign_key "orchestra_compositions", "users"
   add_foreign_key "program_steps", "concerts"

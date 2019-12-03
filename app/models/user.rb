@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :orchestra_compositions
   has_many :concerts
   has_many :musical_works
+  has_many :invitations
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
