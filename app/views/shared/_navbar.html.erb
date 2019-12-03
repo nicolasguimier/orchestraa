@@ -1,11 +1,22 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <% if user_signed_in? %>
+  <% home_url = '/dashboard' %>
+  <% else %>
+  <% home_url = '/' %>
+  <% end %>
+  <%= link_to home_url, class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+
+  <%= link_to "Concerts", new_user_session_path, class: "nav-item justify-content-end" %>
+  <%= link_to "Musical Works", new_user_session_path, class: "nav-item justify-content-end" %>
+  <%= link_to "Invitations", new_user_session_path, class: "nav-item justify-content-end" %>
+
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
