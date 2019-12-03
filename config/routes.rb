@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#landing'
 
-  resource :dahboard, only: [:show]
+  resource :dashboard, only: [:show]
 
   resources :musical_works, only: [:index, :show] do
     # :new, :create, , :detroy , :edit, :update
