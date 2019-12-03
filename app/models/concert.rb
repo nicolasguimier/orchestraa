@@ -3,6 +3,7 @@ class Concert < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   belongs_to :user
+  has_many :program_steps
 
   validates :name, presence: true
 
