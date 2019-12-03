@@ -2,7 +2,31 @@ puts 'Start seeds'
 
 Instrument.destroy_all
 puts 'Instrument table dropped'
+MusicalWork.destroy_all
+puts 'MusicalWork table dropped'
+User.destroy_all
+puts 'User table dropped'
 
+
+puts '-> Start users'
+igor = User.new(
+    full_name: "Igor Patulachi",
+    email: 'igor@example.com',
+    password: 'password')
+igor.save!
+
+puts "#{User.count} users imported. End"
+
+puts '-> Start MusicalWorks'
+work1 = MusicalWork.new(
+    user: igor,
+    title: 'The Four Seasons of Buenos Aires',
+    composer_name: 'Astor Piazzolla',
+    duration: 120,
+    notes: 'Ceci est le contenu des notes A MODIFIER !!!')
+work1.save!
+
+puts "#{MusicalWork.count} musical works imported. End"
 
 puts '-> Start instruments'
 puts ' --> Start Strings'
@@ -53,7 +77,6 @@ xylophone = Instrument.new(
     position: 2)
 xylophone.save!
 
-puts "#{Instrument.count} instruments imported."
-puts 'End instruments'
+puts "#{Instrument.count} instruments imported. End"
 
 puts 'End seeds'
