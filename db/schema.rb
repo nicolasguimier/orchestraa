@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_145101) do
+ActiveRecord::Schema.define(version: 2019_12_03_150857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,9 +82,22 @@ ActiveRecord::Schema.define(version: 2019_12_03_145101) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "work_instruments", force: :cascade do |t|
+    t.bigint "musical_work_id"
+    t.bigint "instrument_id"
+    t.string "sheet_pdf"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["instrument_id"], name: "index_work_instruments_on_instrument_id"
+    t.index ["musical_work_id"], name: "index_work_instruments_on_musical_work_id"
+  end
+
   add_foreign_key "concerts", "users"
   add_foreign_key "musical_works", "users"
   add_foreign_key "orchestra_compositions", "users"
   add_foreign_key "program_steps", "concerts"
   add_foreign_key "program_steps", "musical_works"
+  add_foreign_key "work_instruments", "instruments"
+  add_foreign_key "work_instruments", "musical_works"
 end
