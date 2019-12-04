@@ -11,14 +11,30 @@ $font-size-base: 1rem;
 
 // Colors
 $body-color: $medium-gray;
+$color:      $ivory;
+$navbar-light-color:                $ivory;
+$navbar-light-hover-color:          $orange;
+$navbar-light-active-color:         $ivory;
+$navbar-light-disabled-color:       $medium-gray;
 
 
 // Buttons & inputs' radius
-$border-radius:    2px;
+$border-radius:    10px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
+
+
+$drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 // Override other variables below!
 $container-max-widths: (
   xl: 1350px
 );
+
+$h1-font-size:                $font-size-base * 3.5 !default;
+$h2-font-size:                $font-size-base * 2.75 !default;
+$h3-font-size:                $font-size-base * 2.25 !default;
+$h4-font-size:                $font-size-base * 2 !default;
+$h5-font-size:                $font-size-base * 1.5 !default;
+$h6-font-size:                $font-size-base !default;
+

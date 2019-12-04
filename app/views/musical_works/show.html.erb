@@ -1,0 +1,10 @@
+<h1>MusicalWorks#show</h1>
+<p>Find me in app/views/musical_works/show.html.erb</p>
+  <ul style="border-bottom:1px solid black">
+    <li>owner : <%= @musical_work.user.full_name %></li>
+    <li>title : <%= @musical_work.title %></li>
+    <li>composer_name : <%= @musical_work.composer_name %></li>
+    <li>duration : <%= @musical_work.duration %></li>
+    <li>notes : <%= @musical_work.notes %></li>
+    <li><%= link_to "BACK TO INDEX OF MUSICAL WORKS", musical_works_path %></li>
+  </ul>
