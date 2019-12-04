@@ -3,9 +3,9 @@
 }
 
 .box {
-  height: 200px;
-  width: 200px;
+  height: 500px;
   background-color: $dark-gray;
   box-shadow: $drop-shadow;
   border-radius: $border-radius;
+  padding: 10px;
 }

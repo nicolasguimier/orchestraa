@@ -1,0 +1,17 @@
+.invitation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $black;
+  box-shadow: $drop-shadow;
+  border-radius: $border-radius;
+  margin: 10px;
+  padding: 10px;
+}
+
+.picto {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  color: green;
+}
