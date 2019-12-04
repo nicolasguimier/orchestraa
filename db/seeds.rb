@@ -644,93 +644,214 @@ ProgramStep.create!(
   musical_work: piazzolla,
   kind: "musical_work",
   position: 1)
-# ProgramStep.create!(
-#   concert: concert1,
-#   musical_work: mouzanar,
-#   kind: "musical_work",
-#   position: 2)
-# ProgramStep.create!(
-#   concert: concert1,
-#   kind: "Intermission",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert1,
-#   musical_work: vivaldi1,
-#   kind: "musical_work",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert1,
-#   musical_work: vivaldi2,
-#   kind: "musical_work",
-#   position: 5)
-# ProgramStep.create!(
-#   concert: concert1,
-#   musical_work: vivaldi3,
-#   kind: "musical_work",
-#   position: 6)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert1,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
 
-# puts '---> for Concert 2'
-# ProgramStep.create!(
-#   concert: concert2,
-#   musical_work: piazzolla,
-#   kind: "musical_work",
-#   position: 1)
-# ProgramStep.create!(
-#   concert: concert2,
-#   musical_work: mouzanar,
-#   kind: "musical_work",
-#   position: 2)
-# ProgramStep.create!(
-#   concert: concert2,
-#   kind: "Intermission",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert2,
-#   musical_work: vivaldi1,
-#   kind: "musical_work",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert2,
-#   musical_work: vivaldi2,
-#   kind: "musical_work",
-#   position: 5)
-# ProgramStep.create!(
-#   concert: concert2,
-#   musical_work: vivaldi3,
-#   kind: "musical_work",
-#   position: 6)
+puts '---> for Concert 2'
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert2,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
 
-# puts '---> for Concert 3'
-# ProgramStep.create!(
-#   concert: concert3,
-#   musical_work: piazzolla,
-#   kind: "musical_work",
-#   position: 1)
-# ProgramStep.create!(
-#   concert: concert3,
-#   musical_work: mouzanar,
-#   kind: "musical_work",
-#   position: 2)
-# ProgramStep.create!(
-#   concert: concert3,
-#   kind: "Intermission",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert3,
-#   musical_work: vivaldi1,
-#   kind: "musical_work",
-#   position: 4)
-# ProgramStep.create!(
-#   concert: concert3,
-#   musical_work: vivaldi2,
-#   kind: "musical_work",
-#   position: 5)
-# ProgramStep.create!(
-#   concert: concert3,
-#   musical_work: vivaldi3,
-#   kind: "musical_work",
-#   position: 6)
+puts '---> for Concert 3'
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert3,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
 
+puts '---> for Concert 4'
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert4,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi11,
+  kind: "musical_work",
+  position: 12)
+
+puts '---> for Concert 5'
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert5,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi11,
+  kind: "musical_work",
+  position: 12)
 
 
 
