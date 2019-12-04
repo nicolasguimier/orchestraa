@@ -8,5 +8,6 @@ class Invitation < ApplicationRecord
   validates :sendingblue_email_id, presence: true
   validates :email_delivered, presence: true
   validates :email_read, presence: true
+  validates :email_clicked, presence: true
   validates :email_error, presence: true
 end
