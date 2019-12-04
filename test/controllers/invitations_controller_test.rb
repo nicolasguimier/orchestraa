@@ -11,4 +11,14 @@ class InvitationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get accept" do
+    get invitations_accept_url
+    assert_response :success
+  end
+
+  test "should get decline" do
+    get invitations_decline_url
+    assert_response :success
+  end
+
 end

@@ -1,2 +1,16 @@
 <h1>Invitations#index</h1>
 <p>Find me in app/views/invitations/index.html.erb</p>
+
+<% @invitations.each do |invitation|%>
+  <ul style="border-bottom:1px solid black">
+    <li>owner : <%= invitation.user %></li>
+    <li>full_name : <%= invitation.full_name %></li>
+    <li>email : <%= invitation.email %></li>
+    <li>instrument_id : <%= invitation.instrument_id %></li>
+    <li>status : <%= invitation.status %></li>
+    <li>sendinblue_email_id : <%= invitation.sendinblue_email_id %></li>
+    <li>email_delivered : <%= invitation.email_delivered %></li>
+    <li>email_read : <%= invitation.email_read %></li>
+    <li>email_error : <%= invitation.email_error %></li>
+  </ul>
+<% end %>

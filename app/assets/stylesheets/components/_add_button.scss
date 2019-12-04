@@ -1,0 +1,16 @@
+// BUTTON ADD
+
+// ajouter bouton dans le html avec image_tag / lui donner la class .add_button et .plus_icon pour le plus
+
+.add_button {
+  min-width: 200px;
+  height: 42px;
+  background-color: $green;
+  box-shadow: $drop-shadow;
+  border-radius: $border-radius;
+}
+
+.plus_icon {
+  height: 20px;
+  color: $ivory;
+}
