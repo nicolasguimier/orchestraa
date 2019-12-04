@@ -1,0 +1,24 @@
+.invitation-counter {
+  display: flex;
+}
+
+.instrument-icon {
+  height: 50px;
+  padding-right: 5px;
+}
+
+.invitation-number {
+  font-family: $headers-font;
+  color: $ivory;
+  text-shadow: $drop-shadow;
+  font-size: 80px;
+  margin-top: -35px;
+}
+
+.invitation-total {
+  font-family: $headers-font;
+  color: $ivory;
+  text-shadow: $drop-shadow;
+  font-size: 20px;
+  margin-top: -5px;
+}
