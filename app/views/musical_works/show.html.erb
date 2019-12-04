@@ -1,10 +1,23 @@
-<h1>MusicalWorks#show</h1>
+<h1><%= @musical_work.title %></h1>
 <p>Find me in app/views/musical_works/show.html.erb</p>
-  <ul style="border-bottom:1px solid black">
-    <li>owner : <%= @musical_work.user.full_name %></li>
-    <li>title : <%= @musical_work.title %></li>
-    <li>composer_name : <%= @musical_work.composer_name %></li>
-    <li>duration : <%= @musical_work.duration %></li>
-    <li>notes : <%= @musical_work.notes %></li>
-    <li><%= link_to "BACK TO INDEX OF MUSICAL WORKS", musical_works_path %></li>
-  </ul>
+<div class="row">
+  <div class="col-6">
+    <ul>
+      <li>composer_name : <%= @musical_work.composer_name %></li>
+      <li>duration : <%= @musical_work.duration %></li>
+      <li>notes : <%= @musical_work.notes %></li>
+      <li><%= link_to "BACK TO INDEX OF MUSICAL WORKS", musical_works_path %></li>
+    </ul>
+  </div>
+  <div class="col-6">
+    <table>
+    <% @work_instruments.each do |work_instrument| %>
+      <tr>
+        <td><%= work_instrument.quantity %>x</td>
+        <td><%= work_instrument.instrument.name %></td>
+        <td><% if work_instrument.sheet_pdf? %> LINK TO PDF <% else %> <span class="orange">Missing PDF</span> <% end %> </td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</div>
