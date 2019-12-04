@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_many :orchestra_compositions
-  has_many :concerts
-  has_many :musical_works
-  has_many :invitations
+  has_many :orchestra_compositions, dependent: :destroy
+  has_many :concerts, dependent: :destroy
+  has_many :musical_works, dependent: :destroy
+  has_many :invitations, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
