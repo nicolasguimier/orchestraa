@@ -5,6 +5,7 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find(params[:id])
+    @program_steps = @concert.program_steps
   end
 
   def update

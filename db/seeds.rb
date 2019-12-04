@@ -2,16 +2,16 @@ puts 'Start seeds'
 
 Instrument.destroy_all
 puts 'Instruments table dropped'
-MusicalWork.destroy_all
-puts 'MusicalWorks table dropped'
-Concert.destroy_all
-puts 'Concerts table dropped'
-Invitation.destroy_all
-puts 'Invitations table dropped'
-WorkInstrument.destroy_all
-puts 'WorkInstruments table dropped'
 ProgramStep.destroy_all
 puts 'ProgramStepS table dropped'
+WorkInstrument.destroy_all
+puts 'WorkInstruments table dropped'
+Concert.destroy_all
+puts 'Concerts table dropped'
+MusicalWork.destroy_all
+puts 'MusicalWorks table dropped'
+Invitation.destroy_all
+puts 'Invitations table dropped'
 OrchestraComposition.destroy_all
 puts 'OrchestraCompositionS table dropped'
 User.destroy_all
@@ -24,15 +24,187 @@ igor = User.new(
     email: 'igor@example.com',
     password: 'password')
 igor.save!
-
 puts "#{User.count} users imported. End"
+
+puts '-> Start instruments'
+puts ' --> Start Strings'
+violin1 = Instrument.new(
+    name: "Violin 1",
+    category: 'Strings',
+    position: 1)
+violin1.save!
+violin2 = Instrument.new(
+    name: "Violin 2",
+    category: 'Strings',
+    position: 2)
+violin2.save!
+viola = Instrument.new(
+    name: "Viola",
+    category: 'Strings',
+    position: 3)
+viola.save!
+cello = Instrument.new(
+    name: "Cello",
+    category: 'Strings',
+    position: 4)
+cello.save!
+double_bass = Instrument.new(
+    name: "Double Bass",
+    category: 'Strings',
+    position: 5)
+double_bass.save!
+
+puts ' --> Start Woodwinds'
+flute = Instrument.new(
+    name: "Flute",
+    category: 'Woodwinds',
+    position: 1)
+flute.save!
+piccolo = Instrument.new(
+    name: "Piccolo",
+    category: 'Woodwinds',
+    position: 2)
+piccolo.save!
+oboe = Instrument.new(
+    name: "Oboe",
+    category: 'Woodwinds',
+    position: 3)
+oboe.save!
+english_horn = Instrument.new(
+    name: "English Horn",
+    category: 'Woodwinds',
+    position: 4)
+english_horn.save!
+clarinet = Instrument.new(
+    name: "Clarinet",
+    category: 'Woodwinds',
+    position: 5)
+clarinet.save!
+bass_clarinet = Instrument.new(
+    name: "Bass Clarinet",
+    category: 'Woodwinds',
+    position: 6)
+bass_clarinet.save!
+bassoon = Instrument.new(
+    name: "Bassoon",
+    category: 'Woodwinds',
+    position: 7)
+bassoon.save!
+contrabasson = Instrument.new(
+    name: "Contrabassoon",
+    category: 'Woodwinds',
+    position: 8)
+contrabasson.save!
+saxophone = Instrument.new(
+    name: "Saxophone",
+    category: 'Woodwinds',
+    position: 9)
+saxophone.save!
+
+
+puts ' --> Start Brass'
+trumpet = Instrument.new(
+    name: "Trumpet",
+    category: 'Brass',
+    position: 1)
+trumpet.save!
+trombone = Instrument.new(
+    name: "Trombone",
+    category: 'Brass',
+    position: 2)
+trombone.save!
+bass_trombone = Instrument.new(
+    name: "Bass Trombone",
+    category: 'Brass',
+    position: 3)
+bass_trombone.save!
+french_horn = Instrument.new(
+    name: "French Horn",
+    category: 'Brass',
+    position: 4)
+french_horn.save!
+tuba = Instrument.new(
+    name: "Tuba",
+    category: 'Brass',
+    position: 5)
+tuba.save!
+
+puts ' --> Start Percussions'
+timpani = Instrument.new(
+    name: "Timpani",
+    category: 'Percussions',
+    position: 1)
+timpani.save!
+snare_drum = Instrument.new(
+    name: "Snare Drum",
+    category: 'Percussions',
+    position: 2)
+snare_drum.save!
+bass_drum = Instrument.new(
+    name: "Bass Drum",
+    category: 'Percussions',
+    position: 3)
+bass_drum.save!
+triangle = Instrument.new(
+    name: "triangle",
+    category: 'Percussions',
+    position: 4)
+triangle.save!
+gong = Instrument.new(
+    name: "Gong",
+    category: 'Percussions',
+    position: 5)
+gong.save!
+cymbals = Instrument.new(
+    name: "Cymbals",
+    category: 'Percussions',
+    position: 6)
+cymbals.save!
+vibraphone = Instrument.new(
+    name: "Vibraphone",
+    category: 'Percussions',
+    position: 7)
+vibraphone.save!
+xylophone = Instrument.new(
+    name: "Xylophone",
+    category: 'Percussions',
+    position: 8)
+xylophone.save!
+
+puts ' --> Start keyboards'
+piano = Instrument.new(
+    name: "Piano",
+    category: 'Keyboards',
+    position: 1)
+piano.save!
+pipe_organ = Instrument.new(
+    name: "Pipe Organ",
+    category: 'Keyboards',
+    position: 2)
+pipe_organ.save!
+harp = Instrument.new(
+    name: "Harp",
+    category: 'Keyboards',
+    position: 3)
+harp.save!
+celesta = Instrument.new(
+    name: "Celesta",
+    category: 'Keyboards',
+    position: 3)
+celesta.save!
+accordion = Instrument.new(
+    name: "Accordion",
+    category: 'Keyboards',
+    position: 3)
+accordion.save!
+puts "#{Instrument.count} instruments imported. End"
 
 puts '-> Start MusicalWorks'
 piazzolla = MusicalWork.new(
     user: igor,
     title: 'The Four Seasons of Buenos Aires',
     composer_name: 'Astor Piazzolla',
-    duration: 120,
+    duration: 45,
     notes: "Arranged by Claudio Dante D'Iorio in 2011")
 piazzolla.save!
 mouzanar = MusicalWork.new(
@@ -46,60 +218,80 @@ vivaldi1 = MusicalWork.new(
     user: igor,
     title: 'Concerto in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
-    duration: 90,
+    duration: 38,
     notes: "")
 vivaldi1.save!
 vivaldi2 = MusicalWork.new(
     user: igor,
     title: 'Concerto for strings and Bc in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
-    duration: 90,
+    duration: 25,
     notes: "")
 vivaldi2.save!
 vivaldi3 = MusicalWork.new(
     user: igor,
-    title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
+    title: "Bassoon Concerto in A minor, RV 500",
     composer_name: 'Antonio Vivaldi',
-    duration: 58,
+    duration: 15,
     notes: "")
 vivaldi3.save!
-
-MusicalWork.create!(
+vivaldi4 = MusicalWork.new(
   user: igor,
   title: "L'Adelaide, RV 695",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 21,
   notes: "")
-MusicalWork.create!(
+vivaldi4.save!
+vivaldi5 = MusicalWork.new(
   user: igor,
   title: "All'ombra di sospetto, RV 678",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 34,
   notes: "")
-MusicalWork.create!(
+vivaldi5.save!
+vivaldi6 = MusicalWork.new(
   user: igor,
   title: "All'or che lo sguardo, RV 650",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 12,
   notes: "")
-MusicalWork.create!(
+vivaldi6.save!
+vivaldi7 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 651",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 19,
   notes: "")
-MusicalWork.create!(
+vivaldi7.save!
+vivaldi8 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 683",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 10,
   notes: "")
-MusicalWork.create!(
+vivaldi8.save!
+vivaldi9 = MusicalWork.new(
+  user: igor,
+  title: "La Candace o siano Li veri amici, RV 704",
+  composer_name: 'Antonio Vivaldi',
+  duration: 22,
+  notes: "")
+vivaldi9.save!
+vivaldi10 = MusicalWork.new(
+  user: igor,
+  title: "Canta in prato, ride in monte, RV 623",
+  composer_name: 'Antonio Vivaldi',
+  duration: 32,
+  notes: "")
+vivaldi10.save!
+vivaldi11 = MusicalWork.new(
   user: igor,
   title: "Anche in mezzo a perigliosa",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 14,
   notes: "")
+vivaldi11.save!
+
 MusicalWork.create!(
   user: igor,
   title: "Armida al campo d'Egitto, RV 699",
@@ -132,7 +324,7 @@ MusicalWork.create!(
   notes: "")
 MusicalWork.create!(
   user: igor,
-  title: "Bassoon Concerto in A minor, RV 500",
+  title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -164,18 +356,6 @@ MusicalWork.create!(
 MusicalWork.create!(
   user: igor,
   title: "Beatus vir, RV 597",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "La Candace o siano Li veri amici, RV 704",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Canta in prato, ride in monte, RV 623",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -385,179 +565,6 @@ MusicalWork.create!(
   notes: "")
 puts "#{MusicalWork.count} musical works imported. End"
 
-puts '-> Start instruments'
-puts ' --> Start Strings'
-violin1 = Instrument.new(
-    name: "Violin 1",
-    category: 'Strings',
-    position: 1)
-violin1.save!
-violin2 = Instrument.new(
-    name: "Violin 2",
-    category: 'Strings',
-    position: 2)
-violin2.save!
-viola = Instrument.new(
-    name: "Viola",
-    category: 'Strings',
-    position: 3)
-viola.save!
-cello = Instrument.new(
-    name: "Cello",
-    category: 'Strings',
-    position: 4)
-cello.save!
-double_bass = Instrument.new(
-    name: "Double Bass",
-    category: 'Strings',
-    position: 5)
-double_bass.save!
-
-puts ' --> Start Woodwinds'
-flute = Instrument.new(
-    name: "Flute",
-    category: 'Woodwinds',
-    position: 1)
-flute.save!
-piccolo = Instrument.new(
-    name: "Piccolo",
-    category: 'Woodwinds',
-    position: 2)
-piccolo.save!
-oboe = Instrument.new(
-    name: "Oboe",
-    category: 'Woodwinds',
-    position: 3)
-oboe.save!
-english_horn = Instrument.new(
-    name: "English Horn",
-    category: 'Woodwinds',
-    position: 4)
-english_horn.save!
-clarinet = Instrument.new(
-    name: "Clarinet",
-    category: 'Woodwinds',
-    position: 5)
-clarinet.save!
-bass_clarinet = Instrument.new(
-    name: "Bass Clarinet",
-    category: 'Woodwinds',
-    position: 6)
-bass_clarinet.save!
-bassoon = Instrument.new(
-    name: "Bassoon",
-    category: 'Woodwinds',
-    position: 7)
-bassoon.save!
-contrabasson = Instrument.new(
-    name: "Contrabassoon",
-    category: 'Woodwinds',
-    position: 8)
-contrabasson.save!
-saxophone = Instrument.new(
-    name: "Saxophone",
-    category: 'Woodwinds',
-    position: 9)
-saxophone.save!
-
-
-puts ' --> Start Brass'
-trumpet = Instrument.new(
-    name: "Trumpet",
-    category: 'Brass',
-    position: 1)
-trumpet.save!
-trombone = Instrument.new(
-    name: "Trombone",
-    category: 'Brass',
-    position: 2)
-trombone.save!
-bass_trombone = Instrument.new(
-    name: "Bass Trombone",
-    category: 'Brass',
-    position: 3)
-bass_trombone.save!
-french_horn = Instrument.new(
-    name: "French Horn",
-    category: 'Brass',
-    position: 4)
-french_horn.save!
-tuba = Instrument.new(
-    name: "Tuba",
-    category: 'Brass',
-    position: 5)
-tuba.save!
-
-puts ' --> Start Percussions'
-timpani = Instrument.new(
-    name: "Timpani",
-    category: 'Percussions',
-    position: 1)
-timpani.save!
-snare_drum = Instrument.new(
-    name: "Snare Drum",
-    category: 'Percussions',
-    position: 2)
-snare_drum.save!
-bass_drum = Instrument.new(
-    name: "Bass Drum",
-    category: 'Percussions',
-    position: 3)
-bass_drum.save!
-triangle = Instrument.new(
-    name: "triangle",
-    category: 'Percussions',
-    position: 4)
-triangle.save!
-gong = Instrument.new(
-    name: "Gong",
-    category: 'Percussions',
-    position: 5)
-gong.save!
-cymbals = Instrument.new(
-    name: "Cymbals",
-    category: 'Percussions',
-    position: 6)
-cymbals.save!
-vibraphone = Instrument.new(
-    name: "Vibraphone",
-    category: 'Percussions',
-    position: 7)
-vibraphone.save!
-xylophone = Instrument.new(
-    name: "Xylophone",
-    category: 'Percussions',
-    position: 8)
-xylophone.save!
-
-puts ' --> Start keyboards'
-piano = Instrument.new(
-    name: "Piano",
-    category: 'Keyboards',
-    position: 1)
-piano.save!
-pipe_organ = Instrument.new(
-    name: "Pipe Organ",
-    category: 'Keyboards',
-    position: 2)
-pipe_organ.save!
-harp = Instrument.new(
-    name: "Harp",
-    category: 'Keyboards',
-    position: 3)
-harp.save!
-celesta = Instrument.new(
-    name: "Celesta",
-    category: 'Keyboards',
-    position: 3)
-celesta.save!
-accordion = Instrument.new(
-    name: "Accordion",
-    category: 'Keyboards',
-    position: 3)
-accordion.save!
-puts "#{Instrument.count} instruments imported. End"
-
 puts '-> Start concerts'
 concert1 = Concert.new(
     user: igor,
@@ -630,6 +637,223 @@ puts "#{Invitation.count} invitations imported. End"
 
 
 puts '-> Start programm steps'
+puts '---> for Concert 1'
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert1,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 2'
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert2,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 3'
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert3,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 4'
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert4,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi11,
+  kind: "musical_work",
+  position: 12)
+
+puts '---> for Concert 5'
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert5,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi11,
+  kind: "musical_work",
+  position: 12)
+
+
+
 puts "#{ProgramStep.count} program steps imported. End"
 
 
