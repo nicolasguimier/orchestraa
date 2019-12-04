@@ -2,16 +2,16 @@ puts 'Start seeds'
 
 Instrument.destroy_all
 puts 'Instruments table dropped'
-MusicalWork.destroy_all
-puts 'MusicalWorks table dropped'
-Concert.destroy_all
-puts 'Concerts table dropped'
-Invitation.destroy_all
-puts 'Invitations table dropped'
-WorkInstrument.destroy_all
-puts 'WorkInstruments table dropped'
 ProgramStep.destroy_all
 puts 'ProgramStepS table dropped'
+WorkInstrument.destroy_all
+puts 'WorkInstruments table dropped'
+Concert.destroy_all
+puts 'Concerts table dropped'
+MusicalWork.destroy_all
+puts 'MusicalWorks table dropped'
+Invitation.destroy_all
+puts 'Invitations table dropped'
 OrchestraComposition.destroy_all
 puts 'OrchestraCompositionS table dropped'
 User.destroy_all
@@ -32,7 +32,7 @@ piazzolla = MusicalWork.new(
     user: igor,
     title: 'The Four Seasons of Buenos Aires',
     composer_name: 'Astor Piazzolla',
-    duration: 120,
+    duration: 45,
     notes: "Arranged by Claudio Dante D'Iorio in 2011")
 piazzolla.save!
 mouzanar = MusicalWork.new(
@@ -46,60 +46,80 @@ vivaldi1 = MusicalWork.new(
     user: igor,
     title: 'Concerto in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
-    duration: 90,
+    duration: 38,
     notes: "")
 vivaldi1.save!
 vivaldi2 = MusicalWork.new(
     user: igor,
     title: 'Concerto for strings and Bc in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
-    duration: 90,
+    duration: 25,
     notes: "")
 vivaldi2.save!
 vivaldi3 = MusicalWork.new(
     user: igor,
-    title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
+    title: "Bassoon Concerto in A minor, RV 500",
     composer_name: 'Antonio Vivaldi',
-    duration: 58,
+    duration: 15,
     notes: "")
 vivaldi3.save!
-
-MusicalWork.create!(
+vivaldi4 = MusicalWork.new(
   user: igor,
   title: "L'Adelaide, RV 695",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 21,
   notes: "")
-MusicalWork.create!(
+vivaldi4.save!
+vivaldi5 = MusicalWork.new(
   user: igor,
   title: "All'ombra di sospetto, RV 678",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 34,
   notes: "")
-MusicalWork.create!(
+vivaldi5.save!
+vivaldi6 = MusicalWork.new(
   user: igor,
   title: "All'or che lo sguardo, RV 650",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 12,
   notes: "")
-MusicalWork.create!(
+vivaldi6.save!
+vivaldi7 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 651",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 19,
   notes: "")
-MusicalWork.create!(
+vivaldi7.save!
+vivaldi8 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 683",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 10,
   notes: "")
-MusicalWork.create!(
+vivaldi8.save!
+vivaldi9 = MusicalWork.new(
+  user: igor,
+  title: "La Candace o siano Li veri amici, RV 704",
+  composer_name: 'Antonio Vivaldi',
+  duration: 22,
+  notes: "")
+vivaldi9.save!
+vivaldi10 = MusicalWork.new(
+  user: igor,
+  title: "Canta in prato, ride in monte, RV 623",
+  composer_name: 'Antonio Vivaldi',
+  duration: 32,
+  notes: "")
+vivaldi10.save!
+vivaldi11 = MusicalWork.new(
   user: igor,
   title: "Anche in mezzo a perigliosa",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
+  duration: 14,
   notes: "")
+vivaldi11.save!
+
 MusicalWork.create!(
   user: igor,
   title: "Armida al campo d'Egitto, RV 699",
@@ -132,7 +152,7 @@ MusicalWork.create!(
   notes: "")
 MusicalWork.create!(
   user: igor,
-  title: "Bassoon Concerto in A minor, RV 500",
+  title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -164,18 +184,6 @@ MusicalWork.create!(
 MusicalWork.create!(
   user: igor,
   title: "Beatus vir, RV 597",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "La Candace o siano Li veri amici, RV 704",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Canta in prato, ride in monte, RV 623",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -630,6 +638,102 @@ puts "#{Invitation.count} invitations imported. End"
 
 
 puts '-> Start programm steps'
+puts '---> for Concert 1'
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+# ProgramStep.create!(
+#   concert: concert1,
+#   musical_work: mouzanar,
+#   kind: "musical_work",
+#   position: 2)
+# ProgramStep.create!(
+#   concert: concert1,
+#   kind: "Intermission",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert1,
+#   musical_work: vivaldi1,
+#   kind: "musical_work",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert1,
+#   musical_work: vivaldi2,
+#   kind: "musical_work",
+#   position: 5)
+# ProgramStep.create!(
+#   concert: concert1,
+#   musical_work: vivaldi3,
+#   kind: "musical_work",
+#   position: 6)
+
+# puts '---> for Concert 2'
+# ProgramStep.create!(
+#   concert: concert2,
+#   musical_work: piazzolla,
+#   kind: "musical_work",
+#   position: 1)
+# ProgramStep.create!(
+#   concert: concert2,
+#   musical_work: mouzanar,
+#   kind: "musical_work",
+#   position: 2)
+# ProgramStep.create!(
+#   concert: concert2,
+#   kind: "Intermission",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert2,
+#   musical_work: vivaldi1,
+#   kind: "musical_work",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert2,
+#   musical_work: vivaldi2,
+#   kind: "musical_work",
+#   position: 5)
+# ProgramStep.create!(
+#   concert: concert2,
+#   musical_work: vivaldi3,
+#   kind: "musical_work",
+#   position: 6)
+
+# puts '---> for Concert 3'
+# ProgramStep.create!(
+#   concert: concert3,
+#   musical_work: piazzolla,
+#   kind: "musical_work",
+#   position: 1)
+# ProgramStep.create!(
+#   concert: concert3,
+#   musical_work: mouzanar,
+#   kind: "musical_work",
+#   position: 2)
+# ProgramStep.create!(
+#   concert: concert3,
+#   kind: "Intermission",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert3,
+#   musical_work: vivaldi1,
+#   kind: "musical_work",
+#   position: 4)
+# ProgramStep.create!(
+#   concert: concert3,
+#   musical_work: vivaldi2,
+#   kind: "musical_work",
+#   position: 5)
+# ProgramStep.create!(
+#   concert: concert3,
+#   musical_work: vivaldi3,
+#   kind: "musical_work",
+#   position: 6)
+
+
+
+
 puts "#{ProgramStep.count} program steps imported. End"
 
 
