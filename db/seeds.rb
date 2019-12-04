@@ -1,9 +1,19 @@
 puts 'Start seeds'
 
 Instrument.destroy_all
-puts 'Instrument table dropped'
+puts 'Instruments table dropped'
 MusicalWork.destroy_all
-puts 'MusicalWork table dropped'
+puts 'MusicalWorks table dropped'
+Concert.destroy_all
+puts 'Concerts table dropped'
+Invitation.destroy_all
+puts 'Invitations table dropped'
+WorkInstrument.destroy_all
+puts 'WorkInstruments table dropped'
+ProgramStep.destroy_all
+puts 'ProgramStepS table dropped'
+OrchestraComposition.destroy_all
+puts 'OrchestraCompositionS table dropped'
 User.destroy_all
 puts 'User table dropped'
 
@@ -199,7 +209,74 @@ accordion = Instrument.new(
     category: 'Keyboards',
     position: 3)
 accordion.save!
-
 puts "#{Instrument.count} instruments imported. End"
+
+puts '-> Start concerts'
+concert1 = Concert.new(
+    user: igor,
+    name: "New year concert",
+    location: 'Victoria Hall',
+    address: 'Rue du Général-Dufour 14, 1204 Geneva, Switzerland',
+    notes: 'First concert of the season, with all the musicians, and full program.',
+    start_at:Time.new(2020, 1, 25, 21,0, 0, "+01:00"),
+    end_at:Time.new(2020, 1, 25, 23, 30, 0, "+01:00"))
+concert1.save!
+concert2 = Concert.new(
+    user: igor,
+    name: "New year concert",
+    location: 'Victoria Hall',
+    address: 'Rue du Général-Dufour 14, 1204 Geneva, Switzerland',
+    notes: 'Concert of the sunday, with same program than saturday. But 1 hour before.',
+    start_at:Time.new(2020, 1, 26, 20,0, 0, "+01:00"),
+    end_at:Time.new(2020, 1, 26, 22, 30, 0, "+01:00"))
+concert2.save!
+concert3 = Concert.new(
+    user: igor,
+    name: "New year concert",
+    location: 'Victoria Hall',
+    address: 'Rue du Général-Dufour 14, 1204 Geneva, Switzerland',
+    notes: 'Concert of the tuesday. Only concert of the week. End for this hall in Geneva.',
+    start_at:Time.new(2020, 1, 28, 20,0, 0, "+01:00"),
+    end_at:Time.new(2020, 1, 28, 22, 30, 0, "+01:00"))
+concert3.save!
+concert4 = Concert.new(
+    user: igor,
+    name: "Tribute to Vivaldi",
+    location: 'Cité des congrès',
+    address: '5 Rue de Valmy, 44000 Nantes, France',
+    notes: 'First concert in France. Playing only Vivaldi works',
+    start_at:Time.new(2020, 2, 22, 20,30, 0, "+01:00"),
+    end_at:Time.new(2020, 2, 22, 23, 00, 0, "+01:00"))
+concert4.save!
+concert5 = Concert.new(
+    user: igor,
+    name: "Tribute to Vivaldi",
+    location: 'Cité des congrès',
+    address: '5 Rue de Valmy, 44000 Nantes, France',
+    notes: 'Sunday afternoon, for kids and family.',
+    start_at:Time.new(2020, 2, 23, 15,00, 0, "+01:00"),
+    end_at:Time.new(2020, 2, 23, 17, 30, 0, "+01:00"))
+concert5.save!
+
+
+puts "#{Concert.count} concerts imported. End"
+
+puts '-> Start Invitations'
+puts "#{Invitation.count} invitations imported. End"
+
+
+puts '-> Start work instruments'
+puts "#{WorkInstrument.count} work instruments imported. End"
+
+
+puts '-> Start programm steps'
+puts "#{ProgramStep.count} program steps imported. End"
+
+
+puts '-> Start orchestra composition'
+puts "#{OrchestraComposition.count} orchestra compositions imported. End"
+
+
+
 
 puts 'End seeds'
