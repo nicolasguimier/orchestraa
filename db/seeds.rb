@@ -145,6 +145,11 @@ bass_drum = Instrument.new(
     category: 'Percussions',
     position: 3)
 bass_drum.save!
+claves = Instrument.new(
+    name: "Claves",
+    category: 'Percussions',
+    position: 4)
+claves.save!
 triangle = Instrument.new(
     name: "triangle",
     category: 'Percussions',
@@ -177,6 +182,11 @@ piano = Instrument.new(
     category: 'Keyboards',
     position: 1)
 piano.save!
+bandoneon = Instrument.new(
+    name: "Bandoneon",
+    category: 'Keyboards',
+    position: 2)
+bandoneon.save!
 pipe_organ = Instrument.new(
     name: "Pipe Organ",
     category: 'Keyboards',
@@ -190,12 +200,12 @@ harp.save!
 celesta = Instrument.new(
     name: "Celesta",
     category: 'Keyboards',
-    position: 3)
+    position: 4)
 celesta.save!
 accordion = Instrument.new(
     name: "Accordion",
     category: 'Keyboards',
-    position: 3)
+    position: 5)
 accordion.save!
 puts "#{Instrument.count} instruments imported. End"
 
@@ -205,7 +215,7 @@ piazzolla = MusicalWork.new(
     title: 'The Four Seasons of Buenos Aires',
     composer_name: 'Astor Piazzolla',
     duration: 45,
-    notes: "Arranged by Claudio Dante D'Iorio in 2011")
+    notes: "Arranged by Claudio Dante D'Iorio in 2011. Set of four tango")
 piazzolla.save!
 mouzanar = MusicalWork.new(
     user: igor,
@@ -216,81 +226,74 @@ mouzanar = MusicalWork.new(
 mouzanar.save!
 vivaldi1 = MusicalWork.new(
     user: igor,
-    title: 'Concerto in G minor RV 156',
+    title: 'Concerto for strings in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
     duration: 38,
-    notes: "")
+    notes: "G minor, Baroque, 3 movements")
 vivaldi1.save!
 vivaldi2 = MusicalWork.new(
-    user: igor,
-    title: 'Concerto for strings and Bc in G minor RV 156',
-    composer_name: 'Antonio Vivaldi',
-    duration: 25,
-    notes: "")
+  user: igor,
+  title: "Anche in mezzo a perigliosa",
+  composer_name: 'Antonio Vivaldi',
+  duration: 14,
+  notes: "D major, Baroque italian.")
 vivaldi2.save!
 vivaldi3 = MusicalWork.new(
     user: igor,
     title: "Bassoon Concerto in A minor, RV 500",
     composer_name: 'Antonio Vivaldi',
-    duration: 15,
-    notes: "")
+    duration: 10,
+    notes: "A minor, Baroque, 3 movements")
 vivaldi3.save!
 vivaldi4 = MusicalWork.new(
   user: igor,
   title: "L'Adelaide, RV 695",
   composer_name: 'Antonio Vivaldi',
   duration: 21,
-  notes: "")
+  notes: "Baroque, Italian. First performance in 1735 Carnival in Verona")
 vivaldi4.save!
 vivaldi5 = MusicalWork.new(
   user: igor,
   title: "All'ombra di sospetto, RV 678",
   composer_name: 'Antonio Vivaldi',
-  duration: 34,
-  notes: "")
+  duration: 7,
+  notes: "Baroque Italian - with flute")
 vivaldi5.save!
 vivaldi6 = MusicalWork.new(
   user: igor,
   title: "All'or che lo sguardo, RV 650",
   composer_name: 'Antonio Vivaldi',
   duration: 12,
-  notes: "")
+  notes: "F major - Italian, Baroque, 3 movements")
 vivaldi6.save!
 vivaldi7 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 651",
   composer_name: 'Antonio Vivaldi',
   duration: 19,
-  notes: "")
+  notes: "Italian Baroque")
 vivaldi7.save!
 vivaldi8 = MusicalWork.new(
   user: igor,
   title: "Amor hai vinto, RV 683",
   composer_name: 'Antonio Vivaldi',
   duration: 10,
-  notes: "")
+  notes: "4 movements. Italian Baroque")
 vivaldi8.save!
 vivaldi9 = MusicalWork.new(
   user: igor,
   title: "La Candace o siano Li veri amici, RV 704",
   composer_name: 'Antonio Vivaldi',
   duration: 22,
-  notes: "")
+  notes: "Opera. First Performance in 1720, Carnival in Mantua: Teatro Arciducale")
 vivaldi9.save!
 vivaldi10 = MusicalWork.new(
   user: igor,
   title: "Canta in prato, ride in monte, RV 623",
   composer_name: 'Antonio Vivaldi',
   duration: 32,
-  notes: "")
+  notes: "Latin, Baroque")
 vivaldi10.save!
-vivaldi11 = MusicalWork.new(
-  user: igor,
-  title: "Anche in mezzo a perigliosa",
-  composer_name: 'Antonio Vivaldi',
-  duration: 14,
-  notes: "")
-vivaldi11.save!
 
 MusicalWork.create!(
   user: igor,
@@ -565,6 +568,312 @@ MusicalWork.create!(
   notes: "")
 puts "#{MusicalWork.count} musical works imported. End"
 
+puts '-> Start work instruments'
+puts ' ---> piazzolla'
+# title: 'The Four Seasons of Buenos Aires',
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: bandoneon,
+  quantity: 1)
+
+
+puts ' ---> mouzanar'
+# mouzanar  'Maserati - Piece for Car and Orchestra'
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: bandoneon,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: claves,
+  quantity: 1)
+
+puts ' ---> vivaldi1'
+# vivaldi1  'Concerto in G minor RV 156',
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: claves,
+  quantity: 1)
+
+
+
+puts ' ---> vivaldi2'
+# vivaldi2  "Anche in mezzo a perigliosa",
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi3'
+# vivaldi3 "Bassoon Concerto in A minor, RV 500",
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: bassoon,
+  quantity: 2)
+
+puts ' ---> vivaldi4'
+# vivaldi4  "L'Adelaide, RV 695",
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi5'
+# vivaldi5 "All'ombra di sospetto, RV 678",
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: double_bass,
+  quantity: 1)
+  WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: flute,
+  quantity: 4)
+
+puts ' ---> vivaldi6'
+# vivaldi6  "All'or che lo sguardo, RV 650",
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi7'
+# vivaldi7  "Amor hai vint-o, RV 651",
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi8'
+# vivaldi8 "Amor hai vinto, RV 683",
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi9'
+# vivaldi9  "La Candace o siano Li veri amici, RV 704",
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi10'
+# vivaldi10  "Canta in prato, ride in monte, RV 623",
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: double_bass,
+  quantity: 1)
+puts "#{WorkInstrument.count} work instruments imported. End"
+
+
 puts '-> Start concerts'
 concert1 = Concert.new(
     user: igor,
@@ -615,8 +924,6 @@ concert5.save!
 
 puts "#{Concert.count} concerts imported. End"
 
-puts '-> Start work instruments'
-puts "#{WorkInstrument.count} work instruments imported. End"
 
 puts '-> Start Invitations'
 
@@ -785,11 +1092,6 @@ ProgramStep.create!(
   musical_work: vivaldi10,
   kind: "musical_work",
   position: 11)
-ProgramStep.create!(
-  concert: concert4,
-  musical_work: vivaldi11,
-  kind: "musical_work",
-  position: 12)
 
 puts '---> for Concert 5'
 ProgramStep.create!(
@@ -846,14 +1148,6 @@ ProgramStep.create!(
   musical_work: vivaldi10,
   kind: "musical_work",
   position: 11)
-ProgramStep.create!(
-  concert: concert5,
-  musical_work: vivaldi11,
-  kind: "musical_work",
-  position: 12)
-
-
-
 puts "#{ProgramStep.count} program steps imported. End"
 
 
