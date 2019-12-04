@@ -14,10 +14,11 @@
     <% if program_step.kind == "intermission" %>
       <li>INTERMISSION</li>
     <% else %>
-      <li>
+      <li><%= link_to musical_work_path(program_step.musical_work) do %>
       (<em><%= program_step.musical_work.composer_name %></em>)
       <%= program_step.musical_work.duration %> min -
       <%= program_step.musical_work.title %>
+      <% end %>
       </li>
     <% end %>
   <% end %>
