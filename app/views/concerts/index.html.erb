@@ -1,0 +1,14 @@
+<h1>Concerts#index</h1>
+<p>Find me in app/views/concerts/index.html.erb</p>
+<% @concerts.each do |concert|%>
+  <ul style="border-bottom:1px solid black">
+    <li>user: <%= concert.user.full_name %>,</li>
+    <li>name: <%= concert.name %>,</li>
+    <li>location: <%= concert.location %>,</li>
+    <li>address: <%= concert.address %>,</li>
+    <li>notes: <%= concert.notes %>,</li>
+    <li>start_at: <%= concert.start_at %>,</li>
+    <li>end_at: <%= concert.end_at %></li>
+    <%= link_to "LINK TO CONCERT", concert_path(concert) %>
+  </ul>
+<% end %>
