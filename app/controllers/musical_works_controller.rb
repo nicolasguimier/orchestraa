@@ -5,5 +5,6 @@ class MusicalWorksController < ApplicationController
 
   def show
     @musical_work = MusicalWork.find(params[:id])
+    @work_instruments = @musical_work.work_instruments
   end
 end

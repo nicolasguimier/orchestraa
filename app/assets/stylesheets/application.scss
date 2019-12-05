@@ -15,11 +15,18 @@
 body {
   background-color: $black;
   background-position: cover;
+  color: $ivory;
 }
 
-h1 {
+h1, h2, h3 {
   text-transform: uppercase;
-  color: $ivory;
+}
+
+.green {
+  color: $green;
+}
+.orange {
+ color: $orange;
 }
 
 p {
