@@ -6,5 +6,7 @@ class DashboardsController < ApplicationController
     @invitations_brass = Invitation.all
     @invitations_percussion = Invitation.all
     @invitations_keyboards = Invitation.all
+
+    @concerts = Concert.all
   end
 end
