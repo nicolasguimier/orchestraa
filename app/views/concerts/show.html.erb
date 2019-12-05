@@ -18,18 +18,19 @@
       </div>
     </div>
     <div class="col-12 col-lg-9">
-      <div class="box program">
+      <div class="box dark_box program">
         <h2>Program</h2>
           <% @program_steps.each do |program_step| %>
             <% if program_step.kind == "intermission" %>
-              <div class="intermission">Intermission</li>
+              <div class="box intermission">Intermission</div>
             <% else %>
-              <div class="program-step">
-                <%= link_to musical_work_path(program_step.musical_work) do %>
-              (<em><%= program_step.musical_work.composer_name %></em>)
-              <%= program_step.musical_work.duration %> min -
-              <%= program_step.musical_work.title %>
-              <% end %>
+              <div class="box program-step">
+                <div class="icon-drag"></div>
+                <div class="composer"><%= program_step.musical_work.composer_name %></div>
+                <div class="work-infos">
+                  <p><%= program_step.musical_work.title %> (<%= program_step.musical_work.duration %> min)</p>
+                  <p class="orange"><%= link_to musical_work_path "Missing trompets", (program_step.musical_work) %></p>
+                </div>
               </div>
             <% end %>
           <% end %>

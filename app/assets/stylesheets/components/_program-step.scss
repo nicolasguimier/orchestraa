@@ -1,9 +1,7 @@
 .program {
-  .program-step {
-      background-color: $gray;
-      box-shadow: $drop-shadow;
-      border-radius: $border-radius;
-      padding: 10px 15px;
-      margin-bottom: 20px;
+  .box {
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
   }
 }
