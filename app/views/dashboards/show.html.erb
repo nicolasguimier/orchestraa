@@ -25,28 +25,25 @@
                 </div>
                 </div>
                   <div class='action_buttons'>
-                  <!-- invitation.email_delivered -->
                     <% if invitation.email_delivered %>
                     <%= image_tag('envelope_green.svg', class: 'true') %>
                     <% else %>
                     <%= image_tag('envelope.svg', class: 'false') %>
                     <% end %>
 
-                  <!-- invitation.email_read -->
                     <% if invitation.email_read %>
                     <%= image_tag('open_envelope_green.svg', class: 'true') %>
                     <% else %>
                     <%= image_tag('open_envelope.svg', class: 'false') %>
                     <% end %>
 
-                  <!-- invitation.email_clicked -->
                   <% if invitation.email_clicked %>
                     <%= image_tag('read_mail_green.svg', class: 'true') %>
                     <% else %>
                     <%= image_tag('read_mail.svg', class: 'false') %>
                     <% end %>
 
-                  <!-- invitation.email_error -->
+
                   <% if invitation.email_error %>
                     <%= image_tag('validate_orange.svg', class: 'true') %>
                     <% else %>
