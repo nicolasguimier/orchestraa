@@ -1,8 +1,37 @@
-.poule-search input {
-  min-width: 440px;
+// GENERAL SETTINGS SEARCH BAR
+.search_bars {
   height: 42px;
-  color: $ivory;
+  padding-left: 10px;
+  background-color: $ivory;
   border: 0px;
   border-radius: $border-radius;
   box-shadow: $drop-shadow;
 }
+
+// PENDING SEARCH BAR
+.search {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+.pending-search {
+  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-button {
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  border: 0;
+  background-color: $ivory;
+}
+
+
+// ADD MUSICAL WORKS SEARCH BAR
+
+
+
+
+
