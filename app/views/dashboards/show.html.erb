@@ -3,9 +3,25 @@
     Welcome back <span class="green">Igor!</span> Your latest invitation has been viewed 27 times.</div>
   </div>
 <div class="row">
-  <div class="col-12 col-lg-3">
-    <div class="box"><h2>Pending works</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptas quam doloribus necessitatibus laborum, rem iusto quia deleniti fuga reiciendis iste, temporibus assumenda veritatis et facere dicta, eius recusandae nemo?</p>
+  <div class="col-12 col-lg-4">
+    <div class="box dark_box">
+      <h2><span class="icon-musical-note"></span><span>Pending works</span></h2>
+      <div class="search">
+        <input type="text" class="pending-search search_bars" placeholder="search pending works">
+        <button type="submit" class="search-button">
+          <i class="fa fa-search"></i>
+       </button>
+      </div>
+      <div class="scroll-card" id="pending-works">
+        <% @pending_works.each do |work| %>
+          <div class="box">
+          <%= link_to musical_work_path(work) do %>
+            <p><%= work.title %></p>
+            <p class="orange">Missing trumpets</p>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
     </div>
     <div class="box">
       <%= month_calendar(events: @concerts, attribute: :start_at, end_attribute: :end_at) do |date, events| %>
@@ -21,59 +37,58 @@
       <% end %>
     </div>
   </div>
-  <div class="col-12 col-lg-9">
+  <div class="col-12 col-lg-8">
     <div class="box">
+      <h2 class="icon-note">Pending invitations</h2>
+      <div class="scroll-card" id="pending-invitations">
+        <% @invitations.each do |invitation| %>
+          <div class='invitation'>
+            <div class='action_buttons'>
+              <button class='btn-validate'></button>
+              <button class='btn-decline'></button>
+              <div class='description'>
+                <%#= invitation.status %>
+                <%= invitation.full_name %> -
+                <%= invitation.email %> -
+                <%= invitation.instrument.name %>
+              </div>
+            </div>
+            <div class='action_buttons'>
+            <!-- invitation.email_delivered -->
+              <% if invitation.email_delivered %>
+              <%= image_tag('envelope_green.svg', class: 'true') %>
+              <% else %>
+              <%= image_tag('envelope.svg', class: 'false') %>
+              <% end %>
 
-            <% @invitations.each do |invitation| %>
-              <div class='invitation'>
-                <div class='action_buttons'>
-                  <button class='btn-validate'></button>
-                  <button class='btn-decline'></button>
-                  <div class='description'>
-                  <%#= invitation.status %>
-                  <%= invitation.full_name %> -
-                  <%= invitation.email %> -
-                  <%= invitation.instrument.name %>
-                </div>
-                </div>
-                  <div class='action_buttons'>
-                  <!-- invitation.email_delivered -->
-                    <% if invitation.email_delivered %>
-                    <%= image_tag('envelope_green.svg', class: 'true') %>
-                    <% else %>
-                    <%= image_tag('envelope.svg', class: 'false') %>
-                    <% end %>
+            <!-- invitation.email_read -->
+              <% if invitation.email_read %>
+              <%= image_tag('open_envelope_green.svg', class: 'true') %>
+              <% else %>
+              <%= image_tag('open_envelope.svg', class: 'false') %>
+              <% end %>
 
-                  <!-- invitation.email_read -->
-                    <% if invitation.email_read %>
-                    <%= image_tag('open_envelope_green.svg', class: 'true') %>
-                    <% else %>
-                    <%= image_tag('open_envelope.svg', class: 'false') %>
-                    <% end %>
+              <!-- invitation.email_clicked -->
+              <% if invitation.email_clicked %>
+              <%= image_tag('read_mail_green.svg', class: 'true') %>
+              <% else %>
+              <%= image_tag('read_mail.svg', class: 'false') %>
+              <% end %>
 
-                  <!-- invitation.email_clicked -->
-                  <% if invitation.email_clicked %>
-                    <%= image_tag('read_mail_green.svg', class: 'true') %>
-                    <% else %>
-                    <%= image_tag('read_mail.svg', class: 'false') %>
-                    <% end %>
-
-                  <!-- invitation.email_error -->
-                  <% if invitation.email_bounce %>
-                    <%= image_tag('validate_orange.svg', class: 'true') %>
-                    <% else %>
-                    <%= image_tag('read_mail.svg', class: 'false') %>
-                    <% end %>
-                  </div>
-                </div>
-            <% end %>
-        </div>
-       </div>
+              <!-- invitation.email_error -->
+              <% if invitation.email_bounce %>
+              <%= image_tag('validate_orange.svg', class: 'true') %>
+              <% else %>
+              <%= image_tag('read_mail.svg', class: 'false') %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
+    </div>
     <div class="box">
       <h2>Musicians</h2>
       <%= Invitation.group(:status).count %>
     </div>
   </div>
 </div>
-

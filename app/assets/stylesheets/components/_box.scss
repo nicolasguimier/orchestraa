@@ -5,6 +5,15 @@
   border-radius: $border-radius;
   padding: 10px 15px;
   margin-bottom: 20px;
+  h2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+
+    [class^="icon-"] {
+      margin-right:10px;
+    }
+  }
 }
 
 .dark_box {
@@ -20,13 +29,3 @@
 
 // TITLE + ICON DES CARDS
 
-.box .title {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.box .title-icon {
-  height: 30px;
-  padding-right: 5px;
-  margin-bottom: 6px;
-}
