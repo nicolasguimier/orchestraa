@@ -1,2 +1,43 @@
-<h1>Dashboard#show</h1>
-<p>Find me in app/views/dashboard/show.html.erb</p>
+<div class="box text-center">Welcome back <span class="green">Igor!</span> Your latest invitation has been viewed 27 times.</div>
+<div class="row">
+  <div class="col-3">
+    <div class="box"><h2>Pending works</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptas quam doloribus necessitatibus laborum, rem iusto quia deleniti fuga reiciendis iste, temporibus assumenda veritatis et facere dicta, eius recusandae nemo?</p>
+    </div>
+    <div class="box"><p>Calendar</p></div>
+  </div>
+  <div class="col-9">
+    <div class="box">
+      <h2>Invitations</h2>
+      <table>
+        <tr>
+          <th>status</th>
+          <th>full_name</th>
+          <th>email</th>
+          <th>instrument</th>
+          <th>delivered</th>
+          <th>read</th>
+          <th>clicked</th>
+          <th>error</th>
+        </tr>
+      <% @invitations.each do |invitation| %>
+        <tr>
+          <td><%= invitation.status %></td>
+          <td><%= invitation.full_name %></td>
+          <td><%= invitation.email %></td>
+          <td><%= invitation.instrument.name %></td>
+          <td><%= invitation.email_delivered %></td>
+          <td><%= invitation.email_read %></td>
+          <td><%= invitation.email_clicked %></td>
+          <td><%= invitation.email_error %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+    <div class="box">
+      <h2>Musicians</h2>
+      <%= Invitation.group(:status).count %>
+    </div>
+  </div>
+</div>
+

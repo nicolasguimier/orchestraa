@@ -2,16 +2,16 @@ puts 'Start seeds'
 
 Instrument.destroy_all
 puts 'Instruments table dropped'
-MusicalWork.destroy_all
-puts 'MusicalWorks table dropped'
-Concert.destroy_all
-puts 'Concerts table dropped'
-Invitation.destroy_all
-puts 'Invitations table dropped'
-WorkInstrument.destroy_all
-puts 'WorkInstruments table dropped'
 ProgramStep.destroy_all
 puts 'ProgramStepS table dropped'
+WorkInstrument.destroy_all
+puts 'WorkInstruments table dropped'
+Concert.destroy_all
+puts 'Concerts table dropped'
+MusicalWork.destroy_all
+puts 'MusicalWorks table dropped'
+Invitation.destroy_all
+puts 'Invitations table dropped'
 OrchestraComposition.destroy_all
 puts 'OrchestraCompositionS table dropped'
 User.destroy_all
@@ -24,16 +24,212 @@ igor = User.new(
     email: 'igor@example.com',
     password: 'password')
 igor.save!
-
 puts "#{User.count} users imported. End"
+
+puts '-> Start instruments'
+puts ' --> Start Strings'
+violin1 = Instrument.new(
+    name: "Violin 1",
+    category: 'Strings',
+    position: 1)
+violin1.save!
+violin2 = Instrument.new(
+    name: "Violin 2",
+    category: 'Strings',
+    position: 2)
+violin2.save!
+viola = Instrument.new(
+    name: "Viola",
+    category: 'Strings',
+    position: 3)
+viola.save!
+cello = Instrument.new(
+    name: "Cello",
+    category: 'Strings',
+    position: 4)
+cello.save!
+double_bass = Instrument.new(
+    name: "Double Bass",
+    category: 'Strings',
+    position: 5)
+double_bass.save!
+
+puts ' --> Start Woodwinds'
+flute = Instrument.new(
+    name: "Flute",
+    category: 'Woodwinds',
+    position: 1)
+flute.save!
+piccolo = Instrument.new(
+    name: "Piccolo",
+    category: 'Woodwinds',
+    position: 2)
+piccolo.save!
+oboe = Instrument.new(
+    name: "Oboe",
+    category: 'Woodwinds',
+    position: 3)
+oboe.save!
+english_horn = Instrument.new(
+    name: "English Horn",
+    category: 'Woodwinds',
+    position: 4)
+english_horn.save!
+clarinet = Instrument.new(
+    name: "Clarinet",
+    category: 'Woodwinds',
+    position: 5)
+clarinet.save!
+bass_clarinet = Instrument.new(
+    name: "Bass Clarinet",
+    category: 'Woodwinds',
+    position: 6)
+bass_clarinet.save!
+bassoon = Instrument.new(
+    name: "Bassoon",
+    category: 'Woodwinds',
+    position: 7)
+bassoon.save!
+contrabasson = Instrument.new(
+    name: "Contrabassoon",
+    category: 'Woodwinds',
+    position: 8)
+contrabasson.save!
+soprano_saxophone = Instrument.new(
+    name: "Soprano saxophone",
+    category: 'Woodwinds',
+    position: 9)
+soprano_saxophone.save!
+alto_saxophone = Instrument.new(
+    name: "Alto saxophone",
+    category: 'Woodwinds',
+    position: 10)
+alto_saxophone.save!
+tenor_saxophone = Instrument.new(
+    name: "Tenor saxophone",
+    category: 'Woodwinds',
+    position: 11)
+tenor_saxophone.save!
+baritone_saxophone = Instrument.new(
+    name: "Baritone saxophone",
+    category: 'Woodwinds',
+    position: 12)
+baritone_saxophone.save!
+
+puts ' --> Start Brass'
+trumpet = Instrument.new(
+    name: "Trumpet",
+    category: 'Brass',
+    position: 1)
+trumpet.save!
+trombone = Instrument.new(
+    name: "Trombone",
+    category: 'Brass',
+    position: 2)
+trombone.save!
+bass_trombone = Instrument.new(
+    name: "Bass Trombone",
+    category: 'Brass',
+    position: 3)
+bass_trombone.save!
+french_horn = Instrument.new(
+    name: "French Horn",
+    category: 'Brass',
+    position: 4)
+french_horn.save!
+tuba = Instrument.new(
+    name: "Tuba",
+    category: 'Brass',
+    position: 5)
+tuba.save!
+
+puts ' --> Start Percussions'
+timpani = Instrument.new(
+    name: "Timpani",
+    category: 'Percussions',
+    position: 1)
+timpani.save!
+snare_drum = Instrument.new(
+    name: "Snare Drum",
+    category: 'Percussions',
+    position: 2)
+snare_drum.save!
+bass_drum = Instrument.new(
+    name: "Bass Drum",
+    category: 'Percussions',
+    position: 3)
+bass_drum.save!
+claves = Instrument.new(
+    name: "Claves",
+    category: 'Percussions',
+    position: 4)
+claves.save!
+triangle = Instrument.new(
+    name: "triangle",
+    category: 'Percussions',
+    position: 4)
+triangle.save!
+gong = Instrument.new(
+    name: "Gong",
+    category: 'Percussions',
+    position: 5)
+gong.save!
+cymbals = Instrument.new(
+    name: "Cymbals",
+    category: 'Percussions',
+    position: 6)
+cymbals.save!
+vibraphone = Instrument.new(
+    name: "Vibraphone",
+    category: 'Percussions',
+    position: 7)
+vibraphone.save!
+xylophone = Instrument.new(
+    name: "Xylophone",
+    category: 'Percussions',
+    position: 8)
+xylophone.save!
+
+puts ' --> Start keyboards'
+piano = Instrument.new(
+    name: "Piano",
+    category: 'Keyboards',
+    position: 1)
+piano.save!
+bandoneon = Instrument.new(
+    name: "Bandoneon",
+    category: 'Keyboards',
+    position: 2)
+bandoneon.save!
+pipe_organ = Instrument.new(
+    name: "Pipe Organ",
+    category: 'Keyboards',
+    position: 2)
+pipe_organ.save!
+harp = Instrument.new(
+    name: "Harp",
+    category: 'Keyboards',
+    position: 3)
+harp.save!
+celesta = Instrument.new(
+    name: "Celesta",
+    category: 'Keyboards',
+    position: 4)
+celesta.save!
+accordion = Instrument.new(
+    name: "Accordion",
+    category: 'Keyboards',
+    position: 5)
+accordion.save!
+puts "#{Instrument.count} instruments imported. End"
 
 puts '-> Start MusicalWorks'
 piazzolla = MusicalWork.new(
     user: igor,
     title: 'The Four Seasons of Buenos Aires',
     composer_name: 'Astor Piazzolla',
-    duration: 120,
-    notes: "Arranged by Claudio Dante D'Iorio in 2011")
+    duration: 45,
+    notes: "Arranged by Claudio Dante D'Iorio in 2011. Set of four tango")
 piazzolla.save!
 mouzanar = MusicalWork.new(
     user: igor,
@@ -44,62 +240,75 @@ mouzanar = MusicalWork.new(
 mouzanar.save!
 vivaldi1 = MusicalWork.new(
     user: igor,
-    title: 'Concerto in G minor RV 156',
+    title: 'Concerto for strings in G minor RV 156',
     composer_name: 'Antonio Vivaldi',
-    duration: 90,
-    notes: "")
+    duration: 38,
+    notes: "G minor, Baroque, 3 movements")
 vivaldi1.save!
 vivaldi2 = MusicalWork.new(
-    user: igor,
-    title: 'Concerto for strings and Bc in G minor RV 156',
-    composer_name: 'Antonio Vivaldi',
-    duration: 90,
-    notes: "")
-vivaldi2.save!
-vivaldi3 = MusicalWork.new(
-    user: igor,
-    title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
-    composer_name: 'Antonio Vivaldi',
-    duration: 58,
-    notes: "")
-vivaldi3.save!
-
-MusicalWork.create!(
-  user: igor,
-  title: "L'Adelaide, RV 695",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "All'ombra di sospetto, RV 678",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "All'or che lo sguardo, RV 650",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Amor hai vinto, RV 651",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Amor hai vinto, RV 683",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
   user: igor,
   title: "Anche in mezzo a perigliosa",
   composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
+  duration: 14,
+  notes: "D major, Baroque italian.")
+vivaldi2.save!
+vivaldi3 = MusicalWork.new(
+    user: igor,
+    title: "Bassoon Concerto in A minor, RV 500",
+    composer_name: 'Antonio Vivaldi',
+    duration: 10,
+    notes: "A minor, Baroque, 3 movements")
+vivaldi3.save!
+vivaldi4 = MusicalWork.new(
+  user: igor,
+  title: "L'Adelaide, RV 695",
+  composer_name: 'Antonio Vivaldi',
+  duration: 21,
+  notes: "Baroque, Italian. First performance in 1735 Carnival in Verona")
+vivaldi4.save!
+vivaldi5 = MusicalWork.new(
+  user: igor,
+  title: "All'ombra di sospetto, RV 678",
+  composer_name: 'Antonio Vivaldi',
+  duration: 7,
+  notes: "Baroque Italian - with flute")
+vivaldi5.save!
+vivaldi6 = MusicalWork.new(
+  user: igor,
+  title: "All'or che lo sguardo, RV 650",
+  composer_name: 'Antonio Vivaldi',
+  duration: 12,
+  notes: "F major - Italian, Baroque, 3 movements")
+vivaldi6.save!
+vivaldi7 = MusicalWork.new(
+  user: igor,
+  title: "Amor hai vinto, RV 651",
+  composer_name: 'Antonio Vivaldi',
+  duration: 19,
+  notes: "Italian Baroque")
+vivaldi7.save!
+vivaldi8 = MusicalWork.new(
+  user: igor,
+  title: "Amor hai vinto, RV 683",
+  composer_name: 'Antonio Vivaldi',
+  duration: 10,
+  notes: "4 movements. Italian Baroque")
+vivaldi8.save!
+vivaldi9 = MusicalWork.new(
+  user: igor,
+  title: "La Candace o siano Li veri amici, RV 704",
+  composer_name: 'Antonio Vivaldi',
+  duration: 22,
+  notes: "Opera. First Performance in 1720, Carnival in Mantua: Teatro Arciducale")
+vivaldi9.save!
+vivaldi10 = MusicalWork.new(
+  user: igor,
+  title: "Canta in prato, ride in monte, RV 623",
+  composer_name: 'Antonio Vivaldi',
+  duration: 32,
+  notes: "Latin, Baroque")
+vivaldi10.save!
+
 MusicalWork.create!(
   user: igor,
   title: "Armida al campo d'Egitto, RV 699",
@@ -132,7 +341,7 @@ MusicalWork.create!(
   notes: "")
 MusicalWork.create!(
   user: igor,
-  title: "Bassoon Concerto in A minor, RV 500",
+  title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -164,18 +373,6 @@ MusicalWork.create!(
 MusicalWork.create!(
   user: igor,
   title: "Beatus vir, RV 597",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "La Candace o siano Li veri amici, RV 704",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Canta in prato, ride in monte, RV 623",
   composer_name: 'Antonio Vivaldi',
   duration: 58,
   notes: "")
@@ -385,178 +582,319 @@ MusicalWork.create!(
   notes: "")
 puts "#{MusicalWork.count} musical works imported. End"
 
-puts '-> Start instruments'
-puts ' --> Start Strings'
-violin1 = Instrument.new(
-    name: "Violin 1",
-    category: 'Strings',
-    position: 1)
-violin1.save!
-violin2 = Instrument.new(
-    name: "Violin 2",
-    category: 'Strings',
-    position: 2)
-violin2.save!
-viola = Instrument.new(
-    name: "Viola",
-    category: 'Strings',
-    position: 3)
-viola.save!
-cello = Instrument.new(
-    name: "Cello",
-    category: 'Strings',
-    position: 4)
-cello.save!
-double_bass = Instrument.new(
-    name: "Double Bass",
-    category: 'Strings',
-    position: 5)
-double_bass.save!
-
-puts ' --> Start Woodwinds'
-flute = Instrument.new(
-    name: "Flute",
-    category: 'Woodwinds',
-    position: 1)
-flute.save!
-piccolo = Instrument.new(
-    name: "Piccolo",
-    category: 'Woodwinds',
-    position: 2)
-piccolo.save!
-oboe = Instrument.new(
-    name: "Oboe",
-    category: 'Woodwinds',
-    position: 3)
-oboe.save!
-english_horn = Instrument.new(
-    name: "English Horn",
-    category: 'Woodwinds',
-    position: 4)
-english_horn.save!
-clarinet = Instrument.new(
-    name: "Clarinet",
-    category: 'Woodwinds',
-    position: 5)
-clarinet.save!
-bass_clarinet = Instrument.new(
-    name: "Bass Clarinet",
-    category: 'Woodwinds',
-    position: 6)
-bass_clarinet.save!
-bassoon = Instrument.new(
-    name: "Bassoon",
-    category: 'Woodwinds',
-    position: 7)
-bassoon.save!
-contrabasson = Instrument.new(
-    name: "Contrabassoon",
-    category: 'Woodwinds',
-    position: 8)
-contrabasson.save!
-saxophone = Instrument.new(
-    name: "Saxophone",
-    category: 'Woodwinds',
-    position: 9)
-saxophone.save!
+puts '-> Start work instruments'
+puts ' ---> piazzolla'
+# title: 'The Four Seasons of Buenos Aires',
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: piazzolla,
+  instrument: bandoneon,
+  quantity: 1)
 
 
-puts ' --> Start Brass'
-trumpet = Instrument.new(
-    name: "Trumpet",
-    category: 'Brass',
-    position: 1)
-trumpet.save!
-trombone = Instrument.new(
-    name: "Trombone",
-    category: 'Brass',
-    position: 2)
-trombone.save!
-bass_trombone = Instrument.new(
-    name: "Bass Trombone",
-    category: 'Brass',
-    position: 3)
-bass_trombone.save!
-french_horn = Instrument.new(
-    name: "French Horn",
-    category: 'Brass',
-    position: 4)
-french_horn.save!
-tuba = Instrument.new(
-    name: "Tuba",
-    category: 'Brass',
-    position: 5)
-tuba.save!
+puts ' ---> mouzanar'
+# mouzanar  'Maserati - Piece for Car and Orchestra'
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: bandoneon,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: claves,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: trumpet,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: trombone,
+  quantity: 1)
 
-puts ' --> Start Percussions'
-timpani = Instrument.new(
-    name: "Timpani",
-    category: 'Percussions',
-    position: 1)
-timpani.save!
-snare_drum = Instrument.new(
-    name: "Snare Drum",
-    category: 'Percussions',
-    position: 2)
-snare_drum.save!
-bass_drum = Instrument.new(
-    name: "Bass Drum",
-    category: 'Percussions',
-    position: 3)
-bass_drum.save!
-triangle = Instrument.new(
-    name: "triangle",
-    category: 'Percussions',
-    position: 4)
-triangle.save!
-gong = Instrument.new(
-    name: "Gong",
-    category: 'Percussions',
-    position: 5)
-gong.save!
-cymbals = Instrument.new(
-    name: "Cymbals",
-    category: 'Percussions',
-    position: 6)
-cymbals.save!
-vibraphone = Instrument.new(
-    name: "Vibraphone",
-    category: 'Percussions',
-    position: 7)
-vibraphone.save!
-xylophone = Instrument.new(
-    name: "Xylophone",
-    category: 'Percussions',
-    position: 8)
-xylophone.save!
+puts ' ---> vivaldi1'
+# vivaldi1  'Concerto in G minor RV 156',
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: violin1,
+  quantity: 4)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: violin2,
+  quantity: 3)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: viola,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: cello,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: claves,
+  quantity: 1)
 
-puts ' --> Start keyboards'
-piano = Instrument.new(
-    name: "Piano",
-    category: 'Keyboards',
-    position: 1)
-piano.save!
-pipe_organ = Instrument.new(
-    name: "Pipe Organ",
-    category: 'Keyboards',
-    position: 2)
-pipe_organ.save!
-harp = Instrument.new(
-    name: "Harp",
-    category: 'Keyboards',
-    position: 3)
-harp.save!
-celesta = Instrument.new(
-    name: "Celesta",
-    category: 'Keyboards',
-    position: 3)
-celesta.save!
-accordion = Instrument.new(
-    name: "Accordion",
-    category: 'Keyboards',
-    position: 3)
-accordion.save!
-puts "#{Instrument.count} instruments imported. End"
+
+
+puts ' ---> vivaldi2'
+# vivaldi2  "Anche in mezzo a perigliosa",
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi2,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi3'
+# vivaldi3 "Bassoon Concerto in A minor, RV 500",
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: double_bass,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi3,
+  instrument: bassoon,
+  quantity: 2)
+
+puts ' ---> vivaldi4'
+# vivaldi4  "L'Adelaide, RV 695",
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi4,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi5'
+# vivaldi5 "All'ombra di sospetto, RV 678",
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: double_bass,
+  quantity: 1)
+  WorkInstrument.create!(
+  musical_work: vivaldi5,
+  instrument: flute,
+  quantity: 4)
+
+puts ' ---> vivaldi6'
+# vivaldi6  "All'or che lo sguardo, RV 650",
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi6,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi7'
+# vivaldi7  "Amor hai vint-o, RV 651",
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi7,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi8'
+# vivaldi8 "Amor hai vinto, RV 683",
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi8,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi9'
+# vivaldi9  "La Candace o siano Li veri amici, RV 704",
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: double_bass,
+  quantity: 1)
+
+puts ' ---> vivaldi10'
+# vivaldi10  "Canta in prato, ride in monte, RV 623",
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin1,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: violin2,
+  quantity: 2)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: viola,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: cello,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: vivaldi9,
+  instrument: double_bass,
+  quantity: 1)
+puts "#{WorkInstrument.count} work instruments imported. End"
+
 
 puts '-> Start concerts'
 concert1 = Concert.new(
@@ -608,32 +946,624 @@ concert5.save!
 
 puts "#{Concert.count} concerts imported. End"
 
-puts '-> Start work instruments'
-puts "#{WorkInstrument.count} work instruments imported. End"
 
 puts '-> Start Invitations'
+# Need strings. Need 12, missing 6.
+# 4 - Violin 1    -> 5 invited, 2 accepted, 1 rejected, 2 pending (1 with error)
+Invitation.create!(
+  user: igor,
+  full_name: 'Maximo Melandy',
+  email: 'maximo.melandy@gmail.com',
+  instrument: violin1,
+  status: 'accepted',
+  sendinblue_email_id: 'test',
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mr Enrico',
+  email: 'enrico@wrongemail.com',
+  instrument: violin1,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: false,
+  email_read: false,
+  email_clicked: false,
+  email_error: true
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Stanislas Ducrouet',
+  email: 'stan@gmail.com',
+  instrument: violin1,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Helena Gallos',
+  email: 'helene.g@hotmail.com',
+  instrument: violin1,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mss Simone Delatour',
+  email: 'delatour@yahoo.co.uk',
+  instrument: violin1,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
 
-    # <li>owner : <%= invitation.user %></li>
-    # <li>full_name : <%= invitation.full_name %></li>
-    # <li>email : <%= invitation.email %></li>
-    # <li>instrument_id : <%= invitation.instrument_id %></li>
-    # <li>status : <%= invitation.status %></li>
-    # <li>sendinblue_email_id : <%= invitation.sendinblue_email_id %></li>
-    # <li>email_delivered : <%= invitation.email_delivered %></li>
-    # <li>email_read : <%= invitation.email_read %></li>
-    # <li>email_error : <%= invitation.email_error %></li>
+# 3 - Violin 2    -> 4 invited, 3 pending, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Jean Esposito',
+  email: 'jean@gmail.com',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Clotilde Moussuffa',
+  email: 'clotide@gmx.de',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Eric Tudal',
+  email: 'erictudal@yahoo.com',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Rafaello Dimante',
+  email: 'Raff@gmail.com',
+  instrument: violin2,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+
+# 2 - viola       -> 2 invited, 2 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Yasser Mazarelli',
+  email: 'yass@gmail.com',
+  instrument: viola,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Ivanov Bali',
+  email: 'ivanov@youpi.ca',
+  instrument: viola,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Paula Michu',
+  email: 'Paula@gmail.com',
+  instrument: viola,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Gabriella Tandori',
+  email: 'gabi@tandoo.com',
+  instrument: viola,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# 2 - Cello       -> 2 invited, 2 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Frank Balandier',
+  email: 'franck@balese.com',
+  instrument: cello,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mr Fabrice Pelouz',
+  email: 'pelouz@gmail.com',
+  instrument: cello,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+# 1 - Double Bass -> 1 invited, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Boris Pailloux',
+  email: 'boris@gmail.com',
+  instrument: double_bass,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# Need Woodwinds. Need 6,  2 accepted
+# 2 - Bassoon -> 3 invited, 1 accepted, 1 pending, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Clement Rasparinov',
+  email: 'clement@gmail.com',
+  instrument: bassoon,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mickaël Nuiss Jr',
+  email: 'mickey@gmail.com',
+  instrument: bassoon,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: false,
+  email_read: false,
+  email_clicked: false,
+  email_error: true
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Thomas Garibaldi',
+  email: 'tom.g@gmail.com',
+  instrument: bassoon,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+# 4 - Flute -> 1 invited, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Ophelia Razarovski',
+  email: 'razou@gmail.com',
+  instrument: flute,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# Need Brass : all missing
+# 1 - trumpet -> 0 invited
+# 1 - trombone -> 1 invited, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Hinz Zin Pun',
+  email: 'hin_zin_pun@gmail.com',
+  instrument: trombone,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
 
 
+# Need percusions. all needed
+# 1 - Claves -> 2 invited, 1 accepted, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Cecile Cavinovich',
+  email: 'cecile@gmail.com',
+  instrument: claves,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Nicolas Wagonier',
+  email: 'nico@gmail.com',
+  instrument: claves,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+
+# Need Keyboard. All needed
+# 1 - Bandoneon -> 1 invitation, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Etienne De Nancy',
+  email: 'etienne@gmail.com',
+  instrument: bandoneon,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
 puts "#{Invitation.count} invitations imported. End"
 
 
 
 
 puts '-> Start programm steps'
+puts '---> for Concert 1'
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert1,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert1,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 2'
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert2,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert2,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 3'
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: piazzolla,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: mouzanar,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert3,
+  kind: "intermission",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert3,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 6)
+
+puts '---> for Concert 4'
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert4,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert4,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
+
+puts '---> for Concert 5'
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi1,
+  kind: "musical_work",
+  position: 1)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi2,
+  kind: "musical_work",
+  position: 2)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi3,
+  kind: "musical_work",
+  position: 3)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi4,
+  kind: "musical_work",
+  position: 4)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi5,
+  kind: "musical_work",
+  position: 5)
+ProgramStep.create!(
+  concert: concert5,
+  kind: "intermission",
+  position: 6)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi6,
+  kind: "musical_work",
+  position: 7)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi7,
+  kind: "musical_work",
+  position: 8)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi8,
+  kind: "musical_work",
+  position: 9)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi9,
+  kind: "musical_work",
+  position: 10)
+ProgramStep.create!(
+  concert: concert5,
+  musical_work: vivaldi10,
+  kind: "musical_work",
+  position: 11)
 puts "#{ProgramStep.count} program steps imported. End"
 
 
 puts '-> Start orchestra composition'
+OrchestraComposition.create!(
+  user: igor,
+  name: "String quartet",
+  composition: '{
+    "Strings": {
+      Violin 1": "2",
+      "Viola": "1",
+      "Cello": "1"
+    }
+  }')
+OrchestraComposition.create!(
+  user: igor,
+  name: "Piano quartet",
+  composition: '{
+    "Strings": {
+      "Violin 1": "2",
+      "Viola": "1",
+      "Cello": "1"
+    },
+    "Keyboards": {
+      "Piano": "1"
+    }
+  }')
+
+
+OrchestraComposition.create!(
+  user: igor,
+  name: "Philharmonic orchestra",
+  composition: '{
+    "Strings": {
+      "Violin 1": "16",
+      "Violin 2": "14",
+      "Viola": "12",
+      "Cello": "10",
+      "Double Bass": "8"
+    },
+    "Woodwinds": {
+      "Flute" : "2",
+      "Piccolo" : "1",
+      "Oboe": "1",
+      "Clarinet": "2",
+      "Bass Clarinet": "1",
+      "Bassoon": "1",
+      "Alto saxophones": "1"
+    },
+    "Brass" : {
+      "Trumpet": "2",
+      "Trombone": "1",
+      "Tuba": "1"
+    }
+    "Percussions": {
+      "Timpani": "1",
+      "triangle": "1",
+      "Cymbals": "1"
+    },
+    "Keyboards": {
+      "Harp": "1"
+    }
+  }')
+OrchestraComposition.create!(
+  user: igor,
+  name: "Concert band",
+  composition: '{
+    "Woodwinds": {
+      "Flute" : "2",
+      "Piccolo" : "1",
+      "Oboe": "1",
+      "Clarinet": "3",
+      "Bass Clarinet": "3",
+      "Bassoon": "1",
+      "Alto saxophones": "2"
+    },
+    "Brass" : {
+      "Trumpet": "4",
+      "Trombone": "2",
+      "Bass Trombone": "1",
+      "French Horn": "2",
+      "Tuba": "2"
+    }
+    "Percussions": {
+      "Timpani": "1",
+      "Snare Drum": "1",
+      "Bass Drum": "1",
+      "Claves": "1",
+      "triangle": "1",
+      "Cymbals": "1",
+      "Vibraphone": "1",
+      "Xylophone": "1"
+    }
+  }')
 puts "#{OrchestraComposition.count} orchestra compositions imported. End"
 
 

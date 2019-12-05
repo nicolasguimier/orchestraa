@@ -1,11 +1,7 @@
-.box p {
-  color: $orange;
-}
-
 .box {
-  height: 200px;
-  width: 200px;
   background-color: $dark-gray;
   box-shadow: $drop-shadow;
   border-radius: $border-radius;
+  padding: 10px 15px;
+  margin-bottom: 20px;
 }
