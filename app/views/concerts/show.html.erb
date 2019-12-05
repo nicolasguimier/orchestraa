@@ -1,25 +1,40 @@
-<h1><%= @concert.name %></h1>
-<p>Find me in app/views/concerts/show.html.erb</p>
-<ul style="border-bottom:1px solid black">
-  <li>location: <%= @concert.location %>,</li>
-  <li>address: <%= @concert.address %>,</li>
-  <li>notes: <%= @concert.notes %>,</li>
-  <li>start_at: <%= @concert.start_at %>,</li>
-  <li>end_at: <%= @concert.end_at %></li>
-  <%= link_to "BACK TO INDEX", concerts_path%>
-</ul>
-<h2>Program</h2>
-<ul style="border-bottom:1px solid black">
-  <% @program_steps.each do |program_step| %>
-    <% if program_step.kind == "intermission" %>
-      <li>INTERMISSION</li>
-    <% else %>
-      <li><%= link_to musical_work_path(program_step.musical_work) do %>
-      (<em><%= program_step.musical_work.composer_name %></em>)
-      <%= program_step.musical_work.duration %> min -
-      <%= program_step.musical_work.title %>
-      <% end %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-3">
+      <div class="box">
+        <h1 class="icon icon-concert"><%= @concert.name %></h1>
+        <p>Find me in app/views/concerts/show.html.erb</p>
+        <ul style="border-bottom:1px solid black">
+          <li>location: <%= @concert.location %>,</li>
+          <li>address: <%= @concert.address %>,</li>
+          <li>notes: <%= @concert.notes %>,</li>
+          <li>start_at: <%= @concert.start_at %>,</li>
+          <li>end_at: <%= @concert.end_at %></li>
+          <%= link_to "BACK TO INDEX", concerts_path%>
+        </ul>
+      </div>
+      <div class="box">
+        Map
+      </div>
+    </div>
+    <div class="col-12 col-lg-9">
+      <div class="box program">
+        <h2>Program</h2>
+          <% @program_steps.each do |program_step| %>
+            <% if program_step.kind == "intermission" %>
+              <div class="intermission">Intermission</li>
+            <% else %>
+              <div class="program-step">
+                <%= link_to musical_work_path(program_step.musical_work) do %>
+              (<em><%= program_step.musical_work.composer_name %></em>)
+              <%= program_step.musical_work.duration %> min -
+              <%= program_step.musical_work.title %>
+              <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
