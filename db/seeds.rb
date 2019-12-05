@@ -95,12 +95,26 @@ contrabasson = Instrument.new(
     category: 'Woodwinds',
     position: 8)
 contrabasson.save!
-saxophone = Instrument.new(
-    name: "Saxophone",
+soprano_saxophone = Instrument.new(
+    name: "Soprano saxophone",
     category: 'Woodwinds',
     position: 9)
-saxophone.save!
-
+soprano_saxophone.save!
+alto_saxophone = Instrument.new(
+    name: "Alto saxophone",
+    category: 'Woodwinds',
+    position: 10)
+alto_saxophone.save!
+tenor_saxophone = Instrument.new(
+    name: "Tenor saxophone",
+    category: 'Woodwinds',
+    position: 11)
+tenor_saxophone.save!
+baritone_saxophone = Instrument.new(
+    name: "Baritone saxophone",
+    category: 'Woodwinds',
+    position: 12)
+baritone_saxophone.save!
 
 puts ' --> Start Brass'
 trumpet = Instrument.new(
@@ -627,6 +641,14 @@ WorkInstrument.create!(
   musical_work: mouzanar,
   instrument: claves,
   quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: trumpet,
+  quantity: 1)
+WorkInstrument.create!(
+  musical_work: mouzanar,
+  instrument: trombone,
+  quantity: 1)
 
 puts ' ---> vivaldi1'
 # vivaldi1  'Concerto in G minor RV 156',
@@ -926,18 +948,318 @@ puts "#{Concert.count} concerts imported. End"
 
 
 puts '-> Start Invitations'
+# Need strings. Need 12, missing 6.
+# 4 - Violin 1    -> 5 invited, 2 accepted, 1 rejected, 2 pending (1 with error)
+Invitation.create!(
+  user: igor,
+  full_name: 'Maximo Melandy',
+  email: 'maximo.melandy@gmail.com',
+  instrument: violin1,
+  status: 'accepted',
+  sendinblue_email_id: 'test',
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mr Enrico',
+  email: 'enrico@wrongemail.com',
+  instrument: violin1,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: false,
+  email_read: false,
+  email_clicked: false,
+  email_error: true
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Stanislas Ducrouet',
+  email: 'stan@gmail.com',
+  instrument: violin1,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Helena Gallos',
+  email: 'helene.g@hotmail.com',
+  instrument: violin1,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mss Simone Delatour',
+  email: 'delatour@yahoo.co.uk',
+  instrument: violin1,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
 
-    # <li>owner : <%= invitation.user %></li>
-    # <li>full_name : <%= invitation.full_name %></li>
-    # <li>email : <%= invitation.email %></li>
-    # <li>instrument_id : <%= invitation.instrument_id %></li>
-    # <li>status : <%= invitation.status %></li>
-    # <li>sendinblue_email_id : <%= invitation.sendinblue_email_id %></li>
-    # <li>email_delivered : <%= invitation.email_delivered %></li>
-    # <li>email_read : <%= invitation.email_read %></li>
-    # <li>email_error : <%= invitation.email_error %></li>
+# 3 - Violin 2    -> 4 invited, 3 pending, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Jean Esposito',
+  email: 'jean@gmail.com',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Clotilde Moussuffa',
+  email: 'clotide@gmx.de',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Eric Tudal',
+  email: 'erictudal@yahoo.com',
+  instrument: violin2,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Rafaello Dimante',
+  email: 'Raff@gmail.com',
+  instrument: violin2,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+
+# 2 - viola       -> 2 invited, 2 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Yasser Mazarelli',
+  email: 'yass@gmail.com',
+  instrument: viola,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Ivanov Bali',
+  email: 'ivanov@youpi.ca',
+  instrument: viola,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Paula Michu',
+  email: 'Paula@gmail.com',
+  instrument: viola,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Gabriella Tandori',
+  email: 'gabi@tandoo.com',
+  instrument: viola,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# 2 - Cello       -> 2 invited, 2 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Frank Balandier',
+  email: 'franck@balese.com',
+  instrument: cello,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mr Fabrice Pelouz',
+  email: 'pelouz@gmail.com',
+  instrument: cello,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+# 1 - Double Bass -> 1 invited, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Boris Pailloux',
+  email: 'boris@gmail.com',
+  instrument: double_bass,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# Need Woodwinds. Need 6,  2 accepted
+# 2 - Bassoon -> 3 invited, 1 accepted, 1 pending, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Clement Rasparinov',
+  email: 'clement@gmail.com',
+  instrument: bassoon,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Mickaël Nuiss Jr',
+  email: 'mickey@gmail.com',
+  instrument: bassoon,
+  status: "pending",
+  sendinblue_email_id: "test",
+  email_delivered: false,
+  email_read: false,
+  email_clicked: false,
+  email_error: true
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Thomas Garibaldi',
+  email: 'tom.g@gmail.com',
+  instrument: bassoon,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+# 4 - Flute -> 1 invited, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Ophelia Razarovski',
+  email: 'razou@gmail.com',
+  instrument: flute,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+
+# Need Brass : all missing
+# 1 - trumpet -> 0 invited
+# 1 - trombone -> 1 invited, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Hinz Zin Pun',
+  email: 'hin_zin_pun@gmail.com',
+  instrument: trombone,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
 
 
+# Need percusions. all needed
+# 1 - Claves -> 2 invited, 1 accepted, 1 rejected
+Invitation.create!(
+  user: igor,
+  full_name: 'Cecile Cavinovich',
+  email: 'cecile@gmail.com',
+  instrument: claves,
+  status: "rejected",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: false,
+  email_clicked: false,
+  email_error: false
+  )
+Invitation.create!(
+  user: igor,
+  full_name: 'Nicolas Wagonier',
+  email: 'nico@gmail.com',
+  instrument: claves,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
+
+# Need Keyboard. All needed
+# 1 - Bandoneon -> 1 invitation, 1 accepted
+Invitation.create!(
+  user: igor,
+  full_name: 'Etienne De Nancy',
+  email: 'etienne@gmail.com',
+  instrument: bandoneon,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_error: false
+  )
 puts "#{Invitation.count} invitations imported. End"
 
 
@@ -1152,6 +1474,96 @@ puts "#{ProgramStep.count} program steps imported. End"
 
 
 puts '-> Start orchestra composition'
+OrchestraComposition.create!(
+  user: igor,
+  name: "String quartet",
+  composition: '{
+    "Strings": {
+      Violin 1": "2",
+      "Viola": "1",
+      "Cello": "1"
+    }
+  }')
+OrchestraComposition.create!(
+  user: igor,
+  name: "Piano quartet",
+  composition: '{
+    "Strings": {
+      "Violin 1": "2",
+      "Viola": "1",
+      "Cello": "1"
+    },
+    "Keyboards": {
+      "Piano": "1"
+    }
+  }')
+
+
+OrchestraComposition.create!(
+  user: igor,
+  name: "Philharmonic orchestra",
+  composition: '{
+    "Strings": {
+      "Violin 1": "16",
+      "Violin 2": "14",
+      "Viola": "12",
+      "Cello": "10",
+      "Double Bass": "8"
+    },
+    "Woodwinds": {
+      "Flute" : "2",
+      "Piccolo" : "1",
+      "Oboe": "1",
+      "Clarinet": "2",
+      "Bass Clarinet": "1",
+      "Bassoon": "1",
+      "Alto saxophones": "1"
+    },
+    "Brass" : {
+      "Trumpet": "2",
+      "Trombone": "1",
+      "Tuba": "1"
+    }
+    "Percussions": {
+      "Timpani": "1",
+      "triangle": "1",
+      "Cymbals": "1"
+    },
+    "Keyboards": {
+      "Harp": "1"
+    }
+  }')
+OrchestraComposition.create!(
+  user: igor,
+  name: "Concert band",
+  composition: '{
+    "Woodwinds": {
+      "Flute" : "2",
+      "Piccolo" : "1",
+      "Oboe": "1",
+      "Clarinet": "3",
+      "Bass Clarinet": "3",
+      "Bassoon": "1",
+      "Alto saxophones": "2"
+    },
+    "Brass" : {
+      "Trumpet": "4",
+      "Trombone": "2",
+      "Bass Trombone": "1",
+      "French Horn": "2",
+      "Tuba": "2"
+    }
+    "Percussions": {
+      "Timpani": "1",
+      "Snare Drum": "1",
+      "Bass Drum": "1",
+      "Claves": "1",
+      "triangle": "1",
+      "Cymbals": "1",
+      "Vibraphone": "1",
+      "Xylophone": "1"
+    }
+  }')
 puts "#{OrchestraComposition.count} orchestra compositions imported. End"
 
 

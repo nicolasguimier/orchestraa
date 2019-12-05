@@ -9,11 +9,34 @@
   <div class="col-9">
     <div class="box">
       <h2>Invitations</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut iste eaque, laborum, illum animi, eius corporis quo cumque modi asperiores, dolorem similique sed exercitationem iure natus nostrum ullam ex! Cupiditate!</p>
+      <table>
+        <tr>
+          <th>status</th>
+          <th>full_name</th>
+          <th>email</th>
+          <th>instrument</th>
+          <th>delivered</th>
+          <th>read</th>
+          <th>clicked</th>
+          <th>error</th>
+        </tr>
+      <% @invitations.each do |invitation| %>
+        <tr>
+          <td><%= invitation.status %></td>
+          <td><%= invitation.full_name %></td>
+          <td><%= invitation.email %></td>
+          <td><%= invitation.instrument.name %></td>
+          <td><%= invitation.email_delivered %></td>
+          <td><%= invitation.email_read %></td>
+          <td><%= invitation.email_clicked %></td>
+          <td><%= invitation.email_error %></td>
+        </tr>
+      <% end %>
+      </table>
     </div>
     <div class="box">
       <h2>Musicians</h2>
-      <p>BLA BLA BLA</p>
+      <%= Invitation.group(:status).count %>
     </div>
   </div>
 </div>
