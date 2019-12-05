@@ -13,7 +13,7 @@
     <div class="box">
 
             <% @invitations.each do |invitation| %>
-              <div class='invitation'>
+              <div class='box invitation'>
                 <div class='action_buttons'>
                   <button class='btn-validate'></button>
                   <button class='btn-decline'></button>
@@ -26,28 +26,28 @@
                 </div>
                   <div class='action_buttons'>
                     <% if invitation.email_delivered %>
-                    <%= image_tag('envelope_green.svg', class: 'true') %>
+                    <%= image_tag('envelope_green.svg', class: 'status') %>
                     <% else %>
-                    <%= image_tag('envelope.svg', class: 'false') %>
+                    <%= image_tag('envelope.svg', class: 'status') %>
                     <% end %>
 
                     <% if invitation.email_read %>
-                    <%= image_tag('open_envelope_green.svg', class: 'true') %>
+                    <%= image_tag('open_envelope_green.svg', class: 'status') %>
                     <% else %>
-                    <%= image_tag('open_envelope.svg', class: 'false') %>
+                    <%= image_tag('open_envelope.svg', class: 'status') %>
                     <% end %>
 
                   <% if invitation.email_clicked %>
-                    <%= image_tag('read_mail_green.svg', class: 'true') %>
+                    <%= image_tag('read_mail_green.svg', class: 'status') %>
                     <% else %>
-                    <%= image_tag('read_mail.svg', class: 'false') %>
+                    <%= image_tag('read_mail.svg', class: 'status') %>
                     <% end %>
 
 
                   <% if invitation.email_error %>
-                    <%= image_tag('validate_orange.svg', class: 'true') %>
+                    <%= image_tag('validate_orange.svg', class: 'status') %>
                     <% else %>
-                    <%= image_tag('read_mail.svg', class: 'false') %>
+                    <%= image_tag('read_mail.svg', class: 'status') %>
                     <% end %>
                   </div>
                 </div>
