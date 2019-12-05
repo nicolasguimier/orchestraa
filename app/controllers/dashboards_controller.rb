@@ -8,5 +8,7 @@ class DashboardsController < ApplicationController
     @invitations_keyboards = Invitation.all
 
     @concerts = Concert.all
+
+    @pending_works = MusicalWork.first(10)
   end
 end
