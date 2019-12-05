@@ -1,0 +1,33 @@
+.simple-calendar {
+  color: $medium-gray;
+  font-family: $headers-font;
+  font-weight: bold;
+
+  a {
+    color: $ivory;
+  }
+  a:hover{
+    text-decoration: none;
+    color: $green;
+  }
+
+  .calendar-heading {
+    font-size: 2rem;
+    display:flex;
+    justify-content: space-between;
+    color: $ivory;
+  }
+  .today {
+    background-color: $gray;
+  }
+
+  td {
+    border-top: 0px;
+    text-align:center;
+    border-radius: $border-radius;
+  }
+  .has-events {
+    background-color: $gray;
+  }
+
+}
