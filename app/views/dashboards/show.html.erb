@@ -3,13 +3,25 @@
     Welcome back <span class="green">Igor!</span> Your latest invitation has been viewed 27 times.</div>
   </div>
 <div class="row">
-  <div class="col-3">
+  <div class="col-12 col-lg-3">
     <div class="box"><h2>Pending works</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptas quam doloribus necessitatibus laborum, rem iusto quia deleniti fuga reiciendis iste, temporibus assumenda veritatis et facere dicta, eius recusandae nemo?</p>
     </div>
-    <div class="box"><p>Calendar</p></div>
+    <div class="box">
+      <%= month_calendar(events: @concerts, attribute: :start_at, end_attribute: :end_at) do |date, events| %>
+        <% if events.count > 0 %>
+          <% events.each do |event| %>
+            <%= link_to concert_path(event) do  %>
+              <%= date.day %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <%= date.day %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class="col-9">
+  <div class="col-12 col-lg-9">
     <div class="box">
       <h2>Invitations</h2>
       <table>
