@@ -59,7 +59,7 @@
                     <% end %>
 
                   <!-- invitation.email_error -->
-                  <% if invitation.email_error %>
+                  <% if invitation.email_bounce %>
                     <%= image_tag('validate_orange.svg', class: 'true') %>
                     <% else %>
                     <%= image_tag('read_mail.svg', class: 'false') %>
