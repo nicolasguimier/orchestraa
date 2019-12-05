@@ -930,8 +930,8 @@ concert4 = Concert.new(
     location: 'Cité des congrès',
     address: '5 Rue de Valmy, 44000 Nantes, France',
     notes: 'First concert in France. Playing only Vivaldi works',
-    start_at:Time.new(2020, 2, 22, 20,30, 0, "+01:00"),
-    end_at:Time.new(2020, 2, 22, 23, 00, 0, "+01:00"))
+    start_at:Time.new(2019, 12, 21, 20,30, 0, "+01:00"),
+    end_at:Time.new(2019, 12, 21, 23, 00, 0, "+01:00"))
 concert4.save!
 concert5 = Concert.new(
     user: igor,
@@ -939,8 +939,8 @@ concert5 = Concert.new(
     location: 'Cité des congrès',
     address: '5 Rue de Valmy, 44000 Nantes, France',
     notes: 'Sunday afternoon, for kids and family.',
-    start_at:Time.new(2020, 2, 23, 15,00, 0, "+01:00"),
-    end_at:Time.new(2020, 2, 23, 17, 30, 0, "+01:00"))
+    start_at:Time.new(2019, 12, 22, 15,00, 0, "+01:00"),
+    end_at:Time.new(2019, 12, 22, 17, 30, 0, "+01:00"))
 concert5.save!
 
 
