@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#landing'
 
+
   resource :dashboard, only: [:show]
+
+  get '/jeremie', to: 'pages#jeremie', as: 'jeremie'
+  get '/maxime', to: 'pages#maxime', as: 'maxime'
+  get '/nicolas', to: 'pages#nicolas', as: 'nicolas'
 
   resources :musical_works, only: [:index, :show] do
     # :new, :create, , :detroy , :edit, :update
