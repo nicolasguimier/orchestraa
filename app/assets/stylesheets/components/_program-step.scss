@@ -1,1 +1,9 @@
-_program-step.scss
+.program {
+  .program-step {
+      background-color: $gray;
+      box-shadow: $drop-shadow;
+      border-radius: $border-radius;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+  }
+}
