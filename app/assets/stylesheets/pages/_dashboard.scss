@@ -5,3 +5,18 @@
 #pending-invitations {
   height: 480px;
 }
+
+
+// CONCERT INFOS CARD
+
+.infos-concert {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.info-icon {
+  padding-top: 3px;
+  padding-right: 10px;
+  color: $green;
+}
