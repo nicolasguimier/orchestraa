@@ -1,7 +1,32 @@
 .box {
+
   background-color: $dark-gray;
   box-shadow: $drop-shadow;
   border-radius: $border-radius;
   padding: 10px 15px;
   margin-bottom: 20px;
+}
+
+.dark_box {
+  background-color: $gray;
+  height: 436px;
+}
+
+// SCROLL INSIDE CARDS
+.scroll-card {
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+// TITLE + ICON DES CARDS
+
+.box .title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.box .title-icon {
+  height: 30px;
+  padding-right: 5px;
+  margin-bottom: 6px;
 }
