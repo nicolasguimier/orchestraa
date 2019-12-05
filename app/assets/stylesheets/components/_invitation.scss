@@ -11,8 +11,12 @@
 
 .action_buttons {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+
+  .description {
+    padding-left: 15px;
+  }
 
   .btn-validate {
     height: 35px;
@@ -78,54 +82,23 @@
     text-decoration: none;
   }
 
-  .unread {
+  .false {
     height: 30px;
     width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(asset-path("envelope.svg"));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    border: 0px;
     border:none;
     background-color: transparent;
     outline:none;
     text-decoration: none;
+    margin: 5px;
   }
 
-    .read {
+  .true {
     height: 30px;
     width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(asset-path("envelope_green.svg"));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    border: 0px;
     border:none;
     background-color: transparent;
     outline:none;
     text-decoration: none;
+    margin: 5px;
   }
 }
-
-
-// .unread
-// .read
-
-
-// .delivered
-// .undelivered
-
-
-
-// .clicked
-// .unclicked
-
-
-
-// .email-error
