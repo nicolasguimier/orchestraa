@@ -3,20 +3,39 @@
 
 <div class='box'>
   <div class='invitation'>
-    <div>
-      <button type="submit" style="border: 5px">
-      <%= image_tag('validate.svg', class: 'picto') %>
-      </button>
+    <div class='action_buttons'>
+      <button class='btn-validate'></button>
+      <button class='btn-decline'></button>
     </div>
     <div>
       <p>test test</p>
     </div>
     <div>
       <p>test test</p>
+    </div>
+    <div class='action_buttons'>
+      <%  %>
+      <%= image_tag('envelope.svg', class: 'unread') %>
+      <%= image_tag('envelope_green.svg', class: 'read') %>
     </div>
   </div>
   <div class='invitation'>
     <p>test test</p><p>test test</p><p>test test</p>
   </div>
 </div>
+<% read_class = '' %>
+<% if invitation.email_read = true then read_class = 'read' %>
+<%= image_tag('envelope.svg', class: 'read_class') %>
 
+<%= image_tag('envelope.svg', class: 'unread') %>
+<% if @invitation.email_read >class = "read" %>
+
+
+    <td><%= invitation.status %></td>
+    <td><%= invitation.full_name %></td>
+    <td><%= invitation.email %></td>
+    <td><%= invitation.instrument.name %></td>
+    <td><%= invitation.email_delivered %></td>
+    <td><%= invitation.email_read %></td>
+    <td><%= invitation.email_clicked %></td>
+    <td><%= invitation.email_error %></td>

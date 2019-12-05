@@ -9,9 +9,123 @@
   padding: 10px;
 }
 
-.picto {
-  height: 20px;
-  width: 20px;
-  background-color: transparent;
-  color: green;
+.action_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn-validate {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("validate.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    border: 0px;
+    border:none;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
+
+  .btn-validate:hover {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("validate_green.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
+
+  .btn-decline {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("decline.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    border: 0px;
+    border:none;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
+
+  .btn-decline:hover {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("decline_orange.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
+
+  .unread {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("envelope.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    border: 0px;
+    border:none;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
+
+    .read {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(asset-path("envelope_green.svg"));
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    border: 0px;
+    border:none;
+    background-color: transparent;
+    outline:none;
+    text-decoration: none;
+  }
 }
+
+
+// .unread
+// .read
+
+
+// .delivered
+// .undelivered
+
+
+
+// .clicked
+// .unclicked
+
+
+
+// .email-error
