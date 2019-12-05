@@ -960,7 +960,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -972,7 +972,7 @@ Invitation.create!(
   email_delivered: false,
   email_read: false,
   email_clicked: false,
-  email_error: true
+  email_bounce: true
   )
 Invitation.create!(
   user: igor,
@@ -984,7 +984,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -996,7 +996,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1008,7 +1008,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 # 3 - Violin 2    -> 4 invited, 3 pending, 1 accepted
@@ -1022,7 +1022,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1034,7 +1034,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1046,7 +1046,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1058,7 +1058,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 # 2 - viola       -> 2 invited, 2 rejected
@@ -1072,7 +1072,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1084,7 +1084,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1096,7 +1096,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1108,7 +1108,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 # 2 - Cello       -> 2 invited, 2 accepted
@@ -1122,7 +1122,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1134,7 +1134,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 # 1 - Double Bass -> 1 invited, 1 accepted
 Invitation.create!(
@@ -1147,7 +1147,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 # Need Woodwinds. Need 6,  2 accepted
@@ -1162,7 +1162,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1174,7 +1174,7 @@ Invitation.create!(
   email_delivered: false,
   email_read: false,
   email_clicked: false,
-  email_error: true
+  email_bounce: true
   )
 Invitation.create!(
   user: igor,
@@ -1186,7 +1186,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 # 4 - Flute -> 1 invited, 1 accepted
 Invitation.create!(
@@ -1199,7 +1199,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 # Need Brass : all missing
@@ -1215,7 +1215,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 
 
@@ -1231,7 +1231,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: false,
   email_clicked: false,
-  email_error: false
+  email_bounce: false
   )
 Invitation.create!(
   user: igor,
@@ -1243,7 +1243,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 
 # Need Keyboard. All needed
@@ -1258,7 +1258,7 @@ Invitation.create!(
   email_delivered: true,
   email_read: true,
   email_clicked: true,
-  email_error: false
+  email_bounce: false
   )
 puts "#{Invitation.count} invitations imported. End"
 
