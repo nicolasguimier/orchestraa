@@ -60,13 +60,8 @@
     background-image: url(asset-path("decline_orange.svg"));
   }
 
-  .status {
-    height: 30px;
-    width: 30px;
-    border:none;
-    background-color: transparent;
-    outline:none;
-    text-decoration: none;
-    margin: 5px;
+  .icon_size {
+  font-size: 28px;
+  padding: 0px 5px;
   }
 }
