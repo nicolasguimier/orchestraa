@@ -17,7 +17,7 @@
           <div class="box">
           <%= link_to musical_work_path(work) do %>
             <p><%= work.title %></p>
-            <p class="orange">Missing trumpets</p>
+            <p class="orange">Missing <%= ["trumpet", "flute", "viola", "cello", "bassoon"].sample %> sheet</p>
           <% end %>
         </div>
         <% end %>
