@@ -49,7 +49,7 @@
               <div class='description'>
               <%#= invitation.status %>
                 <%= invitation.full_name %> -
-                <%= invitation.instrument.name %>
+                <span><%= invitation.instrument.name %></span>
               </div>
             </div>
             <div class='action_buttons'>
@@ -63,17 +63,14 @@
                 <% if invitation.email_delivered %>
                   <% enveloppe_class += " green" %>
                 <% else %>
-                  <% enveloppe_class += " ivory" %>
                 <% end %>
                 <% if invitation.email_read %>
                   <% open_class += " green" %>
                 <% else %>
-                  <% open_class += " ivory" %>
                 <% end %>
                 <% if invitation.email_clicked %>
                   <% click_class += " green" %>
                 <% else %>
-                  <% click_class += " ivory" %>
                 <% end %>
               <% end %>
 
