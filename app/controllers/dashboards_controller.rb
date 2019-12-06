@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @invitations = Invitation.all
+    @invitations = Invitation.order(id: :desc)
     @concerts = Concert.all
     @pending_works = MusicalWork.first(10)
 
