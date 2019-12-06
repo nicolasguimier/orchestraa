@@ -40,8 +40,9 @@
                 <div class="composer"><%= program_step.musical_work.composer_name %></div>
                 <div class="work-infos">
                   <p><%= program_step.musical_work.title %> (<%= program_step.musical_work.duration %> min)</p>
-                  <p class="orange"><%= link_to "Missing trompets", musical_work_path(program_step.musical_work) %></p>
+                  <p><%= link_to "Missing trompets", musical_work_path(program_step.musical_work), class: 'orange' %></p>
                 </div>
+                <div class="duration"><%= program_step.musical_work.duration %> min</div>
               </div>
             <% end %>
           <% end %>
