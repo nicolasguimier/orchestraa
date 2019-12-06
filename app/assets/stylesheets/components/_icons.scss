@@ -2,14 +2,13 @@
 
 @font-face {
   font-family: "orchestraa";
-  src:url("orchestraa.eot");
-  src:url("orchestraa.eot?#iefix") format("embedded-opentype"),
-    url("orchestraa.woff") format("woff"),
-    url("orchestraa.ttf") format("truetype"),
-    url("orchestraa.svg#orchestraa") format("svg");
+  src:font-url("orchestraa.eot");
+  src:font-url("orchestraa.eot?#iefix") format("embedded-opentype"),
+    font-url("orchestraa.woff") format("woff"),
+    font-url("orchestraa.ttf") format("truetype"),
+    font-url("orchestraa.svg#orchestraa") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
 [data-icon]:before {
