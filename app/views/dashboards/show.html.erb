@@ -47,8 +47,35 @@
       </div>
     </div>
     <div class="box">
-      <h2>Musicians</h2>
-      <%= Invitation.group(:status).count %>
+      <h2><span class="icon-statistics"></span><span>Musicians</span></h2>
+      <div class="invitations-data">
+        <div class="invitation-counter<% if @missing_strings %><%= ' orange' %><% end %>">
+          <span class="icon-strings instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Strings] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Strings] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_brass %><%= ' orange' %><% end %>">
+          <span class="icon-trumpet instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Brass] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Brass] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_woodwinds %><%= ' orange' %><% end %>">
+          <span class="icon-flute instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Woodwinds] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Woodwinds] %></p>
+        </div>
+        <div class="invitation-counter">
+          <span class="icon-drum instrument-icon<% if @missing_percussions %><%= ' orange' %><% end %>"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Percussions] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Percussions] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_keyboards %><%= ' orange' %> <% end %>">
+          <span class="icon-keyboard instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Keyboard] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Keyboard] %></p>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
