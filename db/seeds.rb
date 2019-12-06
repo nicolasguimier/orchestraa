@@ -1061,7 +1061,7 @@ Invitation.create!(
   email_bounce: false
   )
 
-# 2 - viola       -> 2 invited, 2 rejected
+# 2 - viola       -> 4 invited, 2 rejected, 2 accepted
 Invitation.create!(
   user: igor,
   full_name: 'Yasser Mazarelli',
