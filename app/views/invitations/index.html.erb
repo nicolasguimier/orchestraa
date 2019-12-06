@@ -1,16 +1,38 @@
-<h1>Invitations#index</h1>
-<p>Find me in app/views/invitations/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="box">
+        <h1><span class="icon-note"></span>Invitations</h2>
+        <div>
+          <% @invitations.each do |invitation| %>
+            <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-4">
+      <div class="box">
+        <h2 class="text-center">Send new invitation</h2>
+        <%= simple_form_for @invitation do |f| %>
+          <% if @invitation.errors.any? %>
+            <p class="text-danger"><%= @invitation.errors[:invitation].first  %></p>
+          <% end %>
+          <div class=" form-inputs col-auto">
+            <%= f.input :instrument_id, collection: @instruments, required: true, label:"Instrument"%>
+          </div>
+          <div class=" form-inputs col-auto">
+            <%= f.input :full_name, required: true, as: :string, label:"Full name" %>
+          </div>
+          <div class=" form-inputs col-auto">
+            <%= f.input :email, required: true, as: :string, label:"Email" %>
+          </div>
+          <div class="form-actions col-auto">
+            <%= f.button :submit, "Send invitation", class: "add_button", id:"" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% @invitations.each do |invitation|%>
-  <ul style="border-bottom:1px solid black">
-    <li>owner : <%= invitation.user %></li>
-    <li>full_name : <%= invitation.full_name %></li>
-    <li>email : <%= invitation.email %></li>
-    <li>instrument_id : <%= invitation.instrument_id %></li>
-    <li>status : <%= invitation.status %></li>
-    <li>sendinblue_email_id : <%= invitation.sendinblue_email_id %></li>
-    <li>email_delivered : <%= invitation.email_delivered %></li>
-    <li>email_read : <%= invitation.email_read %></li>
-    <li>email_error : <%= invitation.email_error %></li>
-  </ul>
-<% end %>
+

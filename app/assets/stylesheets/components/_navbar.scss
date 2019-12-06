@@ -5,16 +5,20 @@
 .navbar-lewagon {
   justify-content: space-between;
   border-bottom: 1px solid $ivory;
+  margin-bottom: 20px;
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .navbar-brand img {
+    width: 300px;
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
 
-.navbar-lewagon .nav-link {
-  text-transform: uppercase;
-}
