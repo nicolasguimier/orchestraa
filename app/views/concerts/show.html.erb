@@ -13,8 +13,8 @@
         <div class="infos-concert">
           <div class="info-icon icon icon-agenda"></div>
           <div class="date-infos">
-            <p><%= @concert.start_at %></p>
-            <p><%= @concert.end_at %></p>
+            <p><%= @concert.start_at.strftime("%d %B %Y") %></p>
+            <span><%= @concert.start_at.strftime("%H:%M")%></span><span><%= @concert.end_at.strftime(" to %H:%M") %></span>
           </div>
         </div>
         <div class="infos-concert">
