@@ -1,11 +1,37 @@
 .program {
   .box {
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
   }
+  .composer {
+    padding: 0px 40px 0px 20px;
+  }
+  .duration {
+    padding: 0px 20px;
+  }
+
   .icon-drag {
-    font-size:2rem;
-    width:50px;
+    font-size: 2rem;
+    width: 50px;
+  }
+  .work-infos {
+    flex-grow: 1;
+  }
+  .trash{
+    // display:none;
+  }
+
+  .intermission {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: $green;
+
+    .text {
+      flex-grow: 1;
+      text-transform: uppercase;
+    }
   }
 }
