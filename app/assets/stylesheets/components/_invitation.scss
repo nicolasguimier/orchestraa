@@ -3,8 +3,6 @@
   align-items: center;
   justify-content: space-between;
   background-color: $black;
-  box-shadow: $drop-shadow;
-  border-radius: $border-radius;
   margin: 10px;
   padding: 10px;
 }
@@ -37,18 +35,8 @@
   }
 
   .btn-validate:hover {
-    height: 35px;
-    width: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url(asset-path("validate_green.svg"));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    background-color: transparent;
-    outline:none;
-    text-decoration: none;
+
   }
 
   .btn-decline {
@@ -69,37 +57,11 @@
   }
 
   .btn-decline:hover {
-    height: 35px;
-    width: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url(asset-path("decline_orange.svg"));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    background-color: transparent;
-    outline:none;
-    text-decoration: none;
   }
 
-  .false {
-    height: 30px;
-    width: 30px;
-    border:none;
-    background-color: transparent;
-    outline:none;
-    text-decoration: none;
-    margin: 5px;
-  }
-
-  .true {
-    height: 30px;
-    width: 30px;
-    border:none;
-    background-color: transparent;
-    outline:none;
-    text-decoration: none;
-    margin: 5px;
+  .icon_size {
+  font-size: 28px;
+  padding: 0px 5px;
   }
 }
