@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = current_user.invitations
+    @invitations = current_user.invitations.order(id: :desc)
     @invitation = Invitation.new
     @instruments = Instrument.all
   end
