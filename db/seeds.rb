@@ -1253,7 +1253,7 @@ Invitation.create!(
   full_name: 'Etienne De Nancy',
   email: 'etienne@gmail.com',
   instrument: bandoneon,
-  status: "accepted",
+  status: "pending",
   sendinblue_email_id: "test",
   email_delivered: true,
   email_read: true,

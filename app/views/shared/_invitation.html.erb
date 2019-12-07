@@ -1,7 +1,13 @@
 <div class='box invitation'>
   <div class='action_buttons'>
-    <button class='btn-validate'></button>
-    <button class='btn-decline'></button>
+    <% if invitation.status == "pending" %>
+      <%= link_to '', accept_invitation_path(invitation), method: :patch, class: "btn-validate"%>
+      <%= link_to '', decline_invitation_path(invitation), method: :patch, class: "btn-decline"%>
+    <% elsif invitation.status == "accepted" %>
+      <span class="icon icon-validate green"></span>
+    <% elsif invitation.status == "rejected" %>
+      <span class="icon icon-decline orange"></span>
+    <% end %>
     <div class='description'>
     <%#= invitation.status %>
       <%= invitation.full_name %> -

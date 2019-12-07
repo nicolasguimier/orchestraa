@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def show
-    @invitations = Invitation.order(id: :desc)
-    @concerts = Concert.all
+    @invitations_pending = current_user.invitations.order(id: :desc).where(status: 'pending')
+    @concerts = current_user.concerts
     @pending_works = MusicalWork.first(10)
 
 

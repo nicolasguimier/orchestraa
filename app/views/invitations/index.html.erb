@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-lg-8">
       <div class="box">
-        <h1><span class="icon-note"></span>Invitations</h2>
+        <h1><span class="icon icon-note"></span>Invitations</h2>
         <% if @invitations.empty? %>
           <p>No invitations for now.</p>
         <% else %>
@@ -20,7 +20,7 @@
             </div>
 
             <input name="tabs" type="radio" id="accepted" class="input"/>
-            <label for="accepted" class="label">Acceptées (<%= @invitations_accepted.count %>)</label>
+            <label for="accepted" class="label">Accepted (<%= @invitations_accepted.count %>)</label>
             <div class="panel">
               <% if @invitations_accepted.empty? %>
                 <p>Aucune réservation acceptée.</p>
@@ -32,7 +32,7 @@
             </div>
 
             <input name="tabs" type="radio" id="rejected" class="input"/>
-            <label for="rejected" class="label">Refusées (<%= @invitations_rejected.count %>)</label>
+            <label for="rejected" class="label">Rejected (<%= @invitations_rejected.count %>)</label>
             <div class="panel">
               <% if @invitations_rejected.empty? %>
                 <p>Aucune réservation refusée.</p>

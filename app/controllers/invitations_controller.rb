@@ -1,9 +1,9 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = current_user.invitations.order(id: :desc)
-    @invitations_pending = current_user.invitations.order(id: :desc).where(status: 'pending')
-    @invitations_accepted = current_user.invitations.order(id: :desc).where(status: 'accepted')
-    @invitations_rejected = current_user.invitations.order(id: :desc).where(status: 'rejected')
+    @invitations = current_user.invitations.order(updated_at: :desc)
+    @invitations_pending = current_user.invitations.order(updated_at: :desc).where(status: 'pending')
+    @invitations_accepted = current_user.invitations.order(updated_at: :desc).where(status: 'accepted')
+    @invitations_rejected = current_user.invitations.order(updated_at: :desc).where(status: 'rejected')
 
     @invitation = Invitation.new
     @instruments = Instrument.all
@@ -23,12 +23,14 @@ class InvitationsController < ApplicationController
 
   def accept
     change_status_to('accepted')
-    flash.success = "The invitation is now accepted."
+    redirect_to "/invitations?status=accepted", notice: "The invitation is now accepted."
+    # flash.notice = "The invitation is now accepted."
   end
 
   def decline
     change_status_to('rejected')
-    flash.success = "The invitation is marked as 'Rejected'."
+    redirect_to "/invitations?status=rejected", notice: "The invitation is marked as 'Rejected'."
+    # flash.notice = "The invitation is marked as 'Rejected'."
   end
 
   private
@@ -41,6 +43,5 @@ class InvitationsController < ApplicationController
     @invitation = Invitation.find(params[:id])
     @invitation.status = string
     @invitation.save
-    redirect_to invitations_path
   end
 end
