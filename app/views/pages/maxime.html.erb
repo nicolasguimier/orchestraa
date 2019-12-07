@@ -1,44 +1,28 @@
 maxime.html.erb
 
-
-<div class="box">
-  <h2><span class="icon-statistics"></span><span>Musicians</span></h2>
-  <div class="invitations-data">
-    <div class="invitation-counter<% if true %><%= ' orange' %> <% end %>">
-      <span class="icon-strings instrument-icon"></span>
-      <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Strings] %></p>
-      <p class="invitation-total">/<%= @total_instruments_needed[:Strings] %></p>
-    </div>
-    <div class="invitation-counter<% if true %><%= ' orange' %> <% end %>">
-      <span class="icon-trumpet instrument-icon"></span>
-      <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Brass] %></p>
-      <p class="invitation-total">/<%= @total_instruments_needed[:Brass] %></p>
-    </div>
-    <div class="invitation-counter<% if true %><%= ' orange' %> <% end %>">
-      <span class="icon-flute instrument-icon"></span>
-      <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Woodwinds] %></p>
-      <p class="invitation-total">/<%= @total_instruments_needed[:Woodwinds] %></p>
-    </div>
-    <div class="invitation-counter<% if true %><%= ' orange' %> <% end %>">
-      <span class="icon-keyboard instrument-icon"></span>
-      <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Keyboard] %></p>
-      <p class="invitation-total">/<%= @total_instruments_needed[:Keyboard] %></p>
-    </div>
-    <div class="invitation-counter">
-      <span class="icon-drum instrument-icon"></span>
-      <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Percussions] %></p>
-      <p class="invitation-total">/<%= @total_instruments_needed[:Percussions] %></p>
+<div class="col-md-4 col-md-8 musical-work-show">
+  <div class="wrapper">
+    <div class="work-card">
+      <div class="front">
+        <h1>The Four Seasons of Buenos Aires</h1>
+        <p>Astor Piazzolla<span>45 min.</span></p>
+        <p class="note-work">Arranged by Claudio Dante D'Iorio in 2011. Set of four tango</p>
+      </div>
+      <div class="right">
+        <h2>Composition</h2>
+        <ul>
+          <li class="icon icon-strings">Strings x 5</li>
+          <li class="icon icon-drum">Percussion  x 1</li>
+          <li class="icon icon-keyboard">Keyboard x2</li>
+          <li class="icon icon-trumpet">Brass x3</li>
+          <li class="icon icon-flute">Woodwinds x 3</li>
+        </ul>
+        <button class="btn btn-success">Edit</button>
+      </div>
     </div>
   </div>
+  <div class="box work-edit">
+
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
