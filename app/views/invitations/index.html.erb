@@ -3,11 +3,47 @@
     <div class="col-12 col-lg-8">
       <div class="box">
         <h1><span class="icon-note"></span>Invitations</h2>
-        <div>
-          <% @invitations.each do |invitation| %>
-            <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
-          <% end %>
-        </div>
+        <% if @invitations.empty? %>
+          <p>No invitations for now.</p>
+        <% else %>
+          <div class="tabs">
+            <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
+            <label for="pending" class="label">Pending <span class="bullet-notif"><%= @invitations_pending.count %></span></label>
+            <div class="panel">
+              <% if @invitations_pending.empty? %>
+                <p>No pending invitation for now.</p>
+              <% else %>
+                <% @invitations_pending.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <input name="tabs" type="radio" id="accepted" class="input"/>
+            <label for="accepted" class="label">Acceptées (<%= @invitations_accepted.count %>)</label>
+            <div class="panel">
+              <% if @invitations_accepted.empty? %>
+                <p>Aucune réservation acceptée.</p>
+              <% else %>
+                <% @invitations_accepted.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <input name="tabs" type="radio" id="rejected" class="input"/>
+            <label for="rejected" class="label">Refusées (<%= @invitations_rejected.count %>)</label>
+            <div class="panel">
+              <% if @invitations_rejected.empty? %>
+                <p>Aucune réservation refusée.</p>
+              <% else %>
+                <% @invitations_rejected.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-12 col-lg-4">
