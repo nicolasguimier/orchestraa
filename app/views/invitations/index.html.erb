@@ -62,8 +62,12 @@
           <div class=" form-inputs col-auto">
             <%= f.input :email, required: true, as: :string, label:"Email" %>
           </div>
+          <div class=" form-inputs col-auto">
+            <%= f.input :message, as: :text, label:"Message" %>
+          </div>
           <div class="form-actions col-auto">
-            <%= f.button :submit, "Send invitation", class: "add_button", id:"" %>
+            <%= f.button :submit, "Preview", class: "add_button" %>
+            <%= f.button :submit, "Send invitation", class: "add_button" %>
           </div>
         <% end %>
       </div>

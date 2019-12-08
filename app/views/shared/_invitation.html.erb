@@ -9,9 +9,9 @@
       <span class="icon icon-decline orange"></span>
     <% end %>
     <div class='description'>
-    <%#= invitation.status %>
-      <%= invitation.full_name %> -
-      <span><%= invitation.instrument.name %></span>
+      <%= link_to preview_invitation_path(invitation) do %>
+        <%= invitation.full_name %> - <span><%= invitation.instrument.name %></span>
+      <% end %>
     </div>
   </div>
   <div class='action_buttons'>
