@@ -1,6 +1,4 @@
-maxime.html.erb
-
-<div class="col-md-4 col-md-8 musical-work-show">
+<div class="col-md-12 musical-work-show">
   <div class="wrapper">
     <div class="work-card">
       <div class="front">
@@ -11,18 +9,51 @@ maxime.html.erb
       <div class="right">
         <h2>Composition</h2>
         <ul>
-          <li class="icon icon-strings">Strings x 5</li>
-          <li class="icon icon-drum">Percussion  x 1</li>
-          <li class="icon icon-keyboard">Keyboard x2</li>
-          <li class="icon icon-trumpet">Brass x3</li>
-          <li class="icon icon-flute">Woodwinds x 3</li>
+          <li class="icon icon-strings compose-icon"> Strings x 5</li>
+          <li class="icon icon-drum compose-icon"> Percussion  x 1</li>
+          <li class="icon icon-keyboard compose-icon"> Keyboard x2</li>
+          <li class="icon icon-trumpet compose-icon"> Brass x3</li>
+          <li class="icon icon-flute compose-icon"> Woodwinds x 3</li>
         </ul>
-        <button class="btn btn-success">Edit</button>
       </div>
     </div>
   </div>
-  <div class="box work-edit">
-
+<div class="box dark_box work-edit">
+  <div class="box category-edit col-8">
+      <div>
+        <p>Strings</p>
+        <span class="icon icon-strings"></span>
+      </div>
+        <div class="edit-line">
+          <div class="edit-setup">
+            <div class="input-qty">
+              <input type="number" placeholder="0" class="qty-instrument">
+            </div>
+            <div class="input-name">
+              <p class="instrument-name orange mx-3">Violin</p>
+            </div>
+            <div class="input-button">
+              <button class="btn btn-warning sheet-button"><div>UPLOAD SHEET</div></button>
+            </div>
+          </div>
+        </div>
+        <div class="edit-line">
+          <div class="edit-setup">
+            <div class="input-qty">
+              <input type="number" placeholder="0" class="qty-instrument">
+            </div>
+            <div class="input-name">
+              <p class="instrument-name  mx-3">Viola</p>
+            </div>
+            <div class="input-button">
+              <button class="btn btn-success sheet-button"><div>VIEW SHEET</div></button>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-success">add instrument</button>
+    </div>
+    <div class="box add-works-category col-4">
+      <button class="btn btn-success" id="btn-add-category"> add category <span class="icon icon-plus"></span></button>
+    </div>
   </div>
 </div>
-

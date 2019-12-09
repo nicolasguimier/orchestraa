@@ -1,6 +1,6 @@
 .musical-work-show {
   display: flex;
-  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 
@@ -9,6 +9,7 @@
 .wrapper{
   height: 480px;
   perspective: 800px;
+  margin-top: 6px;
   }
 
 .work-card{
@@ -33,7 +34,7 @@
 .front{
   background-image: linear-gradient(180deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
   transform: rotateY(0deg) translateZ(160px);
-  border-radius: 34px 3px 0 0;
+  border-radius: 34px 10px 0 0;
   padding: 0;
   width: 100%;
 }
@@ -42,7 +43,7 @@
   background-image: linear-gradient(0deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
-  border-radius: 0 0 3px 34px;
+  border-radius: 0 0 10px 34px;
 }
 
 .work-card:hover{
@@ -83,24 +84,15 @@
 }
 
 ul{
-  margin-left: 21px;
   padding: 0;
   font-size: 16px;
-  font-weight: 300;
   list-style: none;
 }
 
 li{
-  padding-bottom: 8px;
+  padding-bottom: 15px;
   position: relative;
 }
-
-li:before{
-  position: absolute;
-  left: -21px;
-  opacity: .55;
-}
-
 
 .note-work{
   position: absolute;
@@ -119,7 +111,88 @@ li:before{
 
 // END MUSICAL WORK INFOS
 
-.work-edit {
-  margin-left: 20px;
+
+
+// EDIT MUSICAL WORKS
+
+ .work-edit {
+  display: flex;
+
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  // margin-left: 20px;
+  // padding-right: 10px;
+  // padding-left: 10px;
+  // padding-bottom: 0;
+  width: 100%;
+  padding: 10px;
+  margin: 0 15px;
+  justify-content: space-around;
+ }
+
+.category-edit {
+  margin-bottom: 0;
+  margin-right: 5px;
+  span {
+    font-size: 60px;
+  }
+}
+
+.edit-line {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+
+.edit-setup {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }
+
+.sheet-button {
+  display: flex;
+  margin-left: 50px;
+  min-width: 150px;
+  div {
+    margin: auto;
+  }
+}
+
+.qty-instrument {
+  border-radius: 10px;
+  width: 70px;
+  text-align: center;
+}
+
+.add-works-category {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+#btn-add-category {
+  margin: auto;
+}
+
+
+// .input-button {
+//   min-width: 200px;
+// }
+
+// .instrument-name {
+//    min-width: 200px;
+
+// }
+
+
+
+
+
+
+
+
+
