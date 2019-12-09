@@ -1,114 +1,116 @@
-<div class="row">
-  <div class="col-12 col-lg-4" id='left-column'>
-    <div class="box dark_box" id='pending-box'>
-      <h2><span class="icon-musical-note"></span><span>Pending works</span></h2>
-      <div class="search">
-        <input type="text" class="pending-search search_bars" placeholder="search pending works">
-        <button type="submit" class="search-button">
-          <i class="fa fa-search"></i>
-       </button>
-      </div>
-      <div class="scroll-card" id="pending-works">
-        <% @pending_works.each do |work| %>
-          <div class="box">
-          <%= link_to musical_work_path(work) do %>
-            <p><%= work.title %></p>
-            <p class="orange">Missing <%= ["trumpet", "flute", "viola", "cello", "bassoon"].sample %> sheet</p>
+<div id='dashboard-wrapper'>
+  <div class="row">
+    <div class="col-12 col-lg-4" id='left-column'>
+      <div class="box dark_box" id='pending-box'>
+        <h2><span class="icon-musical-note"></span><span>Pending works</span></h2>
+        <div class="search">
+          <input type="text" class="pending-search search_bars" placeholder="search pending works">
+          <button type="submit" class="search-button">
+            <i class="fa fa-search"></i>
+         </button>
+        </div>
+        <div class="scroll-card" id="pending-works">
+          <% @pending_works.each do |work| %>
+            <div class="box">
+            <%= link_to musical_work_path(work) do %>
+              <p><%= work.title %></p>
+              <p class="orange">Missing <%= ["trumpet", "flute", "viola", "cello", "bassoon"].sample %> sheet</p>
+            <% end %>
+          </div>
           <% end %>
         </div>
+      </div>
+      <div class="box" id='calendar'>
+        <%= month_calendar(events: @concerts, attribute: :start_at, end_attribute: :end_at) do |date, events| %>
+          <% if events.count > 0 %>
+            <% events.each do |event| %>
+              <%= link_to concert_path(event) do  %>
+                <%= date.day %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= date.day %>
+          <% end %>
         <% end %>
       </div>
     </div>
-    <div class="box" id='calendar'>
-      <%= month_calendar(events: @concerts, attribute: :start_at, end_attribute: :end_at) do |date, events| %>
-        <% if events.count > 0 %>
-          <% events.each do |event| %>
-            <%= link_to concert_path(event) do  %>
-              <%= date.day %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <%= date.day %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-12 col-lg-8">
-    <div class="box">
-      <h2><span class="icon icon-note"></span><%= link_to "Pending invitations", invitations_path %></h2>
-      <div class="scroll-card" id="pending-invitations">
-        <% @invitations_pending.each do |invitation| %>
-          <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
-          <div class='box invitation'>
-            <div class='action_buttons'>
-              <button class='btn-validate' title='Validate'></button>
-              <button class='btn-decline' title='Decline'></button>
-              <div class='description'>
-              <%#= invitation.status %>
-                <%= invitation.full_name %> -
-                <span><%= invitation.instrument.name %></span>
+    <div class="col-12 col-lg-8">
+      <div class="box">
+        <h2><span class="icon icon-note"></span><%= link_to "Pending invitations", invitations_path %></h2>
+        <div class="scroll-card" id="pending-invitations">
+          <% @invitations_pending.each do |invitation| %>
+            <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+            <div class='box invitation'>
+              <div class='action_buttons'>
+                <button class='btn-validate' title='Validate'></button>
+                <button class='btn-decline' title='Decline'></button>
+                <div class='description'>
+                <%#= invitation.status %>
+                  <%= invitation.full_name %> -
+                  <span><%= invitation.instrument.name %></span>
+                </div>
+              </div>
+              <div class='action_buttons'>
+                <% enveloppe_class = "icon icon_size icon-envelope" %>
+                <% open_class = "icon icon_size  icon-open-envelope" %>
+                <% click_class = "icon icon_size icon-click" %>
+
+                <% if invitation.email_bounce %>
+                  <% enveloppe_class += " orange" %>
+                <% else %>
+                  <% if invitation.email_delivered %>
+                    <% enveloppe_class += " green" %>
+                  <% else %>
+                  <% end %>
+                  <% if invitation.email_read %>
+                    <% open_class += " green" %>
+                  <% else %>
+                  <% end %>
+                  <% if invitation.email_clicked %>
+                    <% click_class += " green" %>
+                  <% else %>
+                  <% end %>
+                <% end %>
+
+                <span class="<%= enveloppe_class%>" title="Received"></span>
+                <span class="<%= open_class%>" title="Opened" ></span>
+                <span class="<%= click_class%>" title="Clicked"></span>
               </div>
             </div>
-            <div class='action_buttons'>
-              <% enveloppe_class = "icon icon_size icon-envelope" %>
-              <% open_class = "icon icon_size  icon-open-envelope" %>
-              <% click_class = "icon icon_size icon-click" %>
-
-              <% if invitation.email_bounce %>
-                <% enveloppe_class += " orange" %>
-              <% else %>
-                <% if invitation.email_delivered %>
-                  <% enveloppe_class += " green" %>
-                <% else %>
-                <% end %>
-                <% if invitation.email_read %>
-                  <% open_class += " green" %>
-                <% else %>
-                <% end %>
-                <% if invitation.email_clicked %>
-                  <% click_class += " green" %>
-                <% else %>
-                <% end %>
-              <% end %>
-
-              <span class="<%= enveloppe_class%>" title="Received"></span>
-              <span class="<%= open_class%>" title="Opened" ></span>
-              <span class="<%= click_class%>" title="Clicked"></span>
-            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="box">
+        <h2><span class="icon-statistics"></span><span>Musicians</span></h2>
+        <div class="invitations-data">
+          <div class="invitation-counter<% if @missing_strings %><%= ' orange' %><% end %>">
+            <span class="icon-strings instrument-icon"></span>
+            <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Strings] %></p>
+            <p class="invitation-total">/<%= @total_instruments_needed[:Strings] %></p>
           </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="box">
-      <h2><span class="icon-statistics"></span><span>Musicians</span></h2>
-      <div class="invitations-data">
-        <div class="invitation-counter<% if @missing_strings %><%= ' orange' %><% end %>">
-          <span class="icon-strings instrument-icon"></span>
-          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Strings] %></p>
-          <p class="invitation-total">/<%= @total_instruments_needed[:Strings] %></p>
-        </div>
-        <div class="invitation-counter<% if @missing_brass %><%= ' orange' %><% end %>">
-          <span class="icon-trumpet instrument-icon"></span>
-          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Brass] %></p>
-          <p class="invitation-total">/<%= @total_instruments_needed[:Brass] %></p>
-        </div>
-        <div class="invitation-counter<% if @missing_woodwinds %><%= ' orange' %><% end %>">
-          <span class="icon-flute instrument-icon"></span>
-          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Woodwinds] %></p>
-          <p class="invitation-total">/<%= @total_instruments_needed[:Woodwinds] %></p>
-        </div>
-        <div class="invitation-counter">
-          <span class="icon-drum instrument-icon<% if @missing_percussions %><%= ' orange' %><% end %>"></span>
-          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Percussions] %></p>
-          <p class="invitation-total">/<%= @total_instruments_needed[:Percussions] %></p>
-        </div>
-        <div class="invitation-counter<% if @missing_keyboards %><%= ' orange' %> <% end %>">
-          <span class="icon-keyboard instrument-icon"></span>
-          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Keyboard] %></p>
-          <p class="invitation-total">/<%= @total_instruments_needed[:Keyboard] %></p>
+          <div class="invitation-counter<% if @missing_brass %><%= ' orange' %><% end %>">
+            <span class="icon-trumpet instrument-icon"></span>
+            <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Brass] %></p>
+            <p class="invitation-total">/<%= @total_instruments_needed[:Brass] %></p>
+          </div>
+          <div class="invitation-counter<% if @missing_woodwinds %><%= ' orange' %><% end %>">
+            <span class="icon-flute instrument-icon"></span>
+            <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Woodwinds] %></p>
+            <p class="invitation-total">/<%= @total_instruments_needed[:Woodwinds] %></p>
+          </div>
+          <div class="invitation-counter">
+            <span class="icon-drum instrument-icon<% if @missing_percussions %><%= ' orange' %><% end %>"></span>
+            <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Percussions] %></p>
+            <p class="invitation-total">/<%= @total_instruments_needed[:Percussions] %></p>
+          </div>
+          <div class="invitation-counter<% if @missing_keyboards %><%= ' orange' %> <% end %>">
+            <span class="icon-keyboard instrument-icon"></span>
+            <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Keyboard] %></p>
+            <p class="invitation-total">/<%= @total_instruments_needed[:Keyboard] %></p>
+          </div>
         </div>
       </div>
-    </div>
+      </div>
     </div>
   </div>
 </div>
