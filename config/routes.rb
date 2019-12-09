@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     member do
       patch :accept
       patch :decline
+      get :preview
     end
   end
 
