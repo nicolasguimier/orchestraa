@@ -5,7 +5,7 @@ class ConcertsController < ApplicationController
 
   def show
     @concert = Concert.find(params[:id])
-    @program_steps = @concert.program_steps
+    @program_steps = @concert.program_steps.order(position: :asc)
   end
 
   def update

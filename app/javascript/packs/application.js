@@ -1,4 +1,9 @@
 import "bootstrap";
+import { initSortable } from '../plugins/init_sortable'; // <-- add this
+
+initSortable(); // <-- add this
+
+
 
 
 // preview-invitation

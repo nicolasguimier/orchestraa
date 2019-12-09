@@ -31,9 +31,11 @@
     <div class="col-12 col-lg-9">
       <div class="box dark_box program">
         <h2>Program</h2>
-          <% @program_steps.each do |program_step| %>
-            <%= render partial: 'shared/program_step', locals: {program_step: program_step } %>
-          <% end %>
+          <div id="program-steps">
+            <% @program_steps.each do |program_step| %>
+              <%= render partial: 'shared/program_step', locals: {program_step: program_step } %>
+            <% end %>
+          </div>
         </ul>
       </div>
     </div>

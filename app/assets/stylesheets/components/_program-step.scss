@@ -13,6 +13,11 @@
         visibility: visible;
       }
     }
+    &.ghost {
+      filter: grayscale(1);
+      opacity: 0.5;
+    }
+
   }
   .composer {
     padding: 0px 40px 0px 20px;
