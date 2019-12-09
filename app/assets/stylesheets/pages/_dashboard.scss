@@ -1,9 +1,10 @@
 #pending-works {
-  height: 320px;
+  height: calc(100vh - 465px);
 }
 
 #pending-invitations {
-  height: 500px;
+  min-height: 200px;
+  height: calc(100vh - 340px);
 }
 
 #left-column {
@@ -21,8 +22,7 @@
   line-height: 0.8;
 }
 
-#invitation_list {
-  flex: 2 1 auto;
+
+#dashboard-wrapper {
+  height: calc(100vh - 80px);
 }
-
-
