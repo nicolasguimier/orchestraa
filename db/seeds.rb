@@ -1284,7 +1284,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert1,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert1,
   musical_work: vivaldi1,
@@ -1315,7 +1315,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert2,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert2,
   musical_work: vivaldi1,
@@ -1346,7 +1346,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert3,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert3,
   musical_work: vivaldi1,

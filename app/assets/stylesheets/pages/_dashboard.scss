@@ -1,7 +1,28 @@
 #pending-works {
-  height: 290px;
+  height: calc(100vh - 465px);
 }
 
 #pending-invitations {
-  height: 480px;
+  min-height: 200px;
+  height: calc(100vh - 340px);
+}
+
+#left-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#calendar {
+  font-size: 16px;
+  line-height: 0.8;
+}
+
+
+#dashboard-wrapper {
+  height: calc(100vh - 81px);
 }
