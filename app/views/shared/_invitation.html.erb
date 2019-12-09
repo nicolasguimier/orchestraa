@@ -18,26 +18,39 @@
     <% enveloppe_class = "icon icon_size icon-envelope" %>
     <% open_class = "icon icon_size  icon-open-envelope" %>
     <% click_class = "icon icon_size icon-click" %>
+    <% title_deliver = "Email sent" %>
+    <% title_open = "" %>
+    <% title_click = "" %>
 
     <% if invitation.email_bounce %>
       <% enveloppe_class += " orange" %>
+      <% title_deliver = "Error. Email not received"%>
     <% else %>
       <% if invitation.email_delivered %>
         <% enveloppe_class += " green" %>
+        <% title_deliver = "Email delivered"%>
       <% else %>
-      <% end %>
-      <% if invitation.email_read %>
-        <% open_class += " green" %>
-      <% else %>
-      <% end %>
-      <% if invitation.email_clicked %>
-        <% click_class += " green" %>
-      <% else %>
+        <% enveloppe_class += " gray" %>
+        <% title_deliver = "Sending email... processing"%>
       <% end %>
     <% end %>
+    <% if invitation.email_read %>
+      <% open_class += " green" %>
+      <% title_open = "He has opened the email"%>
+    <% else %>
+      <% open_class += " gray" %>
+      <% title_open = "Email not opened yet"%>
+    <% end %>
+    <% if invitation.email_clicked %>
+      <% click_class += " green" %>
+      <% title_click = "He clicked on a link"%>
+    <% else %>
+      <% click_class += " gray" %>
+      <% title_click = "He has not clicked for now."%>
+    <% end %>
 
-    <span class="<%= enveloppe_class%>" title="Received"></span>
-    <span class="<%= open_class%>" title="Opened" ></span>
-    <span class="<%= click_class%>" title="Clicked"></span>
+    <span class="<%= enveloppe_class%>" title="<%= title_deliver %>"></span>
+    <span class="<%= open_class%>" title="<%= title_open %>" ></span>
+    <span class="<%= click_class%>" title="<%= title_click %>"></span>
   </div>
 </div>
