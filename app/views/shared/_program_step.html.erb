@@ -1,0 +1,18 @@
+<% if program_step.kind == "intermission" %>
+  <div
+    class="box intermission"
+    data-patch-url="<%= concert_program_step_path(program_step.concert.id, program_step.id) %>">
+    <span class="icon icon-pause"></span>
+    <span class="text">Intermission</span>
+<% else %>
+  <div class="box program-step" data-patch-url="<%= concert_program_step_path(program_step.concert.id, program_step.id) %>">
+    <div class="icon icon-drag"></div>
+    <div class="composer"><%= program_step.musical_work.composer_name %></div>
+    <div class="work-infos">
+      <p><%= program_step.musical_work.title %></p>
+      <p><%= link_to "Missing trompets", musical_work_path(program_step.musical_work), class: 'orange' %></p>
+    </div>
+    <div class="duration"><%= program_step.musical_work.duration %> min</div>
+  <% end %>
+    <div class="trash"><%= link_to "", concert_program_step_path(program_step.concert, program_step), { method: "delete", data: { confirm: "Are you sure?" }, class: 'icon icon-trash' } %></div>
+  </div>

@@ -1253,7 +1253,11 @@ Invitation.create!(
   full_name: 'Etienne De Nancy',
   email: 'etienne@gmail.com',
   instrument: bandoneon,
-  status: "accepted",
+  message: "I'm Igor, the director of the Berlin Philarmonic. In anticipation from the next season, we are looking for external musiciens to complete and play our program.<br>
+    You will read below the dates of the next events, and our musical works.<br>
+    You can also click on the orange buttons to download the musical sheets.<br>
+    Please contact me to talk about this project deeply.",
+  status: "pending",
   sendinblue_email_id: "test",
   email_delivered: true,
   email_read: true,
@@ -1280,7 +1284,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert1,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert1,
   musical_work: vivaldi1,
@@ -1311,7 +1315,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert2,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert2,
   musical_work: vivaldi1,
@@ -1342,7 +1346,7 @@ ProgramStep.create!(
 ProgramStep.create!(
   concert: concert3,
   kind: "intermission",
-  position: 4)
+  position: 3)
 ProgramStep.create!(
   concert: concert3,
   musical_work: vivaldi1,

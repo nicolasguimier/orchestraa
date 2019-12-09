@@ -1,7 +1,54 @@
 .program {
   .box {
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
+    position: relative;
+
+    &:hover {
+      transition: all 0.2s ease-out;
+      top: -4px;
+      cursor: grab;
+      .trash {
+        visibility: visible;
+      }
+    }
+    &.ghost {
+      filter: grayscale(1);
+      opacity: 0.5;
+    }
+
+  }
+  .composer {
+    padding: 0px 40px 0px 20px;
+  }
+  .duration {
+    padding: 0px 20px;
+  }
+
+  .icon-drag {
+    font-size: 2rem;
+    width: 50px;
+  }
+  .work-infos {
+    flex-grow: 1;
+  }
+  .trash{
+    width: 30px;
+    visibility: hidden;
+    text-align: right;
+  }
+
+  .intermission {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: $green;
+
+    .text {
+      flex-grow: 1;
+      text-transform: uppercase;
+    }
   }
 }

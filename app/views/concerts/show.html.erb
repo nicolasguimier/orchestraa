@@ -13,8 +13,8 @@
         <div class="infos-concert">
           <div class="info-icon icon icon-agenda"></div>
           <div class="date-infos">
-            <p><%= @concert.start_at %></p>
-            <p><%= @concert.end_at %></p>
+            <p><%= @concert.start_at.strftime("%d %B %Y") %></p>
+            <span><%= @concert.start_at.strftime("%H:%M")%></span><span><%= @concert.end_at.strftime(" to %H:%M") %></span>
           </div>
         </div>
         <div class="infos-concert">
@@ -31,20 +31,17 @@
     <div class="col-12 col-lg-9">
       <div class="box dark_box program">
         <h2>Program</h2>
-          <% @program_steps.each do |program_step| %>
-            <% if program_step.kind == "intermission" %>
-              <div class="box intermission">Intermission</div>
-            <% else %>
-              <div class="box program-step">
-                <div class="icon-drag"></div>
-                <div class="composer"><%= program_step.musical_work.composer_name %></div>
-                <div class="work-infos">
-                  <p><%= program_step.musical_work.title %> (<%= program_step.musical_work.duration %> min)</p>
-                  <p class="orange"><%= link_to musical_work_path "Missing trompets", (program_step.musical_work) %></p>
-                </div>
-              </div>
+          <div id="add-program-steps">
+            <div><%#= link_to "Add musical_works", add_work_concert_program_steps_path(@concert), { method: "post", class: 'add_button icon icon-plus' } %></div>
+          </div>
+          <div id="add-intermission">
+            <div><%#= link_to "Add musical_works", add_work_concert_program_steps_path(@concert), { method: "post", class: 'add_button icon icon-plus' } %></div>
+          </div>
+          <div id="program-steps">
+            <% @program_steps.each do |program_step| %>
+              <%= render partial: 'shared/program_step', locals: {program_step: program_step } %>
             <% end %>
-          <% end %>
+          </div>
         </ul>
       </div>
     </div>
