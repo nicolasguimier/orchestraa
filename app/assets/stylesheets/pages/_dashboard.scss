@@ -6,7 +6,6 @@
   height: 500px;
 }
 
-
 #left-column {
   display: flex;
   flex-direction: column;
@@ -23,14 +22,11 @@
 }
 
 #invitation_list {
-  flex: 2;
+  flex: 2 1 auto;
 }
 
 #pending-box {
-  flex: 2;
-
-#content {
-  height: 100vh;
-
+  flex: 2 1 auto;
 }
+
 
