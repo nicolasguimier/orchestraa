@@ -10,5 +10,8 @@
     </div>
     <div class="duration"><%= program_step.musical_work.duration %> min</div>
     <div class="trash"><%= link_to "", musical_work_path(program_step.musical_work), class: 'icon icon-trash' %></div>
+
+    <%#= link_to("Destroy", concert_program_step(program_step.musical_work, program_step), method: :delete) %>
+
   </div>
 <% end %>
