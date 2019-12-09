@@ -3,6 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    &:hover {
+      transition: all 0.2s ease-out;
+      top: -4px;
+      cursor: grab;
+    }
   }
   .composer {
     padding: 0px 40px 0px 20px;
