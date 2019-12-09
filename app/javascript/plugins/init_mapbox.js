@@ -2,7 +2,7 @@ import mapboxgl from 'mapbox-gl';
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
     const element = document.createElement('div');
     element.className = 'marker';
@@ -13,7 +13,7 @@ const addMarkersToMap = (map, markers) => {
 
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
+      // .setPopup(popup) // add this
       .addTo(map);
   });
 };
@@ -31,7 +31,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/jerremr/ck3yao44102yq1crl3vip0z7j'
   });
 
   const markers = JSON.parse(mapElement.dataset.markers);

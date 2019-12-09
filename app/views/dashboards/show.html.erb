@@ -1,10 +1,6 @@
-<div class="box welcome-card">
-  <div class="welcome">
-    Welcome back <span class="green">Igor!</span> Your latest invitation has been viewed 27 times.</div>
-  </div>
 <div class="row">
-  <div class="col-12 col-lg-4">
-    <div class="box dark_box">
+  <div class="col-12 col-lg-4" id='left-column'>
+    <div class="box dark_box" id='pending-box'>
       <h2><span class="icon-musical-note"></span><span>Pending works</span></h2>
       <div class="search">
         <input type="text" class="pending-search search_bars" placeholder="search pending works">
@@ -23,7 +19,7 @@
         <% end %>
       </div>
     </div>
-    <div class="box">
+    <div class="box" id='calendar'>
       <%= month_calendar(events: @concerts, attribute: :start_at, end_attribute: :end_at) do |date, events| %>
         <% if events.count > 0 %>
           <% events.each do |event| %>
@@ -37,15 +33,15 @@
       <% end %>
     </div>
   </div>
-  <div class="col-12 col-lg-8">
-    <div class="box">
+  <div class="col-12 col-lg-8"  id='right-column'>
+    <div class="box" id='invitation_list'>
       <h2 class="icon-note">Pending invitations</h2>
       <div class="scroll-card" id="pending-invitations">
         <% @invitations.each do |invitation| %>
           <div class='box invitation'>
             <div class='action_buttons'>
-              <button class='btn-validate'></button>
-              <button class='btn-decline'></button>
+              <button class='btn-validate' title='Validate'></button>
+              <button class='btn-decline' title='Decline'></button>
               <div class='description'>
               <%#= invitation.status %>
                 <%= invitation.full_name %> -
@@ -74,9 +70,9 @@
                 <% end %>
               <% end %>
 
-              <span class="<%= enveloppe_class%>" title='test'></span>
-              <span class="<%= open_class%>" alt='test'></span>
-              <span class="<%= click_class%>"></span>
+              <span class="<%= enveloppe_class%>" title="Received"></span>
+              <span class="<%= open_class%>" title="Opened" ></span>
+              <span class="<%= click_class%>" title="Clicked"></span>
             </div>
           </div>
         <% end %>

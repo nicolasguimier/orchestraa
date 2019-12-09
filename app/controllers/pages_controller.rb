@@ -10,9 +10,9 @@ class PagesController < ApplicationController
     @markers = @concerts.map do |concert|
       {
         lat: concert.latitude,
-        lng: concert.longitude
+        lng: concert.longitude,
         # infoWindow: render_to_string(partial: "info_window", locals: { concert: concert }),
-        # image_url: helpers.asset_url('marker_map.svg')
+        image_url: helpers.asset_url('marker_map.svg')
       }
     end
   end
