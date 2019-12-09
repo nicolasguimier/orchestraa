@@ -41,11 +41,15 @@ Rails.application.routes.draw do
   resources :concerts, only: [:index, :show, :update] do
   # pas de edit, la modif se fait en ajax dans la show.
   # plus tard :new, :create, :destroy
-    resources :program_steps, only: [:create, :update, :destroy] do
+    resources :program_steps, only: [:update, :destroy] do
     # pas index :
     # pas show
     # pas new
     # pas edit
+      collection do
+        post :add_work
+        post :add_intermission
+      end
     end
 
   end
