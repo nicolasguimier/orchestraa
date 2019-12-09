@@ -36,17 +36,17 @@
     <% end %>
     <% if invitation.email_read %>
       <% open_class += " green" %>
-      <% title_open = "He has opened the email"%>
+      <% title_open = "Recipient has opened the email"%>
     <% else %>
       <% open_class += " gray" %>
       <% title_open = "Email not opened yet"%>
     <% end %>
     <% if invitation.email_clicked %>
       <% click_class += " green" %>
-      <% title_click = "He clicked on a link"%>
+      <% title_click = "Recipient clicked on a link"%>
     <% else %>
       <% click_class += " gray" %>
-      <% title_click = "He has not clicked for now."%>
+      <% title_click = "Recipient has not clicked for now."%>
     <% end %>
     <span class="<%= enveloppe_class%>" title="<%= title_deliver %>"></span>
     <span class="<%= open_class%>" title="<%= title_open %>" ></span>
