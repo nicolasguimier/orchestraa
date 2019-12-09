@@ -585,10 +585,14 @@ puts "#{MusicalWork.count} musical works imported. End"
 puts '-> Start work instruments'
 puts ' ---> piazzolla'
 # title: 'The Four Seasons of Buenos Aires',
-WorkInstrument.create!(
+piazzolla_violin1 = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: violin1,
   quantity: 4)
+# url_sheet = 'http://www.le-chapon-fin.fr/images/eleveur-poule_1.jpg'
+#piazzolla_violin1.remote_sheet_pdf = url_sheet
+piazzolla_violin1.save!
+
 WorkInstrument.create!(
   musical_work: piazzolla,
   instrument: violin2,
