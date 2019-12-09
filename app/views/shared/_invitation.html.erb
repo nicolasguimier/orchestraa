@@ -1,41 +1,43 @@
-<div class='invitation'>
+<div class='box invitation'>
   <div class='action_buttons'>
-    <button class='btn-validate'></button>
-    <button class='btn-decline'></button>
+    <% if invitation.status == "pending" %>
+      <%= link_to '', accept_invitation_path(invitation), method: :patch, class: "btn-validate"%>
+      <%= link_to '', decline_invitation_path(invitation), method: :patch, class: "btn-decline"%>
+    <% elsif invitation.status == "accepted" %>
+      <span class="icon icon-validate green"></span>
+    <% elsif invitation.status == "rejected" %>
+      <span class="icon icon-decline orange"></span>
+    <% end %>
     <div class='description'>
-      <%#= invitation.status %>
-      <%= invitation.full_name %> -
-      <%= invitation.email %> -
-      <%= invitation.instrument.name %>
+      <%= link_to preview_invitation_path(invitation) do %>
+        <%= invitation.full_name %> - <span><%= invitation.instrument.name %></span>
+      <% end %>
     </div>
   </div>
   <div class='action_buttons'>
-  <!-- invitation.email_delivered -->
-    <% if invitation.email_delivered %>
-    <%= image_tag('envelope_green.svg', class: 'true') %>
-    <% else %>
-    <%= image_tag('envelope.svg', class: 'false') %>
-    <% end %>
+    <% enveloppe_class = "icon icon_size icon-envelope" %>
+    <% open_class = "icon icon_size  icon-open-envelope" %>
+    <% click_class = "icon icon_size icon-click" %>
 
-  <!-- invitation.email_read -->
-    <% if invitation.email_read %>
-    <%= image_tag('open_envelope_green.svg', class: 'true') %>
-    <% else %>
-    <%= image_tag('open_envelope.svg', class: 'false') %>
-    <% end %>
-
-    <!-- invitation.email_clicked -->
-    <% if invitation.email_clicked %>
-    <%= image_tag('read_mail_green.svg', class: 'true') %>
-    <% else %>
-    <%= image_tag('read_mail.svg', class: 'false') %>
-    <% end %>
-
-    <!-- invitation.email_error -->
     <% if invitation.email_bounce %>
-    <%= image_tag('validate_orange.svg', class: 'true') %>
+      <% enveloppe_class += " orange" %>
     <% else %>
-    <%= image_tag('read_mail.svg', class: 'false') %>
+      <% if invitation.email_delivered %>
+        <% enveloppe_class += " green" %>
+      <% else %>
+      <% end %>
+      <% if invitation.email_read %>
+        <% open_class += " green" %>
+      <% else %>
+      <% end %>
+      <% if invitation.email_clicked %>
+        <% click_class += " green" %>
+      <% else %>
+      <% end %>
     <% end %>
+
+    <span class="<%= enveloppe_class%>"></span>
+    <span class="<%= open_class%>"></span>
+    <span class="<%= click_class%>"></span>
   </div>
 </div>

@@ -10,6 +10,11 @@
   font-weight: normal;
   font-style: normal;
 }
+.icon {
+  line-height: 50%;
+  display: inline-block;
+  position: relative;
+}
 
 [data-icon]:before {
   font-family: "orchestraa" !important;
@@ -98,5 +103,8 @@
   content: "\75";
 }
 .icon-click:before {
-  content: "\76";
+  content: "\67";
+}
+.icon-trash:before {
+  content: "\77";
 }

@@ -2,12 +2,48 @@
   <div class="row">
     <div class="col-12 col-lg-8">
       <div class="box">
-        <h1><span class="icon-note"></span>Invitations</h2>
-        <div>
-          <% @invitations.each do |invitation| %>
-            <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
-          <% end %>
-        </div>
+        <h1><span class="icon icon-note"></span>Invitations</h2>
+        <% if @invitations.empty? %>
+          <p>No invitations for now.</p>
+        <% else %>
+          <div class="tabs">
+            <input name="tabs" type="radio" id="pending" checked="checked" class="input"/>
+            <label for="pending" class="label">Pending <span class="bullet-notif"><%= @invitations_pending.count %></span></label>
+            <div class="panel">
+              <% if @invitations_pending.empty? %>
+                <p>No pending invitation for now.</p>
+              <% else %>
+                <% @invitations_pending.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <input name="tabs" type="radio" id="accepted" class="input"/>
+            <label for="accepted" class="label">Accepted (<%= @invitations_accepted.count %>)</label>
+            <div class="panel">
+              <% if @invitations_accepted.empty? %>
+                <p>Aucune réservation acceptée.</p>
+              <% else %>
+                <% @invitations_accepted.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+
+            <input name="tabs" type="radio" id="rejected" class="input"/>
+            <label for="rejected" class="label">Rejected (<%= @invitations_rejected.count %>)</label>
+            <div class="panel">
+              <% if @invitations_rejected.empty? %>
+                <p>Aucune réservation refusée.</p>
+              <% else %>
+                <% @invitations_rejected.each do |invitation| %>
+                  <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-12 col-lg-4">
@@ -26,8 +62,12 @@
           <div class=" form-inputs col-auto">
             <%= f.input :email, required: true, as: :string, label:"Email" %>
           </div>
+          <div class=" form-inputs col-auto">
+            <%= f.input :message, as: :text, label:"Message" %>
+          </div>
           <div class="form-actions col-auto">
-            <%= f.button :submit, "Send invitation", class: "add_button", id:"" %>
+            <%= f.button :submit, "Preview", class: "add_button" %>
+            <%= f.button :submit, "Send invitation", class: "add_button" %>
           </div>
         <% end %>
       </div>

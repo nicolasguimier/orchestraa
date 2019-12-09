@@ -10,7 +10,8 @@
     justify-content: flex-start;
     align-items:center;
 
-    [class^="icon-"] {
+    [class^="icon-"],
+    [class*=" icon-"] {
       margin-right:10px;
     }
   }
@@ -18,7 +19,6 @@
 
 .dark_box {
   background-color: $gray;
-  height: 436px;
 }
 
 // SCROLL INSIDE CARDS

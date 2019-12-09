@@ -13,7 +13,7 @@
           <div class="box">
           <%= link_to musical_work_path(work) do %>
             <p><%= work.title %></p>
-            <p class="orange">Missing trumpets</p>
+            <p class="orange">Missing <%= ["trumpet", "flute", "viola", "cello", "bassoon"].sample %> sheet</p>
           <% end %>
         </div>
         <% end %>
@@ -33,11 +33,12 @@
       <% end %>
     </div>
   </div>
-  <div class="col-12 col-lg-8"  id='right-column'>
-    <div class="box" id='invitation_list'>
-      <h2 class="icon-note">Pending invitations</h2>
+  <div class="col-12 col-lg-8">
+    <div class="box">
+      <h2><span class="icon icon-note"></span><%= link_to "Pending invitations", invitations_path %></h2>
       <div class="scroll-card" id="pending-invitations">
-        <% @invitations.each do |invitation| %>
+        <% @invitations_pending.each do |invitation| %>
+          <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
           <div class='box invitation'>
             <div class='action_buttons'>
               <button class='btn-validate' title='Validate'></button>
@@ -79,8 +80,35 @@
       </div>
     </div>
     <div class="box">
-      <h2>Musicians</h2>
-      <%= Invitation.group(:status).count %>
+      <h2><span class="icon-statistics"></span><span>Musicians</span></h2>
+      <div class="invitations-data">
+        <div class="invitation-counter<% if @missing_strings %><%= ' orange' %><% end %>">
+          <span class="icon-strings instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Strings] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Strings] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_brass %><%= ' orange' %><% end %>">
+          <span class="icon-trumpet instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Brass] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Brass] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_woodwinds %><%= ' orange' %><% end %>">
+          <span class="icon-flute instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Woodwinds] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Woodwinds] %></p>
+        </div>
+        <div class="invitation-counter">
+          <span class="icon-drum instrument-icon<% if @missing_percussions %><%= ' orange' %><% end %>"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Percussions] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Percussions] %></p>
+        </div>
+        <div class="invitation-counter<% if @missing_keyboards %><%= ' orange' %> <% end %>">
+          <span class="icon-keyboard instrument-icon"></span>
+          <p class="invitation-number"><%= @accepted_invites_count_per_instrument_category[:Keyboard] %></p>
+          <p class="invitation-total">/<%= @total_instruments_needed[:Keyboard] %></p>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
