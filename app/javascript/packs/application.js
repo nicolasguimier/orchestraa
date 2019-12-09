@@ -6,6 +6,12 @@ initSortable(); // <-- add this
 
 
 
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+initMapbox();
+
 // preview-invitation
 // const previewButton = document.getElementById('preview-invitation');
 // if (previewButton != null) {
