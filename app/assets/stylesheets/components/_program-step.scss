@@ -9,6 +9,9 @@
       transition: all 0.2s ease-out;
       top: -4px;
       cursor: grab;
+      .trash {
+        visibility: visible;
+      }
     }
   }
   .composer {
@@ -26,7 +29,9 @@
     flex-grow: 1;
   }
   .trash{
-    // display:none;
+    width: 30px;
+    visibility: hidden;
+    text-align: right;
   }
 
   .intermission {

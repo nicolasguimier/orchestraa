@@ -1,0 +1,14 @@
+<% if program_step.kind == "intermission" %>
+  <div class="box intermission"><span class="icon icon-pause"></span><span class="text">Intermission</span><div class="trash"><%= link_to "", root_path, class: 'icon icon-trash' %></div></div>
+<% else %>
+  <div class="box program-step">
+    <div class="icon icon-drag"></div>
+    <div class="composer"><%= program_step.musical_work.composer_name %></div>
+    <div class="work-infos">
+      <p><%= program_step.musical_work.title %></p>
+      <p><%= link_to "Missing trompets", musical_work_path(program_step.musical_work), class: 'orange' %></p>
+    </div>
+    <div class="duration"><%= program_step.musical_work.duration %> min</div>
+    <div class="trash"><%= link_to "", musical_work_path(program_step.musical_work), class: 'icon icon-trash' %></div>
+  </div>
+<% end %>
