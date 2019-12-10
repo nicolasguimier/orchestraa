@@ -9,6 +9,10 @@ class WorkInstrumentsController < ApplicationController
   end
 
   def update
+    @work_instrument = WorkInstrument.find(params[:id])
+    @work_instrument.update(work_instr_params)
+
+    redirect_to musical_work_path(@work_instrument.musical_work)
   end
 
   def destroy
@@ -17,6 +21,6 @@ class WorkInstrumentsController < ApplicationController
   private
 
   def work_instr_params
-    params.require(:work_instrument).permit(:musical_work)
+    params.require(:work_instrument).permit(:musical_work, :sheet_pdf)
   end
 end
