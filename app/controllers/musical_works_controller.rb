@@ -55,13 +55,7 @@ class MusicalWorksController < ApplicationController
     }
     works_instruments = @musical_work.work_instruments
     works_instruments.each do |work_instr|
-      instruments[work_instr.instrument.category] << {
-        'name' =>  work_instr.instrument.name,
-        'category' =>  work_instr.instrument.category,
-        'position' =>  work_instr.instrument.position,
-        'quantity' =>  work_instr.quantity,
-        'pdf' => ""
-      }
+      instruments[work_instr.instrument.category] << work_instr
     end
     return instruments
     # instruments = {

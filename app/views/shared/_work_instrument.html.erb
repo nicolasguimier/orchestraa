@@ -5,8 +5,8 @@
       <div class="edit-box">
         <% work_instruments.each do |work_instrument| %>
           <div class="edit-line">
-            <input type="number" placeholder="0" class="input-box" value="<%= work_instrument["quantity"] %>">
-            <p class="edit-instrument"><%= work_instrument["name"] %></p>
+            <input type="number" placeholder="0" class="input-box" value="<%= work_instrument.quantity %>">
+            <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
             <% if work_instrument.sheet_pdf.url.nil? %>
             <span class="orange">Missing PDF</span>
           <% else %>
