@@ -12,10 +12,10 @@
         <% end %>
         <div class="add-instrument">
           <form action="<%= musical_work_work_instruments_path(@musical_work) %>" method="post">
-            <select onchange="this.form.submit()" name="" id="instrument-selector">
+            <select onchange="this.form.submit()" name="work_instrument[instrument_id]" id="instrument-selector">
               <option value="add-instrument">- Add instrument -</option>
               <% Instrument.where(category: category).each do |instr|  %>
-                <option value="<%= instr.name %>"><%= instr.name %></option>
+                <option value="<%= instr.id %>"><%= instr.name %></option>
               <% end %>
             </select>
             <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
