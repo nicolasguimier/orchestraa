@@ -1,0 +1,86 @@
+.musical-work-show {
+  display: flex;
+  align-items: flex-start;
+}
+
+// DIV NOIRE FOND
+.work-edit {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15px;
+  padding-left: 0;
+}
+
+// .work-box {
+//   margin-right: 1px;
+// }
+
+// DIV AVEC TOUS LES ELEMENTS
+.main-box {
+  display: flex;
+}
+
+// DIV DE L ICON
+.icon-box {
+  font-size: 70px;
+  color: $medium-gray;
+  padding-bottom: 70px;
+}
+
+// DIV LIGNE ET ADD INSTRUMENT BUTTON
+.edit-box {
+  margin-left: 50px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// DIV LIGNE INSTRUMENT
+.edit-line {
+  display: flex;
+  align-items: center;
+}
+
+// DIV INPUT QUANTITE
+.input-box {
+  width: 40px;
+}
+
+// DIV INSTRUMENT NAME
+.edit-instrument {
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+// DIV UPLOAD / VIEW BUTTON
+.view-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+}
+
+.upload-button {
+  min-width: 140px;
+  background-color: $orange;
+  border: 1px solid $orange;
+
+}
+
+.upload-button:hover {
+    background-color: $orange;
+    border: 1px solid $orange;
+}
+
+// DIV ADD INSTRUMENT BUTTON
+.add-instrument {
+  text-align: end;
+}
+
+// BUTTON ADD INSTRUMENT
+.add-category-box {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
