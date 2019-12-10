@@ -15,7 +15,14 @@
       <tr>
         <td><%= work_instrument.quantity %>x</td>
         <td><%= work_instrument.instrument.name %></td>
-        <td><% if work_instrument.sheet_pdf? %> LINK TO PDF <% else %> <span class="orange">Missing PDF</span> <% end %> </td>
+
+        <td>
+          <% if work_instrument.sheet_pdf.url.nil? %>
+            <span class="orange">Missing PDF</span>
+          <% else %>
+            LINK TO PDF
+          <% end %>
+        </td>
       </tr>
     <% end %>
     </table>
