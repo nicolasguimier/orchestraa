@@ -588,17 +588,17 @@ puts ' ---> piazzolla'
 piazzolla_violin1 = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: violin1,
-  quantity: 4)
-url_sheet = 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575971854/416515308-violin-I_r59isl.pdf'
-piazzolla_violin1.sheet_pdf = url_sheet
+  quantity: 4,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575971854/416515308-violin-I_r59isl.pdf'
+)
 piazzolla_violin1.save!
 
 piazzolla_violin2 = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: violin2,
-  quantity: 3)
-url_sheet = 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575971483/371641312-Piazzolla-Spring-Violin-III_l3byrw.pdf'
-piazzolla_violin2.sheet_pdf = url_sheet
+  quantity: 3,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575971483/371641312-Piazzolla-Spring-Violin-III_l3byrw.pdf'
+)
 piazzolla_violin2.save!
 
 WorkInstrument.create!(
@@ -609,25 +609,25 @@ WorkInstrument.create!(
 piazzolla_cello = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: cello,
-  quantity: 2)
-url_sheet = 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643893-Piazzolla-Spring-Flute-II_cmdamr.pdf'
-piazzolla_cello.sheet_pdf = url_sheet
-piazzolla_cello.save!
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643893-Piazzolla-Spring-Flute-II_cmdamr.pdf'
+)
+  piazzolla_cello.save!
 
 piazzolla_double_bass = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: double_bass,
-  quantity: 1)
-url_sheet = 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643841-Piazzolla-Spring-Bass_ayqtst.pdf'
-piazzolla_double_bass.sheet_pdf = url_sheet
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643841-Piazzolla-Spring-Bass_ayqtst.pdf'
+)
 piazzolla_double_bass.save!
 
 piazzolla_bandoneon = WorkInstrument.new(
   musical_work: piazzolla,
   instrument: bandoneon,
-  quantity: 1)
-url_sheet = 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643905-Piazzolla-Spring-Oboe_eu7nvg.pdf'
-piazzolla_bandoneon.sheet_pdf = url_sheet
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575970735/371643905-Piazzolla-Spring-Oboe_eu7nvg.pdf'
+)
 piazzolla_bandoneon.save!
 
 
