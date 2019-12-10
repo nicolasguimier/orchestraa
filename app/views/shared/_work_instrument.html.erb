@@ -3,11 +3,15 @@
     <h2 class="icon icon-<%= icon %>"><%= category %></h2>
     <div class="main-box">
       <div class="edit-box">
-        <% work_instruments.each do |instrument| %>
+        <% work_instruments.each do |work_instrument| %>
           <div class="edit-line">
-            <input type="number" placeholder="0" class="input-box" value="<%= instrument["quantity"] %>">
-            <p class="edit-instrument"><%= instrument["name"] %></p>
-            <a href="#" class="view-link">view the sheet<span class="icon icon-read-mail px-2"></span></a>
+            <input type="number" placeholder="0" class="input-box" value="<%= work_instrument.quantity %>">
+            <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
+            <% if work_instrument.sheet_pdf.url.nil? %>
+            <span class="orange">Missing PDF</span>
+          <% else %>
+            <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
+          <% end %>
           </div>
         <% end %>
         <div class="add-instrument">
