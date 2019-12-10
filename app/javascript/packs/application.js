@@ -37,3 +37,32 @@ inputs.forEach( (input) => {
 
 
 });
+
+// Display New category card on musical work
+const newCategoryBox = document.querySelector(".add-category-box")
+const newCategorySelector = document.getElementById("category-selector")
+
+if (newCategorySelector) {
+  newCategorySelector.addEventListener("change", function() {
+    newCategoryBox.className = "col-6"
+    newCategoryBox.innerHTML =
+`
+  <div class="box work-box">
+    <h2 class="icon icon-` + newCategorySelector.value.toLowerCase() + `">`+ newCategorySelector.value +`</h2>
+    <div class="main-box">
+      <div class="edit-box">
+        <div class="add-instrument">
+          <form action="<%= musical_work_work_instruments_path(@musical_work) %>" method="post">
+            <select onchange="this.form.submit()" name="work_instrument[instrument_id]" id="instrument-selector">
+              <option value="add-instrument">- Add instrument -</option>
+                <option value="10">Violon</option>
+            </select>
+            <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+  });
+}

@@ -309,277 +309,277 @@ vivaldi10 = MusicalWork.new(
   notes: "Latin, Baroque")
 vivaldi10.save!
 
-MusicalWork.create!(
-  user: igor,
-  title: "Armida al campo d'Egitto, RV 699",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Arsilda, regina di Ponto, RV 700",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Artabano, re de' Parti, RV 706-b",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "L'Artabano, RV 706-d",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "L'Atenaide, RV 702",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Bassoon Concerto in B-flat major, RV 504",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Bassoon Concerto in C major, RV 474",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Bassoon Concerto in C major, RV 478",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Bassoon Concerto in F major, RV 485",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Armida al campo d'Egitto, RV 699",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Arsilda, regina di Ponto, RV 700",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Artabano, re de' Parti, RV 706-b",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "L'Artabano, RV 706-d",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "L'Atenaide, RV 702",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Viola d'amore and Lute in D minor, RV 540",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Bassoon Concerto in B-flat major, RV 504",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Bassoon Concerto in C major, RV 474",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Bassoon Concerto in C major, RV 478",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Bassoon Concerto in F major, RV 485",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
 
-MusicalWork.create!(
-  user: igor,
-  title: "Beatus vir, RV 597",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Catone in Utica, RV 705",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Concerto in A minor, RV 418",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Concerto in A minor, RV 419",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Sonata in F major, RV 41",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Sonata in G minor, RV 42",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Sonata in B-flat major, RV 47",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cello Sonata in A major",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Cessate, omai cessate, RV 684",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Chamber Concerto in A minor, RV 108",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Chamber Concerto in F major, RV 99",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Cellos in G minor, RV 531",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Flutes in C major, RV 533",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Oboes in A minor, RV 536",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Oboes in C major, RV 534",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Oboes in D major, RV 563",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Oboes in D minor, RV 535",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Trumpets in C major, RV 537",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Violins in A minor, RV 523",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Violins in B-flat major, RV 524",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Violins in C minor, RV 510",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Violins in D minor, RV 514",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 2 Violins in E-flat major, RV 515",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for 4 Violins in B-flat major, RV 553",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Flute, Oboe, Bassoon and Strings in F major, RV 570",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Oboe and Violin in B-flat major, RV 548",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Strings in B-flat major, RV 167",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Strings in C major, RV 109",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Violin and Cello in A major, RV 546",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Violin and Cello in B-flat major, RV 547",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Violin and Organ in F major, RV 767",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto for Violino in Tromba Marina in G major, RV 313",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto funebre in B-flat major, RV 579",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto in A major, RV 585",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
-MusicalWork.create!(
-  user: igor,
-  title: "Concerto in C major, RV 554",
-  composer_name: 'Antonio Vivaldi',
-  duration: 58,
-  notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Beatus vir, RV 597",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Catone in Utica, RV 705",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Concerto in A minor, RV 418",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Concerto in A minor, RV 419",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Sonata in F major, RV 41",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Sonata in G minor, RV 42",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Sonata in B-flat major, RV 47",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cello Sonata in A major",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Cessate, omai cessate, RV 684",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Chamber Concerto in A minor, RV 108",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Chamber Concerto in F major, RV 99",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Cellos in G minor, RV 531",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Flutes in C major, RV 533",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Oboes in A minor, RV 536",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Oboes in C major, RV 534",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Oboes in D major, RV 563",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Oboes in D minor, RV 535",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Trumpets in C major, RV 537",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Violins in A minor, RV 523",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Violins in B-flat major, RV 524",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Violins in C minor, RV 510",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Violins in D minor, RV 514",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 2 Violins in E-flat major, RV 515",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for 4 Violins in B-flat major, RV 553",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Flute, Oboe, Bassoon and Strings in F major, RV 570",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Oboe and Violin in B-flat major, RV 548",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Strings in B-flat major, RV 167",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Strings in C major, RV 109",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Violin and Cello in A major, RV 546",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Violin and Cello in B-flat major, RV 547",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Violin and Organ in F major, RV 767",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto for Violino in Tromba Marina in G major, RV 313",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto funebre in B-flat major, RV 579",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto in A major, RV 585",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
+# MusicalWork.create!(
+#   user: igor,
+#   title: "Concerto in C major, RV 554",
+#   composer_name: 'Antonio Vivaldi',
+#   duration: 58,
+#   notes: "")
 puts "#{MusicalWork.count} musical works imported. End"
 
 puts '-> Start work instruments'
@@ -633,38 +633,61 @@ piazzolla_bandoneon.save!
 
 puts ' ---> mouzanar'
 # mouzanar  'Maserati - Piece for Car and Orchestra'
-WorkInstrument.create!(
+  mouzanar_violin1 = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: violin1,
-  quantity: 4)
-WorkInstrument.create!(
+  quantity: 4,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+  )
+mouzanar_violin2 = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: violin2,
-  quantity: 3)
-WorkInstrument.create!(
+  quantity: 3,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_viola = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: viola,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_cello = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: cello,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_double_bass = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: double_bass,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_bandoneon = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: bandoneon,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_claves = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: claves,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_trumpet = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: trumpet,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
 WorkInstrument.create!(
   musical_work: mouzanar,
   instrument: trombone,
@@ -672,22 +695,32 @@ WorkInstrument.create!(
 
 puts ' ---> vivaldi1'
 # vivaldi1  'Concerto in G minor RV 156',
-WorkInstrument.create!(
+vivaldi1_violin1 = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: violin1,
-  quantity: 4)
-WorkInstrument.create!(
+  quantity: 4,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+vivaldi1_violin2 = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: violin2,
-  quantity: 3)
-WorkInstrument.create!(
+  quantity: 3,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+vivaldi1_viola = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: viola,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_cello = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: cello,
-  quantity: 2)
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi1,
   instrument: double_bass,
@@ -701,52 +734,68 @@ WorkInstrument.create!(
 
 puts ' ---> vivaldi2'
 # vivaldi2  "Anche in mezzo a perigliosa",
-WorkInstrument.create!(
+vivaldi2_violin1 = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: violin1,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi2_violin2 = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: violin2,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi2_viola = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: viola,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi2,
   instrument: cello,
   quantity: 1)
-WorkInstrument.create!(
+vivaldi2_double_bass = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: double_bass,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 
 puts ' ---> vivaldi3'
 # vivaldi3 "Bassoon Concerto in A minor, RV 500",
-WorkInstrument.create!(
+vivaldi3_violin1 = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: violin1,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi3_violin2 = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: violin2,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi3_viola = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: viola,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi3,
   instrument: cello,
   quantity: 1)
+vivaldi3_bassoon = WorkInstrument.new(
+  musical_work: vivaldi3,
+  instrument: bassoon,
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi3,
   instrument: double_bass,
-  quantity: 1)
-WorkInstrument.create!(
-  musical_work: vivaldi3,
-  instrument: bassoon,
   quantity: 2)
 
 puts ' ---> vivaldi4'

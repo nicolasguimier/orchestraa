@@ -1,8 +1,9 @@
 class WorkInstrumentsController < ApplicationController
   def create
-    @work_instrument = WorkInstrument.new(work_instr_params)
+    @work_instrument = WorkInstrument.new(work_instrument_params)
+    @work_instrument.musical_work_id = params[:musical_work_id]
     if @work_instrument.save
-      redirect_to musical_work(params[:musical_work])
+      redirect_to musical_work_path(params[:musical_work_id])
     else
       render nothing: true
     end
@@ -10,7 +11,7 @@ class WorkInstrumentsController < ApplicationController
 
   def update
     @work_instrument = WorkInstrument.find(params[:id])
-    @work_instrument.update(work_instr_params)
+    @work_instrument.update(work_instrument_params)
 
     redirect_to musical_work_path(@work_instrument.musical_work)
   end
@@ -20,7 +21,7 @@ class WorkInstrumentsController < ApplicationController
 
   private
 
-  def work_instr_params
-    params.require(:work_instrument).permit(:musical_work, :sheet_pdf)
+  def work_instrument_params
+    params.require(:work_instrument).permit(:instrument_id, :musical_work, :sheet_pdf)
   end
 end
