@@ -633,38 +633,61 @@ piazzolla_bandoneon.save!
 
 puts ' ---> mouzanar'
 # mouzanar  'Maserati - Piece for Car and Orchestra'
-WorkInstrument.create!(
+  mouzanar_violin1 = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: violin1,
-  quantity: 4)
-WorkInstrument.create!(
+  quantity: 4,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+  )
+mouzanar_violin2 = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: violin2,
-  quantity: 3)
-WorkInstrument.create!(
+  quantity: 3,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_viola = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: viola,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_cello = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: cello,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_double_bass = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: double_bass,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_bandoneon = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: bandoneon,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_claves = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: claves,
-  quantity: 1)
-WorkInstrument.create!(
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+mouzanar_trumpet = WorkInstrument.new(
   musical_work: mouzanar,
   instrument: trumpet,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
 WorkInstrument.create!(
   musical_work: mouzanar,
   instrument: trombone,
@@ -672,22 +695,32 @@ WorkInstrument.create!(
 
 puts ' ---> vivaldi1'
 # vivaldi1  'Concerto in G minor RV 156',
-WorkInstrument.create!(
+vivaldi1_violin1 = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: violin1,
-  quantity: 4)
-WorkInstrument.create!(
+  quantity: 4,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+vivaldi1_violin2 = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: violin2,
-  quantity: 3)
-WorkInstrument.create!(
+  quantity: 3,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+
+vivaldi1_viola = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: viola,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_cello = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: cello,
-  quantity: 2)
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi1,
   instrument: double_bass,
@@ -701,52 +734,68 @@ WorkInstrument.create!(
 
 puts ' ---> vivaldi2'
 # vivaldi2  "Anche in mezzo a perigliosa",
-WorkInstrument.create!(
+vivaldi2_violin1 = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: violin1,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi2_violin2 = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: violin2,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi2_viola = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: viola,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi2,
   instrument: cello,
   quantity: 1)
-WorkInstrument.create!(
+vivaldi2_double_bass = WorkInstrument.new(
   musical_work: vivaldi2,
   instrument: double_bass,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 
 puts ' ---> vivaldi3'
 # vivaldi3 "Bassoon Concerto in A minor, RV 500",
-WorkInstrument.create!(
+vivaldi3_violin1 = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: violin1,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi3_violin2 = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: violin2,
-  quantity: 2)
-WorkInstrument.create!(
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi3_viola = WorkInstrument.new(
   musical_work: vivaldi3,
   instrument: viola,
-  quantity: 1)
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi3,
   instrument: cello,
   quantity: 1)
+vivaldi3_bassoon = WorkInstrument.new(
+  musical_work: vivaldi3,
+  instrument: bassoon,
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
 WorkInstrument.create!(
   musical_work: vivaldi3,
   instrument: double_bass,
-  quantity: 1)
-WorkInstrument.create!(
-  musical_work: vivaldi3,
-  instrument: bassoon,
   quantity: 2)
 
 puts ' ---> vivaldi4'
