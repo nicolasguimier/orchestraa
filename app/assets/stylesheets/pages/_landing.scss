@@ -1,8 +1,38 @@
-
-
 .background {
-   background-image: url('cover_landing.jpg');
+  background-image: url('cover_landing.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 250px;
+
+    h4 {
+      font-size: 40px;
+      padding-bottom: 15px;
+      font-weight: lighter;
+    }
+    h5 {
+      font-size: 20px;
+      padding-bottom: 15px;
+      font-weight: lighter;
+      color: $medium-gray;
+    }
+}
+
+.login-button {
+  min-width: 200px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.login-text {
+  font-size: 20px;
+  letter-spacing: 2px;
 }
