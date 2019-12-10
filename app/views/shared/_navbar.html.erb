@@ -1,8 +1,10 @@
+<% on_landing = params[:controller] == "pages" && params[:action] == "landing" %>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <% if user_signed_in? %>
-  <% home_url = dashboard_path %>
+    <% home_url = dashboard_path %>
   <% else %>
-  <% home_url = root_path %>
+    <% home_url = root_path %>
   <% end %>
   <%= link_to home_url, class: "navbar-brand" do %>
     <%= image_tag "final_logo.png" %>
@@ -32,7 +34,9 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% unless on_landing %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% end %>
         </li>
       <% end %>
     </ul>
