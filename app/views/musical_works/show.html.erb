@@ -2,18 +2,18 @@
   <div class="wrapper">
     <div class="work-card">
       <div class="front">
-        <h1>The Four Seasons of Buenos Aires</h1>
-        <p>Astor Piazzolla<span>45 min.</span></p>
-        <p class="note-work">Arranged by Claudio Dante D'Iorio in 2011. Set of four tango</p>
+        <h1><%= @musical_work.title %></h1>
+        <p><%= @musical_work.composer_name %><span><%= @musical_work.duration %> min.</span></p>
+        <p class="note-work"><%= @musical_work.notes %></p>
       </div>
       <div class="right">
         <h2>Composition</h2>
         <ul>
           <li class="icon icon-strings compose-icon"> Strings x 5</li>
-          <li class="icon icon-drum compose-icon"> Percussion  x 1</li>
-          <li class="icon icon-keyboard compose-icon"> Keyboard x2</li>
-          <li class="icon icon-trumpet compose-icon"> Brass x3</li>
-          <li class="icon icon-flute compose-icon"> Woodwinds x 3</li>
+          <li class="icon icon-percussions compose-icon"> Percussion  x 1</li>
+          <li class="icon icon-keyboards compose-icon"> Keyboard x2</li>
+          <li class="icon icon-brass compose-icon"> Brass x3</li>
+          <li class="icon icon-woodwinds compose-icon"> Woodwinds x 3</li>
         </ul>
       </div>
     </div>
@@ -26,12 +26,17 @@
     <% end %>
     <% if @missing_categories.any? %>
       <div class="box work-box add-category-box col-6">
-        <select name="new-category" id="category-selector" class= "btn-category-selector">
-          <option value="add-category">- Add category -</option>
-          <% @missing_categories.each do |category| %>
-            <option value="<%= category %>"><%= category %></option>
-          <% end %>
-        </select>
+        <!-- <form action="/instruments" accept-charset="UTF-8" data-remote="true" method="post">
+          <select onchange="this.form.submit()" name="category" id="category-selector" class= "btn-category-selector">
+        -->
+          <select onchange="this.form.submit()" name="category" id="category-selector" class= "btn-category-selector">
+            <option value="add-category">- Add category -</option>
+            <% @missing_categories.each do |category| %>
+              <option value="<%= category %>"><%= category %></option>
+            <% end %>
+          </select>
+          <!-- <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" /> -->
+        <!-- </form> -->
       </div>
     <% end %>
   </div>

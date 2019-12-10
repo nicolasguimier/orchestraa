@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/maxime', to: 'pages#maxime', as: 'maxime'
   get '/nicolas', to: 'pages#nicolas', as: 'nicolas'
 
+  post '/instruments', to: 'instruments#index', as: 'intruments'
+
   resources :musical_works, only: [:index, :show] do
     # :new, :create, , :detroy , :edit, :update
     resources :work_instruments, only: [:create] do
@@ -59,6 +61,8 @@ Rails.application.routes.draw do
   # pas de edit : la modif du se fait dans l'index
   # pas de show : toutes les infos sont dans l'index
   # plus tard : :index, :destroy
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
