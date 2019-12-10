@@ -8,14 +8,13 @@
             <input type="number" placeholder="0" class="input-box" value="<%= work_instrument.quantity %>">
             <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
             <% if work_instrument.sheet_pdf.url.nil? %>
-            <span class="orange">Missing PDF</span>
-            <span>
+              <div class="upload-pdf">
               <%= simple_form_for(work_instrument) do |f| %>
-                <%= f.input :sheet_pdf %>
+                <%= f.input :sheet_pdf, label: 'Select missing pdf', label_html: { class: 'label-pdf orange' } %>
                 <%= f.input :sheet_pdf_cache, as: :hidden %>
-                <%= f.submit %>
+                <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail' %>
               <% end %>
-            </span>
+            </div>
           <% else %>
             <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
           <% end %>
