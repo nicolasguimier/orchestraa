@@ -9,6 +9,13 @@
             <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
             <% if work_instrument.sheet_pdf.url.nil? %>
             <span class="orange">Missing PDF</span>
+            <span>
+              <%= simple_form_for(work_instrument) do |f| %>
+                <%= f.input :sheet_pdf %>
+                <%= f.input :sheet_pdf_cache, as: :hidden %>
+                <%= f.submit %>
+              <% end %>
+            </span>
           <% else %>
             <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
           <% end %>
@@ -32,3 +39,5 @@
     </div>
   </div>
 </div>
+
+
