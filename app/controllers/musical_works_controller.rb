@@ -4,6 +4,8 @@ class MusicalWorksController < ApplicationController
   end
 
   def show
+    $instrument_categories = ["Strings","Brass","Woodwinds","Percussions","Keyboards"]
+
     @musical_work = MusicalWork.find(params[:id])
     @all_work_instruments = @musical_work.work_instruments
     @work_instruments = generate_instruments_hash

@@ -19,15 +19,14 @@
     </div>
   </div>
   <div class="box dark_box work-edit col-9">
-    <% categories = [["Strings", "strings"], ["Brass", "trumpet"], ["Woodwinds", "flute"], ["Percussions", "drum"], ["Keyboards", "keyboard"]] %>
-    <% categories.each do |category| %>
-      <% if @work_instruments[category[0]].any? %>
-        <%= render partial: 'shared/work_instrument', locals: {icon: category[1], category: category[0], work_instruments: @work_instruments[category[0]] } %>
+    <% $instrument_categories.each do |category| %>
+      <% if @work_instruments[category].any? %>
+        <%= render partial: 'shared/work_instrument', locals: {icon: category.downcase, category: category, work_instruments: @work_instruments[category] } %>
       <% end %>
     <% end %>
     <% if @missing_categories.any? %>
       <div class="box work-box add-category-box col-6">
-        <select name="" id="category-selector" class= "btn-category-selector">
+        <select name="new-category" id="category-selector" class= "btn-category-selector">
           <option value="add-category">- Add category -</option>
           <% @missing_categories.each do |category| %>
             <option value="<%= category %>"><%= category %></option>
