@@ -1,30 +1,49 @@
-<h1><%= @musical_work.title %></h1>
-<p>Find me in app/views/musical_works/show.html.erb</p>
-<div class="row">
-  <div class="col-6">
-    <ul>
-      <li>composer_name : <%= @musical_work.composer_name %></li>
-      <li>duration : <%= @musical_work.duration %></li>
-      <li>notes : <%= @musical_work.notes %></li>
-      <li><%= link_to "BACK TO INDEX OF MUSICAL WORKS", musical_works_path %></li>
-    </ul>
+<div class="col-md-12 musical-work-show">
+  <div class="wrapper">
+    <div class="work-card">
+      <div class="front">
+        <h1>The Four Seasons of Buenos Aires</h1>
+        <p>Astor Piazzolla<span>45 min.</span></p>
+        <p class="note-work">Arranged by Claudio Dante D'Iorio in 2011. Set of four tango</p>
+      </div>
+      <div class="right">
+        <h2>Composition</h2>
+        <ul>
+          <li class="icon icon-strings compose-icon"> Strings x 5</li>
+          <li class="icon icon-drum compose-icon"> Percussion  x 1</li>
+          <li class="icon icon-keyboard compose-icon"> Keyboard x2</li>
+          <li class="icon icon-trumpet compose-icon"> Brass x3</li>
+          <li class="icon icon-flute compose-icon"> Woodwinds x 3</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="col-6">
-    <table>
-    <% @work_instruments.each do |work_instrument| %>
-      <tr>
-        <td><%= work_instrument.quantity %>x</td>
-        <td><%= work_instrument.instrument.name %></td>
-
-        <td>
-          <% if work_instrument.sheet_pdf.url.nil? %>
-            <span class="orange">Missing PDF</span>
-          <% else %>
-            LINK TO PDF
-          <% end %>
-        </td>
-      </tr>
+  <div class="box dark_box work-edit col-9">
+    <% if @work_instruments["Strings"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "strings", category: "Strings", work_instruments: @work_instruments["Strings"] } %>
     <% end %>
-    </table>
+    <% if @work_instruments["Brass"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "trumpet", category: "Brass", work_instruments: @work_instruments["Brass"] } %>
+    <% end %>
+    <% if @work_instruments["Woodwinds"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "flute", category: "Woodwinds", work_instruments: @work_instruments["Woodwinds"] } %>
+    <% end %>
+    <% if @work_instruments["Percussions"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "drum", category: "Percussions", work_instruments: @work_instruments["Percussions"] } %>
+    <% end %>
+    <% if @work_instruments["Keyboards"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "keyboard", category: "Keyboards", work_instruments: @work_instruments["Keyboards"] } %>
+    <% end %>
+    <div class="box work-box add-category-box col-6">
+      <select name="" id="category-selector" class= "btn-category-selector">
+        <option value="add-category">- Add category -</option>
+        <option value="strings">Strings</option>
+        <option value="keyboard">Keyboards</option>
+        <option value="brass">Brass</option>
+        <option value="woodwinds">Woodwines</option>
+        <option value="percussions">Percussions</option>
+      </select>
+    </div>
   </div>
 </div>
+
