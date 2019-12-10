@@ -1,23 +1,59 @@
-<h1><%= @musical_work.title %></h1>
-<p>Find me in app/views/musical_works/show.html.erb</p>
-<div class="row">
-  <div class="col-6">
-    <ul>
-      <li>composer_name : <%= @musical_work.composer_name %></li>
-      <li>duration : <%= @musical_work.duration %></li>
-      <li>notes : <%= @musical_work.notes %></li>
-      <li><%= link_to "BACK TO INDEX OF MUSICAL WORKS", musical_works_path %></li>
-    </ul>
+<div class="col-md-12 musical-work-show">
+  <div class="wrapper">
+    <div class="work-card">
+      <div class="front">
+        <h1>The Four Seasons of Buenos Aires</h1>
+        <p>Astor Piazzolla<span>45 min.</span></p>
+        <p class="note-work">Arranged by Claudio Dante D'Iorio in 2011. Set of four tango</p>
+      </div>
+      <div class="right">
+        <h2>Composition</h2>
+        <ul>
+          <li class="icon icon-strings compose-icon"> Strings x 5</li>
+          <li class="icon icon-drum compose-icon"> Percussion  x 1</li>
+          <li class="icon icon-keyboard compose-icon"> Keyboard x2</li>
+          <li class="icon icon-trumpet compose-icon"> Brass x3</li>
+          <li class="icon icon-flute compose-icon"> Woodwinds x 3</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="col-6">
-    <table>
-    <% @work_instruments.each do |work_instrument| %>
-      <tr>
-        <td><%= work_instrument.quantity %>x</td>
-        <td><%= work_instrument.instrument.name %></td>
-        <td><% if work_instrument.sheet_pdf? %> LINK TO PDF <% else %> <span class="orange">Missing PDF</span> <% end %> </td>
-      </tr>
-    <% end %>
-    </table>
+  <div class="box dark_box work-edit col-9">
+    <div class="col-6">
+      <div class="box work-box">
+        <h3>Strings</h3>
+        <div class="main-box">
+          <div class="icon-box icon icon-strings"></div>
+          <div class="edit-box">
+            <div class="edit-line">
+              <input type="number" placeholder="0" class="input-box">
+              <p class="edit-instrument">Violin</p>
+              <a href="#" class="view-link">view the sheet<span class="icon icon-read-mail px-2"></span></a>
+            </div>
+            <div class="edit-line">
+              <input type="number" placeholder="0" class="input-box">
+              <p class="edit-instrument">Viola</p>
+              <button class="btn btn-warning upload-button">upload sheet</button>
+            </div>
+            <div class="add-instrument">
+              <select name="" id="instrument-selector">
+                <option value="add-instrument">- Add instrument -</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box work-box add-category-box col-6">
+      <select name="" id="category-selector" class= "btn-category-selector">
+        <option value="add-category">- Add category -</option>
+        <option value="strings">Strings</option>
+        <option value="keyboard">Keyboards</option>
+        <option value="brass">Brass</option>
+        <option value="woodwinds">Woodwines</option>
+        <option value="percussions">Percussions</option>
+      </select>
+    </div>
   </div>
 </div>
+
