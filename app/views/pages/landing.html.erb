@@ -1,1 +1,7 @@
-<h1>Pages#LANDING</h1>
+<%#= render 'shared/navbar' if current_user %>
+
+<body class="background">
+
+<button><%= link_to "Login", new_user_session_path, class: "login-button" %></button>
+
+</body>
