@@ -19,72 +19,21 @@
     </div>
   </div>
   <div class="box dark_box work-edit col-9">
-    <div class="col-6">
-       <% if @work_instruments["Strings"].any? %>
-    <div class="box">
-      <h2>Strings</h2>
-      <% @work_instruments["Strings"].each do |instrument| %>
-        <%= instrument["quantity"] %> - <%= instrument["name"] %><br>
-      <% end %>
-    </div>
+    <% if @work_instruments["Strings"].any? %>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "strings", category: "Strings", work_instruments: @work_instruments["Strings"] } %>
     <% end %>
     <% if @work_instruments["Brass"].any? %>
-    <div class="box">
-      <h2>Brass</h2>
-      <% @work_instruments["Brass"].each do |instrument| %>
-        <%= instrument["quantity"] %> - <%= instrument["name"] %><br>
-      <% end %>
-    </div>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "trumpet", category: "Brass", work_instruments: @work_instruments["Brass"] } %>
     <% end %>
     <% if @work_instruments["Woodwinds"].any? %>
-    <div class="box">
-      <h2>Woodwinds</h2>
-      <% @work_instruments["Woodwinds"].each do |instrument| %>
-        <%= instrument["quantity"] %> - <%= instrument["name"] %><br>
-      <% end %>
-    </div>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "flute", category: "Woodwinds", work_instruments: @work_instruments["Woodwinds"] } %>
     <% end %>
     <% if @work_instruments["Percussions"].any? %>
-    <div class="box">
-      <h2>Percussions</h2>
-      <% @work_instruments["Percussions"].each do |instrument| %>
-        <%= instrument["quantity"] %> - <%= instrument["name"] %><br>
-      <% end %>
-    </div>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "drum", category: "Percussions", work_instruments: @work_instruments["Percussions"] } %>
     <% end %>
     <% if @work_instruments["Keyboards"].any? %>
-    <div class="box">
-      <h2>Keyboards</h2>
-      <% @work_instruments["Keyboards"].each do |instrument| %>
-        <%= instrument["quantity"] %> - <%= instrument["name"] %><br>
-      <% end %>
-    </div>
+      <%= render partial: 'shared/work_instrument', locals: {icon: "keyboard", category: "Keyboards", work_instruments: @work_instruments["Keyboards"] } %>
     <% end %>
-      
-      <div class="box work-box">
-        <h3>Strings</h3>
-        <div class="main-box">
-          <div class="icon-box icon icon-strings"></div>
-          <div class="edit-box">
-            <div class="edit-line">
-              <input type="number" placeholder="0" class="input-box">
-              <p class="edit-instrument">Violin</p>
-              <a href="#" class="view-link">view the sheet<span class="icon icon-read-mail px-2"></span></a>
-            </div>
-            <div class="edit-line">
-              <input type="number" placeholder="0" class="input-box">
-              <p class="edit-instrument">Viola</p>
-              <button class="btn btn-warning upload-button">upload sheet</button>
-            </div>
-            <div class="add-instrument">
-              <select name="" id="instrument-selector">
-                <option value="add-instrument">- Add instrument -</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="box work-box add-category-box col-6">
       <select name="" id="category-selector" class= "btn-category-selector">
         <option value="add-category">- Add category -</option>

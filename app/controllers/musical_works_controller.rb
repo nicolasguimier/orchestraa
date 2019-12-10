@@ -9,6 +9,40 @@ class MusicalWorksController < ApplicationController
     @work_instruments = generate_instruments_hash
   end
 
+  def load_orchestra_composition
+    # @composition = OrchestraComposition.first
+    @composition = {
+      "Strings" => [
+        {
+          "name" => "Violin1",
+          "category" => "Strings",
+          "position" => 4,
+          "quantity" => 3,
+          "pdf" => ""
+        },
+        {
+          "name" => "Violin2",
+          "category" => "Strings",
+          "position" => 5,
+          "quantity" => 2,
+          "pdf" => ""
+        }
+      ],
+      "Brass" => [],
+      "Woodwinds" => [],
+      "Percussions" => [],
+      "Keyboards" => [
+        {
+          "name" => "Bandoneon",
+          "category" => "Keyboards",
+          "position" => 1,
+          "quantity" => 1,
+          "pdf" => ""
+        }
+      ]
+    }
+  end
+
   private
 
   def generate_instruments_hash
