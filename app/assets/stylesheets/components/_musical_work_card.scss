@@ -26,18 +26,20 @@
 }
 
 .front{
-  background-image: linear-gradient(180deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
+  // background-image: linear-gradient(180deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
+  background-color: $gray;
   transform: rotateY(0deg) translateZ(160px);
-  border-radius: 34px 10px 0 0;
+  border-radius: 10px;
   padding: 0;
   width: 100%;
 }
 
 .right{
-  background-image: linear-gradient(0deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
+  // background-image: linear-gradient(0deg, rgba(43,49,53,100) 0%, rgba(92,91,94,0) 100%);
+  background-color: $dark-gray;
   opacity: 0.08;
   transform: rotateY(90deg) translateZ(160px);
-  border-radius: 0 0 10px 34px;
+  border-radius: 10px;
 }
 
 .work-card:hover{
@@ -59,7 +61,7 @@
 }
 
 .wrapper p{
-  margin: 0;
+  margin-right: 15px;
   font-weight: 300;
 }
 
