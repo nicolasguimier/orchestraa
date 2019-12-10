@@ -878,23 +878,23 @@ WorkInstrument.create!(
 puts ' ---> vivaldi10'
 # vivaldi10  "Canta in prato, ride in monte, RV 623",
 WorkInstrument.create!(
-  musical_work: vivaldi9,
+  musical_work: vivaldi10,
   instrument: violin1,
   quantity: 2)
 WorkInstrument.create!(
-  musical_work: vivaldi9,
+  musical_work: vivaldi10,
   instrument: violin2,
   quantity: 2)
 WorkInstrument.create!(
-  musical_work: vivaldi9,
+  musical_work: vivaldi10,
   instrument: viola,
   quantity: 1)
 WorkInstrument.create!(
-  musical_work: vivaldi9,
+  musical_work: vivaldi10,
   instrument: cello,
   quantity: 1)
 WorkInstrument.create!(
-  musical_work: vivaldi9,
+  musical_work: vivaldi10,
   instrument: double_bass,
   quantity: 1)
 puts "#{WorkInstrument.count} work instruments imported. End"
