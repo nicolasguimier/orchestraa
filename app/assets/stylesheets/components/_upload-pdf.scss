@@ -1,0 +1,25 @@
+.upload-pdf {
+
+  form {
+    display: flex;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 0px;
+  }
+
+  .label-pdf {
+    cursor: pointer;
+    margin-bottom: 0px;
+  }
+  .label-pdf:hover {
+    font-weight: bold;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+
