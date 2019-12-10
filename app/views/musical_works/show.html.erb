@@ -19,31 +19,22 @@
     </div>
   </div>
   <div class="box dark_box work-edit col-9">
-    <% if @work_instruments["Strings"].any? %>
-      <%= render partial: 'shared/work_instrument', locals: {icon: "strings", category: "Strings", work_instruments: @work_instruments["Strings"] } %>
+    <% categories = [["Strings", "strings"], ["Brass", "trumpet"], ["Woodwinds", "flute"], ["Percussions", "drum"], ["Keyboards", "keyboard"]] %>
+    <% categories.each do |category| %>
+      <% if @work_instruments[category[0]].any? %>
+        <%= render partial: 'shared/work_instrument', locals: {icon: category[1], category: category[0], work_instruments: @work_instruments[category[0]] } %>
+      <% end %>
     <% end %>
-    <% if @work_instruments["Brass"].any? %>
-      <%= render partial: 'shared/work_instrument', locals: {icon: "trumpet", category: "Brass", work_instruments: @work_instruments["Brass"] } %>
+    <% if @missing_categories.any? %>
+      <div class="box work-box add-category-box col-6">
+        <select name="" id="category-selector" class= "btn-category-selector">
+          <option value="add-category">- Add category -</option>
+          <% @missing_categories.each do |category| %>
+            <option value="<%= category %>"><%= category %></option>
+          <% end %>
+        </select>
+      </div>
     <% end %>
-    <% if @work_instruments["Woodwinds"].any? %>
-      <%= render partial: 'shared/work_instrument', locals: {icon: "flute", category: "Woodwinds", work_instruments: @work_instruments["Woodwinds"] } %>
-    <% end %>
-    <% if @work_instruments["Percussions"].any? %>
-      <%= render partial: 'shared/work_instrument', locals: {icon: "drum", category: "Percussions", work_instruments: @work_instruments["Percussions"] } %>
-    <% end %>
-    <% if @work_instruments["Keyboards"].any? %>
-      <%= render partial: 'shared/work_instrument', locals: {icon: "keyboard", category: "Keyboards", work_instruments: @work_instruments["Keyboards"] } %>
-    <% end %>
-    <div class="box work-box add-category-box col-6">
-      <select name="" id="category-selector" class= "btn-category-selector">
-        <option value="add-category">- Add category -</option>
-        <option value="strings">Strings</option>
-        <option value="keyboard">Keyboards</option>
-        <option value="brass">Brass</option>
-        <option value="woodwinds">Woodwines</option>
-        <option value="percussions">Percussions</option>
-      </select>
-    </div>
   </div>
 </div>
 
