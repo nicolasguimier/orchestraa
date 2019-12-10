@@ -11,12 +11,18 @@
           </div>
         <% end %>
         <div class="add-instrument">
-          <select name="" id="instrument-selector">
-            <option value="add-instrument">- Add instrument -</option>
-            <% Instrument.where(category: category).each do |instr|  %>
-              <option value="<%= instr.name %>"><%= instr.name %></option>
-            <% end %>
-          </select>
+          <form action="<%= musical_work_work_instruments_path(@musical_work) %>" method="post">
+            <select onchange="this.form.submit()" name="" id="instrument-selector">
+              <option value="add-instrument">- Add instrument -</option>
+              <% Instrument.where(category: category).each do |instr|  %>
+                <option value="<%= instr.name %>"><%= instr.name %></option>
+              <% end %>
+            </select>
+            <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
+          </form>
+
+          <%#= select("post", "person_id", Instrument.where(category: category).collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+
         </div>
       </div>
     </div>
