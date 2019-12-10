@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="box dark_box work-edit col-9">
-    <% $instrument_categories.each do |category| %>
+    <% Instrument::CATEGORIES.each do |category| %>
       <% if @work_instruments[category].any? %>
         <%= render partial: 'shared/work_instrument', locals: {icon: category.downcase, category: category, work_instruments: @work_instruments[category] } %>
       <% end %>
