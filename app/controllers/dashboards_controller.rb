@@ -3,6 +3,10 @@ class DashboardsController < ApplicationController
     @invitations_pending = current_user.invitations.order(id: :desc).where(status: 'pending')
     @concerts = current_user.concerts
     @pending_works = MusicalWork.first(10)
+    @pending_works = []
+    MusicalWork.all.each do |musical_work|
+      @pending_works << musical_work if musical_work.missing_sheets.any?
+    end
 
 
     # For the musicians calculations

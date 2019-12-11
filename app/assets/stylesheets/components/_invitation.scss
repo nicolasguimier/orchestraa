@@ -7,6 +7,26 @@
   padding: 10px;
 }
 
+.invitation-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 10px;
+  h1 {
+    position: center;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+.send-button {
+  text-align: center;
+  min-width: 200px;
+}
+
 .action_buttons {
   display: flex;
   justify-content: space-between;

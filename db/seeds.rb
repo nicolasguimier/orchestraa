@@ -165,7 +165,7 @@ claves = Instrument.new(
     position: 4)
 claves.save!
 triangle = Instrument.new(
-    name: "triangle",
+    name: "Triangle",
     category: 'Percussions',
     position: 4)
 triangle.save!
@@ -240,17 +240,17 @@ mouzanar = MusicalWork.new(
 mouzanar.save!
 vivaldi1 = MusicalWork.new(
     user: igor,
-    title: 'Concerto for strings in G minor RV 156',
+    title: 'The Four Seasons',
     composer_name: 'Antonio Vivaldi',
-    duration: 38,
-    notes: "G minor, Baroque, 3 movements")
+    duration: 43,
+    notes: "Spring, Summer, Autumn, Winter")
 vivaldi1.save!
 vivaldi2 = MusicalWork.new(
   user: igor,
-  title: "Anche in mezzo a perigliosa",
+  title: "Opus 4",
   composer_name: 'Antonio Vivaldi',
-  duration: 14,
-  notes: "D major, Baroque italian.")
+  duration: 23,
+  notes: "A minor - with piano")
 vivaldi2.save!
 vivaldi3 = MusicalWork.new(
     user: igor,
@@ -694,13 +694,19 @@ WorkInstrument.create!(
   quantity: 1)
 
 puts ' ---> vivaldi1'
-# vivaldi1  'Concerto in G minor RV 156',
+# vivaldi1  'The Four seasons',
 vivaldi1_violin1 = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: violin1,
   quantity: 4,
   remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
 )
+vivaldi1_violin1.save!
+
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: clarinet,
+  quantity: 3)
 
 vivaldi1_violin2 = WorkInstrument.new(
   musical_work: vivaldi1,
@@ -708,6 +714,31 @@ vivaldi1_violin2 = WorkInstrument.new(
   quantity: 3,
   remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
 )
+vivaldi1_violin2.save!
+
+vivaldi1_tuba = WorkInstrument.new(
+  musical_work: vivaldi1,
+  instrument: tuba,
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_tuba.save!
+
+vivaldi1_trumpet = WorkInstrument.new(
+  musical_work: vivaldi1,
+  instrument: trumpet,
+  quantity: 2,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_trumpet.save!
+
+vivaldi1_piccolo = WorkInstrument.new(
+  musical_work: vivaldi1,
+  instrument: piccolo,
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_piccolo.save!
 
 vivaldi1_viola = WorkInstrument.new(
   musical_work: vivaldi1,
@@ -715,21 +746,38 @@ vivaldi1_viola = WorkInstrument.new(
   quantity: 2,
   remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
 )
-vivaldi1_cello = WorkInstrument.new(
+vivaldi1_viola.save!
+
+vivaldi1_trombone = WorkInstrument.new(
   musical_work: vivaldi1,
-  instrument: cello,
+  instrument: trombone,
   quantity: 2,
   remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
 )
+vivaldi1_trombone.save!
+
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: triangle,
+  quantity: 1)
+
+WorkInstrument.create!(
+  musical_work: vivaldi1,
+  instrument: bandoneon,
+  quantity: 1)
+
 WorkInstrument.create!(
   musical_work: vivaldi1,
   instrument: double_bass,
   quantity: 1)
-WorkInstrument.create!(
+
+vivaldi1_claves = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: claves,
-  quantity: 1)
-
+  quantity: 1,
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_claves.save!
 
 
 puts ' ---> vivaldi2'
@@ -1307,6 +1355,32 @@ Invitation.create!(
   full_name: 'Nicolas Wagonier',
   email: 'nico@gmail.com',
   instrument: claves,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_bounce: false
+  )
+
+Invitation.create!(
+  user: igor,
+  full_name: 'Maxime Couscous',
+  email: 'max@gmail.com',
+  instrument: triangle,
+  status: "accepted",
+  sendinblue_email_id: "test",
+  email_delivered: true,
+  email_read: true,
+  email_clicked: true,
+  email_bounce: false
+  )
+
+Invitation.create!(
+  user: igor,
+  full_name: 'Jérémie Wagonier',
+  email: 'jerem@gmail.com',
+  instrument: flute,
   status: "accepted",
   sendinblue_email_id: "test",
   email_delivered: true,

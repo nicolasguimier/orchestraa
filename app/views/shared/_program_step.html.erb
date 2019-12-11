@@ -4,13 +4,19 @@
     data-patch-url="<%= concert_program_step_path(program_step.concert.id, program_step.id) %>">
     <span class="icon icon-pause"></span>
     <span class="text">Intermission</span>
+    <span class="duration">10 min</span>
 <% else %>
   <div class="box program-step" data-patch-url="<%= concert_program_step_path(program_step.concert.id, program_step.id) %>">
     <div class="icon icon-drag"></div>
     <div class="composer"><%= program_step.musical_work.composer_name %></div>
     <div class="work-infos">
       <p><%= program_step.musical_work.title %></p>
-      <p><%= link_to "Missing trompets", musical_work_path(program_step.musical_work), class: 'orange' %></p>
+      <% if program_step.musical_work.missing_sheets.any? %>
+        <p><%= link_to musical_work_path(program_step.musical_work), class: 'orange' do %>
+            Missing <%= program_step.musical_work.missing_sheets.map(&:inspect).join(', ').tr('"', '') %> sheets
+          <% end %>
+        </p>
+      <% end %>
     </div>
     <div class="duration"><%= program_step.musical_work.duration %> min</div>
   <% end %>

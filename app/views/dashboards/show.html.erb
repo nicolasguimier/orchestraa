@@ -13,7 +13,7 @@
           <div class="box">
           <%= link_to musical_work_path(work) do %>
             <p><%= work.title %></p>
-            <p class="orange">Missing <%= ["trumpet", "flute", "viola", "cello", "bassoon"].sample %> sheet</p>
+            <p class="orange">Missing <%= work.missing_sheets.map(&:inspect).join(', ').tr('"', '') %> sheets</p>
           <% end %>
         </div>
         <% end %>
