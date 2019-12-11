@@ -7,7 +7,6 @@ class MusicalWorksController < ApplicationController
     $instrument_categories = ["Strings","Brass","Woodwinds","Percussions","Keyboards"]
 
     @musical_work = MusicalWork.find(params[:id])
-    @all_work_instruments = @musical_work.work_instruments
     @work_instruments = generate_instruments_hash
     @missing_categories = missing_categories
   end
@@ -56,7 +55,7 @@ class MusicalWorksController < ApplicationController
       "Percussions" => [],
       "Keyboards" => []
     }
-    work_instruments = @musical_work.work_instruments
+    work_instruments = @musical_work.work_instruments.joins(:instrument).order('instruments.position')
     work_instruments.each do |work_instr|
       instruments[work_instr.instrument.category] << work_instr
     end
