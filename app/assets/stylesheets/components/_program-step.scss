@@ -1,4 +1,11 @@
 .program {
+
+  .banner_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .box {
     display: flex;
     justify-content: space-between;

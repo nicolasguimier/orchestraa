@@ -19,7 +19,7 @@ class DashboardsController < ApplicationController
       Strings: 12,
       Woodwinds: 6,
       Brass: 2,
-      Percussions: 1,
+      Percussions: 2,
       Keyboard: 1
     }
 
