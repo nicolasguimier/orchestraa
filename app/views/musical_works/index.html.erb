@@ -1,13 +1,13 @@
-<h1>MusicalWorks#index</h1>
-<p>Find me in app/views/musical_works/index.html.erb</p>
-
-<% @musical_works.each do |musical_work|%>
-  <ul style="border-bottom:1px solid black">
-    <li>owner : <%= musical_work.user.full_name %></li>
-    <li>title : <%= musical_work.title %></li>
-    <li>composer_name : <%= musical_work.composer_name %></li>
-    <li>duration : <%= musical_work.duration %></li>
-    <li>notes : <%= musical_work.notes %></li>
-    <li><%= link_to "LINK TO MUSICAL WORK", musical_work_path(musical_work) %></li>
-  </ul>
-<% end %>
+<h1>Musical works</h1>
+<div class="index-concert-works">
+  <% @musical_works.each do |musical_work|%>
+    <ul>
+  <div class="box">
+      <li><h2><%= musical_work.title %></h2></li>
+      <li><%= musical_work.composer_name %></li>
+      <li><%= musical_work.duration %> min.</li>
+      <%= link_to "View musical work details", musical_work_path(musical_work)%>
+    </ul>
+  <% end %>
+  </div>
+</div>
