@@ -25,8 +25,7 @@ Rails.application.routes.draw do
   end
   resources :work_instruments, only: [:update, :destroy]
 
-  resources :invitations, only: [:index, :create] do
-  # pas de show on affiche juste via index
+  resources :invitations, only: [:index, :create, :show] do
   # pas de new, on a un formulaire de creation affiché dans l'index
   # pas d'edit, on va juste modifier certains champs via des routes 'member'
   # pas d'update, idem
@@ -34,7 +33,7 @@ Rails.application.routes.draw do
     member do
       patch :accept
       patch :decline
-      get :preview
+      patch :send_email
     end
   end
 
