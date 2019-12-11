@@ -18,4 +18,5 @@ class ConcertsController < ApplicationController
 
   def update
   end
+
 end
