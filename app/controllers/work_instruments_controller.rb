@@ -22,6 +22,6 @@ class WorkInstrumentsController < ApplicationController
   private
 
   def work_instrument_params
-    params.require(:work_instrument).permit(:instrument_id, :musical_work, :sheet_pdf)
+    params.require(:work_instrument).permit(:instrument_id, :musical_work, :sheet_pdf, :quantity)
   end
 end

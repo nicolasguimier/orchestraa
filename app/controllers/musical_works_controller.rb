@@ -56,8 +56,8 @@ class MusicalWorksController < ApplicationController
       "Percussions" => [],
       "Keyboards" => []
     }
-    works_instruments = @musical_work.work_instruments
-    works_instruments.each do |work_instr|
+    work_instruments = @musical_work.work_instruments
+    work_instruments.each do |work_instr|
       instruments[work_instr.instrument.category] << work_instr
     end
     return instruments

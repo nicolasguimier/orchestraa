@@ -5,18 +5,19 @@
       <div class="edit-box">
         <% work_instruments.each do |work_instrument| %>
           <div class="edit-line">
-            <input type="number" placeholder="0" class="input-box" value="<%= work_instrument.quantity %>">
-            <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
-            <% if work_instrument.sheet_pdf.url.nil? %>
-              <div class="upload-pdf">
-              <%= simple_form_for(work_instrument) do |f| %>
-                <%= f.input :sheet_pdf, label: 'Select missing pdf', label_html: { class: 'label-pdf orange' } %>
-                <%= f.input :sheet_pdf_cache, as: :hidden %>
-                <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail green' %>
+            <%= simple_form_for(work_instrument) do |f| %>
+              <!-- <input type="number" placeholder="0" class="input-box" value="<%= work_instrument.quantity %>"> -->
+              <%= f.input :quantity, label:false %>
+              <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
+              <% if work_instrument.sheet_pdf.url.nil? %>
+                <div class="upload-pdf">
+                  <%= f.input :sheet_pdf, label: 'Select missing pdf', label_html: { class: 'label-pdf orange' } %>
+                  <%= f.input :sheet_pdf_cache, as: :hidden %>
+                </div>
+              <% else %>
+                <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
               <% end %>
-            </div>
-          <% else %>
-            <%= link_to " View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
+              <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail green' %>
           <% end %>
           </div>
         <% end %>
