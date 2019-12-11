@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     member do
       patch :accept
       patch :decline
+      patch :send_email
     end
   end
 

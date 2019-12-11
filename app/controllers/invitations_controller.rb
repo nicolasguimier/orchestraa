@@ -57,21 +57,13 @@ class InvitationsController < ApplicationController
     @invitation.sendinblue_email_id = "test"
     @invitation.email_delivered = true
     if @invitation.save
-      if params[:commit] == "Preview"
-        redirect_to preview_invitation_path(@invitation)
-      else
-        if send_email
-          redirect_to invitations_path, notice: "The invitation has been sent."
-        else
-          raise
-        end
-      end
+      redirect_to invitation_path(@invitation)
     else
-      render nothing: true
+      raise
     end
   end
 
-  def preview
+  def show
     @invitation = Invitation.find(params[:id])
     @concerts = current_user.concerts
     # We split the works by group of 3, because email template is displaying in 3 columns
@@ -82,6 +74,12 @@ class InvitationsController < ApplicationController
     change_status_to('accepted')
     redirect_to "/invitations?status=accepted", notice: "The invitation is now accepted."
     # flash.notice = "The invitation is now accepted."
+  end
+
+  def send_email
+    change_status_to('pending')
+    redirect_to "/invitations?status=pending", notice: "The invitation has been sent."
+    # flash.notice = "The invitation is now sent."
   end
 
   def decline
@@ -102,7 +100,5 @@ class InvitationsController < ApplicationController
     @invitation.save
   end
 
-  def send_email
-    true
-  end
+
 end
