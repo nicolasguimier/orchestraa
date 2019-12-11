@@ -1,7 +1,14 @@
-<h1>Preview of the invitation</h1>
-<div>
-  <p>From : <%= current_user.email %></p>
-  <p>To : <%= @invitation.email %> (<%= @invitation.full_name %>)</p>
+<div class="invitation-status">
+  <div>
+    <p>From : <%= current_user.email %></p>
+    <p>To : <%= @invitation.email %> (<%= @invitation.full_name %>)</p>
+  </div>
+  <% if @invitation.status == "draft" %>
+    <h1>Preview of the invitation</h1>
+    <%= link_to 'Send email', send_email_invitation_path(@invitation), method: :patch, class: "btn btn-success send-button"%>
+  <% else %>
+    <h1>Invitation sent the <%= @invitation.created_at.strftime("%d %B %Y at %H:%M") %></h1>
+  <% end %>
 </div>
 <div>
 
