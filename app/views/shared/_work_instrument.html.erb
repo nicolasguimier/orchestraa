@@ -12,11 +12,11 @@
               <%= simple_form_for(work_instrument) do |f| %>
                 <%= f.input :sheet_pdf, label: 'Select missing pdf', label_html: { class: 'label-pdf orange' } %>
                 <%= f.input :sheet_pdf_cache, as: :hidden %>
-                <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail' %>
+                <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail green' %>
               <% end %>
             </div>
           <% else %>
-            <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
+            <%= link_to " View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
           <% end %>
           </div>
         <% end %>
