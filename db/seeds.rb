@@ -224,13 +224,6 @@ accordion.save!
 puts "#{Instrument.count} instruments imported. End"
 
 puts '-> Start MusicalWorks'
-# Create work without instruments.
-MusicalWork.create!(
-    user: igor,
-    title: 'WORK WITHOUT INSTRUMENTS',
-    composer_name: 'NICOLAS GUIMIER',
-    duration: 45,
-    notes: "")
 
 piazzolla = MusicalWork.new(
     user: igor,
