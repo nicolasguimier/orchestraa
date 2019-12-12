@@ -1,13 +1,14 @@
 <h1>Musical works</h1>
 <div class="index-concert-works">
   <% @musical_works.each do |musical_work|%>
-    <ul>
-  <div class="box">
+    <div class="box">
+      <ul>
       <li><h2><%= musical_work.title %></h2></li>
       <li><%= musical_work.composer_name %></li>
       <li><%= musical_work.duration %> min.</li>
       <%= link_to "View musical work details", musical_work_path(musical_work)%>
-    </ul>
+      </ul>
+    </div>
   <% end %>
-  </div>
+  <%= link_to "add new musical work", musical_works_path, method: :post %>
 </div>

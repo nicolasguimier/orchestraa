@@ -88,7 +88,6 @@
 
 .eye-view-sheet {
   margin-right: 10px;
-  margin-top: 5px;
 }
 // DIV ADD INSTRUMENT BUTTON
 .add-instrument {
@@ -111,4 +110,8 @@
   height: 35px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.button-selector:active, .button-selector:focus {
+  outline: none;
 }

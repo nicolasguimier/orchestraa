@@ -12,6 +12,13 @@
 @import "components/index";
 @import "pages/index";
 
+*,
+*::before,
+*::after {
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $black;
   background-position: cover;
@@ -46,4 +53,17 @@ h1, h2, h3, h4, h5, h6, p {
   height: 100vh;
   border: 3px;
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  border: 1px solid $orange;
+}
+
+::-webkit-scrollbar-track {
+  background: $gray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $orange;
 }
