@@ -13,7 +13,8 @@
           <div class="box">
           <%= link_to musical_work_path(work) do %>
             <p><%= work.title %></p>
-            <p class="orange">Missing <%= work.missing_sheets.map(&:inspect).join(', ').tr('"', '') %> sheets</p>
+            <p class="orange">Missing <%= work.missing_sheets.first(3).map(&:inspect).join(', ').tr('"', '') %><% if work.missing_sheets.count > 3 %>... and <%= work.missing_sheets.count - 3 %> more <% end %>
+            sheets</p>
           <% end %>
         </div>
         <% end %>
