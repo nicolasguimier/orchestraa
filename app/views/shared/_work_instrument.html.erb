@@ -1,6 +1,6 @@
 <div class="col-6">
   <div class="box work-box">
-    <h2 class="icon icon-<%= icon %>"><%= category %></h2>
+    <h2><span class="icon icon-<%= icon %>"></span><span><%= category %></span></h2>
     <div class="main-box">
       <div class="edit-box">
         <% work_instruments.each do |work_instrument| %>
@@ -24,8 +24,8 @@
         <% end %>
         <div class="add-instrument">
           <form action="<%= musical_work_work_instruments_path(@musical_work) %>" method="post">
-            <select onchange="this.form.submit()" name="work_instrument[instrument_id]" id="instrument-selector">
-              <option value="add-instrument">- Add instrument -</option>
+            <select onchange="this.form.submit()" name="work_instrument[instrument_id]" id="instrument-selector" class="button-selector">
+              <option value="add-instrument">Add instrument </option>
               <% Instrument.where(category: category).each do |instr|  %>
                 <option value="<%= instr.id %>"><%= instr.name %></option>
               <% end %>

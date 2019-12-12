@@ -3,17 +3,17 @@
   align-items: flex-start;
 }
 
+.musical-work-title {
+  margin-right: 5px;
+}
+
 // DIV NOIRE FOND
 .work-edit {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 15px;
-  padding-left: 0;
+  margin-left:  15px;
 }
 
-// .work-box {
-//   margin-right: 1px;
-// }
 
 // DIV AVEC TOUS LES ELEMENTS
 .main-box {
@@ -100,4 +100,15 @@
   display:flex;
   align-items: center;
   justify-content: center;
+}
+
+.button-selector {
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  background-color: $green;
+  border: 0;
+  color: $ivory;
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
