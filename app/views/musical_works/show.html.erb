@@ -25,18 +25,20 @@
       <% end %>
     <% end %>
     <% if @missing_categories.any? %>
-      <div class="box work-box add-category-box col-6">
-        <!-- <form action="/instruments" accept-charset="UTF-8" data-remote="true" method="post">
-          <select onchange="this.form.submit()" name="category" id="category-selector" class= "btn-category-selector">
-        -->
-          <select onchange="this.form.submit()" name="category" id="category-selector" class= "btn-category-selector">
-            <option value="add-category">- Add category -</option>
-            <% @missing_categories.each do |category| %>
-              <option value="<%= category %>"><%= category %></option>
-            <% end %>
-          </select>
-          <!-- <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" /> -->
-        <!-- </form> -->
+      <div class="col-6">
+          <div class="box work-box add-category-box">
+            <!-- <form action="/instruments" accept-charset="UTF-8" data-remote="true" method="post">
+              <select onchange="this.form.submit()" name="category" id="category-selector" class= "btn-category-selector">
+            -->
+              <select onchange="this.form.submit()" name="category" id="category-selector" class= "button-selector">
+                <option value="add-category">Add category</option>
+                <% @missing_categories.each do |category| %>
+                  <option value="<%= category %>" id="category-selector"><%= category %></option>
+                <% end %>
+              </select>
+              <!-- <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" /> -->
+            <!-- </form> -->
+          </div>
       </div>
     <% end %>
   </div>
