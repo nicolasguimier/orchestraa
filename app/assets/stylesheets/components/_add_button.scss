@@ -9,6 +9,10 @@
   box-shadow: $drop-shadow;
   border-radius: $border-radius;
   color:$ivory;
+  .icon {
+    vertical-align: middle;
+    padding-right:10px;
+  }
 }
 
 .add_button:hover {

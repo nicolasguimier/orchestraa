@@ -48,7 +48,11 @@
               </form>
             </div>
             <div id="add-intermission">
-              <div><%= link_to "Add intermission", add_intermission_concert_program_steps_path(@concert), { method: "post", class: 'btn add_button icon icon-plus' } %></div>
+              <div>
+                <%= link_to add_intermission_concert_program_steps_path(@concert), method: "post" do %>
+                  <span class="btn add_button"><span class="icon icon-plus"></span><span>Add intermission</span></span>
+                <% end %>
+              </div>
             </div>
           </div>
           <div id="program-steps">
