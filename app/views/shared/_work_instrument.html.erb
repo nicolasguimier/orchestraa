@@ -11,8 +11,8 @@
               <p class="edit-instrument"><%= work_instrument.instrument.name %></p>
               <% if work_instrument.sheet_pdf.url.nil? %>
                 <div class="upload-pdf">
-                  <%= f.input :sheet_pdf, label: 'Select missing pdf', label_html: { class: 'label-pdf orange' } %>
-                  <%= f.input :sheet_pdf_cache, as: :hidden %>
+                  <%= f.input :sheet_pdf, label: 'Select missing pdf', input_html: {id: "work_instrument_sheet_pdf_#{work_instrument.id}" }, label_html: { class: 'label-pdf orange' } %>
+                  <%= f.input :sheet_pdf_cache, input_html: {id: "work_instrument_sheet_pdf_#{work_instrument.id}_cache"}, as: :hidden %>
                 </div>
               <% else %>
                 <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
