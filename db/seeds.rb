@@ -1639,7 +1639,6 @@ OrchestraComposition.create!(
     }
   }')
 
-
 OrchestraComposition.create!(
   user: igor,
   name: "Philharmonic orchestra",
