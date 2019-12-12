@@ -766,10 +766,13 @@ WorkInstrument.create!(
   instrument: bandoneon,
   quantity: 1)
 
-WorkInstrument.create!(
+vivaldi1_double_bass = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: double_bass,
-  quantity: 1)
+  quantity: 1
+  remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
+)
+vivaldi1_double_bass.save!
 
 vivaldi1_claves = WorkInstrument.new(
   musical_work: vivaldi1,
@@ -1020,8 +1023,8 @@ concert1 = Concert.new(
     location: 'Victoria Hall',
     address: 'Rue du Général-Dufour 14, 1204 Geneva, Switzerland',
     notes: 'First concert of the season, with all the musicians, and full program.',
-    start_at:Time.new(2020, 1, 25, 21,0, 0, "+01:00"),
-    end_at:Time.new(2020, 1, 25, 23, 30, 0, "+01:00"))
+    start_at:Time.new(2020, 1, 1, 21,0, 0, "+01:00"),
+    end_at:Time.new(2020, 1, 1, 23, 30, 0, "+01:00"))
 concert1.save!
 concert2 = Concert.new(
     user: igor,
@@ -1416,33 +1419,24 @@ puts '-> Start programm steps'
 puts '---> for Concert 1'
 ProgramStep.create!(
   concert: concert1,
-  musical_work: piazzolla,
+  musical_work: mouzanar,
   kind: "musical_work",
   position: 1)
 ProgramStep.create!(
   concert: concert1,
-  musical_work: mouzanar,
+  musical_work: vivaldi1,
   kind: "musical_work",
   position: 2)
 ProgramStep.create!(
   concert: concert1,
-  kind: "intermission",
-  position: 3)
-ProgramStep.create!(
-  concert: concert1,
-  musical_work: vivaldi1,
-  kind: "musical_work",
-  position: 4)
-ProgramStep.create!(
-  concert: concert1,
   musical_work: vivaldi2,
   kind: "musical_work",
-  position: 5)
+  position: 3)
 ProgramStep.create!(
   concert: concert1,
   musical_work: vivaldi3,
   kind: "musical_work",
-  position: 6)
+  position: 4)
 
 puts '---> for Concert 2'
 ProgramStep.create!(
