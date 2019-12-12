@@ -15,9 +15,10 @@
                   <%= f.input :sheet_pdf_cache, input_html: {id: "work_instrument_sheet_pdf_#{work_instrument.id}_cache"}, as: :hidden %>
                 </div>
               <% else %>
-                <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail px-2" %>
+                <%= link_to "", work_instrument.sheet_pdf.url, target: "_blank", class: "icon icon-read-mail eye-view-sheet" %>
+                <%= link_to "View PDF", work_instrument.sheet_pdf.url, target: "_blank" %>
               <% end %>
-              <%= f.button :submit, "Save", class: 'label-pdf icon icon-read-mail green' %>
+              <%= f.button :submit, "Save", class: 'save green' %>
           <% end %>
           </div>
         <% end %>
