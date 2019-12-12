@@ -95,10 +95,11 @@
 }
 
 // BUTTON ADD INSTRUMENT
-.add-category-box {
+.add-category-box, .add-template-box {
   display:flex;
   align-items: center;
   justify-content: center;
+  padding: 100px 0;
 }
 
 .button-selector {
