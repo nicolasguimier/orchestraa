@@ -2,19 +2,19 @@
   <div class="row">
     <div class="col-12 col-lg-3">
       <div class="box">
-        <h1><%= @concert.name %></h1>
-        <div class="infos-concert">
-          <div class="info-icon icon icon-location"></div>
-          <div class="adress-infos">
-            <p><%= @concert.location %></p>
-            <p><%= @concert.address %></p>
-          </div>
-        </div>
+        <h1 class="mb-4"><%= @concert.name %></h1>
         <div class="infos-concert">
           <div class="info-icon icon icon-agenda"></div>
           <div class="date-infos">
             <p><%= @concert.start_at.strftime("%d %B %Y") %></p>
-            <span><%= @concert.start_at.strftime("%H:%M")%></span><span><%= @concert.end_at.strftime(" to %H:%M") %></span>
+            <p class="lower"><%= @concert.start_at.strftime("%H:%M")%><%= @concert.end_at.strftime(" to %H:%M") %></p>
+          </div>
+        </div>
+        <div class="infos-concert">
+          <div class="info-icon icon icon-location"></div>
+          <div class="adress-infos">
+            <p><%= @concert.location %></p>
+            <p class="lower"><%= @concert.address %></p>
           </div>
         </div>
         <div class="infos-concert">
