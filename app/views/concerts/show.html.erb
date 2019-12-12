@@ -36,8 +36,16 @@
         <h2>Program</h2>
           <div class="banner_button infos-concert program">
             <div id="add-program-steps">
-              <div>
-                <select name="" id=""><option value=""></option></select><%#= link_to "Add musical_works", add_work_concert_program_steps_path(@concert), { method: "post", class: 'add_button icon icon-plus' } %></div>
+
+              <form action="<%= add_work_concert_program_steps_path(@concert) %>" method="post">
+                <select onchange="this.form.submit()" name="work_id" id="work-selector" class="button-selector">
+                  <option value="add-work">- Add musical work -</option>
+                  <% MusicalWork.all.each do |work|  %>
+                    <option value="<%= work.id %>"><%= work.title %></option>
+                  <% end %>
+                </select>
+                <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
+              </form>
             </div>
             <div id="add-intermission">
               <div><%= link_to "Add intermission", add_intermission_concert_program_steps_path(@concert), { method: "post", class: 'btn add_button icon icon-plus' } %></div>
