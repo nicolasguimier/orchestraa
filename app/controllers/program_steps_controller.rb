@@ -8,19 +8,14 @@ class ProgramStepsController < ApplicationController
   end
 
   def add_work
+    add_program_step("musical_work")
+    @step.musical_work = MusicalWork.find(params[:work_id])
+    save_program_step
   end
 
   def add_intermission
-    @intermission = ProgramStep.new
-    @intermission.kind = "intermission"
-    @intermission.concert = Concert.find(params[:concert_id])
-    @intermission.insert_at(1)
-
-    if @intermission.save
-      redirect_to concert_path(params[:concert_id])
-    else
-      raise
-    end
+    add_program_step("intermission")
+    save_program_step
   end
 
   def destroy
@@ -30,6 +25,23 @@ class ProgramStepsController < ApplicationController
       # respond_to do |format|
       #   format.js
       # end
+    else
+      raise
+    end
+  end
+
+  private
+
+  def add_program_step(kind)
+    @step = ProgramStep.new
+    @step.concert = Concert.find(params[:concert_id])
+    @step.kind = kind
+    @step.insert_at(1)
+  end
+
+  def save_program_step
+    if @step.save
+      redirect_to concert_path(params[:concert_id])
     else
       raise
     end

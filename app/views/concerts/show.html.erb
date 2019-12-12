@@ -2,19 +2,19 @@
   <div class="row">
     <div class="col-12 col-lg-3">
       <div class="box">
-        <h1><%= @concert.name %></h1>
-        <div class="infos-concert">
-          <div class="info-icon icon icon-location"></div>
-          <div class="adress-infos">
-            <p><%= @concert.location %></p>
-            <p><%= @concert.address %></p>
-          </div>
-        </div>
+        <h1 class="mb-4"><%= @concert.name %></h1>
         <div class="infos-concert">
           <div class="info-icon icon icon-agenda"></div>
           <div class="date-infos">
             <p><%= @concert.start_at.strftime("%d %B %Y") %></p>
-            <span><%= @concert.start_at.strftime("%H:%M")%></span><span><%= @concert.end_at.strftime(" to %H:%M") %></span>
+            <p class="lower"><%= @concert.start_at.strftime("%H:%M")%><%= @concert.end_at.strftime(" to %H:%M") %></p>
+          </div>
+        </div>
+        <div class="infos-concert">
+          <div class="info-icon icon icon-location"></div>
+          <div class="adress-infos">
+            <p><%= @concert.location %></p>
+            <p class="lower"><%= @concert.address %></p>
           </div>
         </div>
         <div class="infos-concert">
@@ -36,8 +36,16 @@
         <h2>Program</h2>
           <div class="banner_button infos-concert program">
             <div id="add-program-steps">
-              <div>
-                <select name="" id=""><option value=""></option></select><%#= link_to "Add musical_works", add_work_concert_program_steps_path(@concert), { method: "post", class: 'add_button icon icon-plus' } %></div>
+
+              <form action="<%= add_work_concert_program_steps_path(@concert) %>" method="post">
+                <select onchange="this.form.submit()" name="work_id" id="work-selector" class="button-selector">
+                  <option value="add-work">- Add musical work -</option>
+                  <% MusicalWork.all.each do |work|  %>
+                    <option value="<%= work.id %>"><%= work.title %></option>
+                  <% end %>
+                </select>
+                <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
+              </form>
             </div>
             <div id="add-intermission">
               <div><%= link_to "Add intermission", add_intermission_concert_program_steps_path(@concert), { method: "post", class: 'btn add_button icon icon-plus' } %></div>
