@@ -1,5 +1,5 @@
 class Instrument < ApplicationRecord
-  CATEGORIES = ["Strings", "Keyboards", "Brass", "Woodwinds", "Percussions"]
+  CATEGORIES = ["Brass", "Keyboards", "Strings", "Woodwinds", "Percussions"]
 
   has_many :invitations, dependent: :destroy
   has_many :work_instruments, dependent: :destroy
