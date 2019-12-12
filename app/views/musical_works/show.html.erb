@@ -24,6 +24,13 @@
         <%= render partial: 'shared/work_instrument', locals: {icon: category.downcase, category: category, work_instruments: @work_instruments[category] } %>
       <% end %>
     <% end %>
+    <% if @missing_categories.count == Instrument::CATEGORIES.count  %>
+      <div class="col-6">
+        <div class="box work-box add-template-box">
+          Load from template
+        </div>
+      </div>
+    <% end %>
     <% if @missing_categories.any? %>
       <div class="col-6">
           <div class="box work-box add-category-box">
