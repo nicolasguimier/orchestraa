@@ -27,7 +27,7 @@
     <% if @missing_categories.count == Instrument::CATEGORIES.count  %>
       <div class="col-6">
         <div class="box work-box add-template-box">
-          Load from template
+          <%= link_to "Load from template", load_orchestra_composition_musical_work_work_instruments_path(@musical_work), method: :post %>
         </div>
       </div>
     <% end %>
