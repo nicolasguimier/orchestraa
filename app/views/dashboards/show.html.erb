@@ -35,7 +35,7 @@
   </div>
   <div class="col-12 col-lg-8">
     <div class="box">
-      <h2><span class="icon icon-note"></span><%= link_to "Pending invitations", invitations_path %></h2>
+      <h2><span class="icon icon-note"></span><span>Pending invitations</span></h2>
       <div class="scroll-card" id="pending-invitations">
         <% @invitations_pending.each do |invitation| %>
           <%= render partial: 'shared/invitation', locals: {invitation: invitation } %>
