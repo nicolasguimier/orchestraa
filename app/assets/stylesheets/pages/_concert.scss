@@ -19,3 +19,13 @@
 .icon-plus:before {
   padding-right: 5px;
 }
+
+.button-selector{
+  background-color: $ivory;
+
+  option {
+    &:hover {
+      background-color: red;
+    }
+  }
+}
