@@ -27,6 +27,15 @@
     <% if @missing_categories.count == Instrument::CATEGORIES.count  %>
       <div class="col-6">
         <div class="box work-box add-template-box">
+          <form action="<%= load_orchestra_composition_musical_work_work_instruments_path(@musical_work) %>" method="post">
+            <select onchange="this.form.submit()" name="composition" id="composition-selector" class= "button-selector">
+              <option value="select">Select composition</option>
+              <% @orchestra_compositions.each do |composition| %>
+                <option value="<%= composition.id %>" id="composition-selector-<%= composition.id %>"><%= composition.name %></option>
+              <% end %>
+            </select>
+            <input type="hidden" name="authenticity_token" id="authenticity_token" value="<%= form_authenticity_token %>" />
+          </form>
           <%= link_to "Load from template", load_orchestra_composition_musical_work_work_instruments_path(@musical_work), method: :post %>
         </div>
       </div>

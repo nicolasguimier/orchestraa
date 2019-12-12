@@ -32,7 +32,7 @@ class WorkInstrumentsController < ApplicationController
   end
 
   def load_work_instruments
-    @work_instruments = OrchestraComposition.first.composition
+    @work_instruments = OrchestraComposition.find(params[:composition]).composition
     # @work_instruments = {
     #   test_instruments[0].id => 1,
     #   test_instruments[1].id => 2,

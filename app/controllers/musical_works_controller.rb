@@ -9,6 +9,7 @@ class MusicalWorksController < ApplicationController
     @musical_work = MusicalWork.find(params[:id])
     @work_instruments = generate_instruments_hash
     @missing_categories = missing_categories
+    @orchestra_compositions = OrchestraComposition.all
   end
 
   def create
