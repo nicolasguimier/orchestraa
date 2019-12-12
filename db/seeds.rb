@@ -1626,93 +1626,108 @@ puts '-> Start orchestra composition'
 OrchestraComposition.create!(
   user: igor,
   name: "String quartet",
-  composition: '{
-    "Strings": {
-      Violin 1": "2",
-      "Viola": "1",
-      "Cello": "1"
-    }
-  }')
-OrchestraComposition.create!(
-  user: igor,
-  name: "Piano quartet",
-  composition: '{
-    "Strings": {
-      "Violin 1": "2",
-      "Viola": "1",
-      "Cello": "1"
+  composition: [
+    {
+      instrument_id: violin1.id,
+      quantity: 1
     },
-    "Keyboards": {
-      "Piano": "1"
+    {
+      instrument_id: violin2.id,
+      quantity: 1
+    },
+    {
+      instrument_id: viola.id,
+      quantity: 1
+    },
+    {
+      instrument_id: cello.id,
+      quantity: 1
     }
-  }')
+  ]
+)
 
 
-OrchestraComposition.create!(
-  user: igor,
-  name: "Philharmonic orchestra",
-  composition: '{
-    "Strings": {
-      "Violin 1": "16",
-      "Violin 2": "14",
-      "Viola": "12",
-      "Cello": "10",
-      "Double Bass": "8"
-    },
-    "Woodwinds": {
-      "Flute" : "2",
-      "Piccolo" : "1",
-      "Oboe": "1",
-      "Clarinet": "2",
-      "Bass Clarinet": "1",
-      "Bassoon": "1",
-      "Alto saxophones": "1"
-    },
-    "Brass" : {
-      "Trumpet": "2",
-      "Trombone": "1",
-      "Tuba": "1"
-    }
-    "Percussions": {
-      "Timpani": "1",
-      "triangle": "1",
-      "Cymbals": "1"
-    },
-    "Keyboards": {
-      "Harp": "1"
-    }
-  }')
-OrchestraComposition.create!(
-  user: igor,
-  name: "Concert band",
-  composition: '{
-    "Woodwinds": {
-      "Flute" : "2",
-      "Piccolo" : "1",
-      "Oboe": "1",
-      "Clarinet": "3",
-      "Bass Clarinet": "3",
-      "Bassoon": "1",
-      "Alto saxophones": "2"
-    },
-    "Brass" : {
-      "Trumpet": "4",
-      "Trombone": "2",
-      "Bass Trombone": "1",
-      "French Horn": "2",
-      "Tuba": "2"
-    }
-    "Percussions": {
-      "Timpani": "1",
-      "Snare Drum": "1",
-      "Bass Drum": "1",
-      "Claves": "1",
-      "triangle": "1",
-      "Cymbals": "1",
-      "Vibraphone": "1",
-      "Xylophone": "1"
-    }
-  }')
+
+# OrchestraComposition.create!(
+#   user: igor,
+#   name: "Piano quartet",
+#   composition: '{
+#     "Strings": {
+#       "Violin 1": "2",
+#       "Viola": "1",
+#       "Cello": "1"
+#     },
+#     "Keyboards": {
+#       "Piano": "1"
+#     }
+#   }')
+
+
+# OrchestraComposition.create!(
+#   user: igor,
+#   name: "Philharmonic orchestra",
+#   composition: '{
+#     "Strings": {
+#       "Violin 1": "16",
+#       "Violin 2": "14",
+#       "Viola": "12",
+#       "Cello": "10",
+#       "Double Bass": "8"
+#     },
+#     "Woodwinds": {
+#       "Flute" : "2",
+#       "Piccolo" : "1",
+#       "Oboe": "1",
+#       "Clarinet": "2",
+#       "Bass Clarinet": "1",
+#       "Bassoon": "1",
+#       "Alto saxophones": "1"
+#     },
+#     "Brass" : {
+#       "Trumpet": "2",
+#       "Trombone": "1",
+#       "Tuba": "1"
+#     }
+#     "Percussions": {
+#       "Timpani": "1",
+#       "triangle": "1",
+#       "Cymbals": "1"
+#     },
+#     "Keyboards": {
+#       "Harp": "1"
+#     }
+#   }')
+# OrchestraComposition.create!(
+#   user: igor,
+#   name: "Concert band",
+#   composition: '{
+#     "Woodwinds": {
+#       "Flute" : "2",
+#       "Piccolo" : "1",
+#       "Oboe": "1",
+#       "Clarinet": "3",
+#       "Bass Clarinet": "3",
+#       "Bassoon": "1",
+#       "Alto saxophones": "2"
+#     },
+#     "Brass" : {
+#       "Trumpet": "4",
+#       "Trombone": "2",
+#       "Bass Trombone": "1",
+#       "French Horn": "2",
+#       "Tuba": "2"
+#     }
+#     "Percussions": {
+#       "Timpani": "1",
+#       "Snare Drum": "1",
+#       "Bass Drum": "1",
+#       "Claves": "1",
+#       "triangle": "1",
+#       "Cymbals": "1",
+#       "Vibraphone": "1",
+#       "Xylophone": "1"
+#     }
+#   }')
 puts "#{OrchestraComposition.count} orchestra compositions imported. End"
 
 

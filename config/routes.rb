@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post '/instruments', to: 'instruments#index', as: 'intruments'
 
-  resources :musical_works, only: [:index, :show] do
+  resources :musical_works, only: [:index, :show, :create] do
     # :new, :create, , :detroy , :edit, :update
     resources :work_instruments, only: [:create] do
       collection do

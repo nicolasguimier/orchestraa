@@ -11,6 +11,17 @@ class MusicalWorksController < ApplicationController
     @missing_categories = missing_categories
   end
 
+  def create
+    @musical_work = MusicalWork.create(
+      user: current_user,
+      title: 'New ',
+      composer_name: 'Bethoveen',
+      duration: 45,
+      notes: ""
+    )
+    redirect_to musical_work_path(@musical_work)
+  end
+
   private
 
   def generate_instruments_hash
