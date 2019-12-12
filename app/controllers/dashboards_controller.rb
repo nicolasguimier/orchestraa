@@ -20,9 +20,9 @@ class DashboardsController < ApplicationController
 
     # For now, hardcoded, we'll see next week if we have time to make it dynamic
     @total_instruments_needed = {
-      Strings: 12,
-      Woodwinds: 6,
-      Brass: 2,
+      Strings: 9,
+      Woodwinds: 3,
+      Brass: 0,
       Percussions: 2,
       Keyboard: 1
     }
