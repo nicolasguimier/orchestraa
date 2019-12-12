@@ -111,3 +111,7 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.button-selector:active, .button-selector:focus {
+  outline: none;
+}
