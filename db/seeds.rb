@@ -769,7 +769,7 @@ WorkInstrument.create!(
 vivaldi1_double_bass = WorkInstrument.new(
   musical_work: vivaldi1,
   instrument: double_bass,
-  quantity: 1
+  quantity: 1,
   remote_sheet_pdf_url: 'https://res.cloudinary.com/dt2lwcp7z/image/upload/v1575986106/250595387-Astor-Piazzolla-Adios-Nonino-Piano-Solo_gpmyza.pdf'
 )
 vivaldi1_double_bass.save!
